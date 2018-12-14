@@ -1,0 +1,59 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts, amsmath, amssymb}
+\usepackage[none]{hyphenat}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[nottoc, notlot, notlof]{tocbibind}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[L]{\slshape \MakeUppercase{Cassette deck}}
+\fancyhead[R]{\slshape Constant Théo, Essafsyfy Abdelkrim}
+\fancyfoot[C]{\thepage}
+%\renewcommand{\headrulewidth}{0pt} %to remove the horizontal line in header
+\renewcommand{\footrulewidth}{0pt} %to remove the horizontal line in footer
+
+\parindent 0ex %removes paragraph indentation
+%\setlength{\parindent}{4em} %change the width of the indent
+%\setlength{\parskip}{1em} %change the amount of spacing between paragraphs
+\renewcommand{\baselinestretch}{1.5} %affects line spacing of paragraphs 
+
+\begin{document}
+
+\begin{titlepage}
+\begin{center}
+\vspace*{1cm}
+\Large{\textbf{Génie Logiciel}}\\
+\Large{\textbf{Projet de Modélisation et d’Implémentation}}
+\vfill
+\line(1,0){400}\\[1mm]
+\huge{\textbf{“Simulator of a Cassette Deck”}}\\[3mm]
+\Large{\textbf{- Partie modélisation -}}\\[1mm]
+\line(1,0){400}\\
+\vfill
+Par Constant Théo et Essafsyfy Abdelkrim\\
+%Candidate \#\\
+\today
+\end{center}
+\end{titlepage}
+
+\tableofcontents
+\thispagestyle{empty} %removes header and footer from table of contents
+\clearpage %table of content on its own page
+
+\setcounter{page}{1} %1st page is after table of contents
+
+\section{Maquette de l'interface graphique}
+\section{Diagrammes UML}
+\subsection{Diagramme de cas d'utilisation}
+\subsection{Diagramme de classes}
+\subsection{Diagramme d'état}
+\subsection{Diagramme de séquence}
+\subsection{Diagramme d'activité}
+\subsection{Diagramme bonus?}
+
+\end{document}

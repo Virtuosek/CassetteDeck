@@ -1,0 +1,8 @@
+\contentsline {section}{\numberline {1}Maquette de l'interface graphique}{1}
+\contentsline {section}{\numberline {2}Diagrammes UML}{1}
+\contentsline {subsection}{\numberline {2.1}Diagramme de cas d'utilisation}{1}
+\contentsline {subsection}{\numberline {2.2}Diagramme de classes}{1}
+\contentsline {subsection}{\numberline {2.3}Diagramme d'\IeC {\'e}tat}{1}
+\contentsline {subsection}{\numberline {2.4}Diagramme de s\IeC {\'e}quence}{1}
+\contentsline {subsection}{\numberline {2.5}Diagramme d'activit\IeC {\'e}}{1}
+\contentsline {subsection}{\numberline {2.6}Diagramme bonus?}{1}
