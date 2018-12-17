@@ -1,0 +1,38 @@
+\BOOKMARK [1][-]{section.1}{Use case diagram}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Diagram}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{Cases' description}{section.1}% 3
+\BOOKMARK [3][-]{subsubsection.1.2.1}{Turn on/Turn off}{subsection.1.2}% 4
+\BOOKMARK [3][-]{subsubsection.1.2.2}{Open/Close}{subsection.1.2}% 5
+\BOOKMARK [3][-]{subsubsection.1.2.3}{Insert/Remove cassette}{subsection.1.2}% 6
+\BOOKMARK [3][-]{subsubsection.1.2.4}{Plug in/out audio device}{subsection.1.2}% 7
+\BOOKMARK [3][-]{subsubsection.1.2.5}{Use navigation commands}{subsection.1.2}% 8
+\BOOKMARK [3][-]{subsubsection.1.2.6}{Press play}{subsection.1.2}% 9
+\BOOKMARK [3][-]{subsubsection.1.2.7}{Press pause}{subsection.1.2}% 10
+\BOOKMARK [3][-]{subsubsection.1.2.8}{Press stop}{subsection.1.2}% 11
+\BOOKMARK [3][-]{subsubsection.1.2.9}{Press fast forward}{subsection.1.2}% 12
+\BOOKMARK [3][-]{subsubsection.1.2.10}{Press fast rewind}{subsection.1.2}% 13
+\BOOKMARK [3][-]{subsubsection.1.2.11}{Forward/Rewind to the next/previous song}{subsection.1.2}% 14
+\BOOKMARK [3][-]{subsubsection.1.2.12}{Activate auto-reverse}{subsection.1.2}% 15
+\BOOKMARK [3][-]{subsubsection.1.2.13}{Configure built-in stereo speakers}{subsection.1.2}% 16
+\BOOKMARK [3][-]{subsubsection.1.2.14}{Adjust audio stereo balance}{subsection.1.2}% 17
+\BOOKMARK [3][-]{subsubsection.1.2.15}{Adjust audio volume}{subsection.1.2}% 18
+\BOOKMARK [3][-]{subsubsection.1.2.16}{Adjust audio volume between decks}{subsection.1.2}% 19
+\BOOKMARK [3][-]{subsubsection.1.2.17}{Record}{subsection.1.2}% 20
+\BOOKMARK [3][-]{subsubsection.1.2.18}{Plug in/out input audio device}{subsection.1.2}% 21
+\BOOKMARK [3][-]{subsubsection.1.2.19}{Configure built-in microphone}{subsection.1.2}% 22
+\BOOKMARK [3][-]{subsubsection.1.2.20}{Adjust mic stereo balance}{subsection.1.2}% 23
+\BOOKMARK [3][-]{subsubsection.1.2.21}{Adjust mic audio volume}{subsection.1.2}% 24
+\BOOKMARK [3][-]{subsubsection.1.2.22}{Adjust mic audio volume}{subsection.1.2}% 25
+\BOOKMARK [3][-]{subsubsection.1.2.23}{Use recording commands}{subsection.1.2}% 26
+\BOOKMARK [3][-]{subsubsection.1.2.24}{Start recording}{subsection.1.2}% 27
+\BOOKMARK [3][-]{subsubsection.1.2.25}{Pause recording}{subsection.1.2}% 28
+\BOOKMARK [3][-]{subsubsection.1.2.26}{Stop recording}{subsection.1.2}% 29
+\BOOKMARK [1][-]{section.2}{Class diagram}{}% 30
+\BOOKMARK [1][-]{section.3}{State Charts Diagrams \(Yakindu\)}{}% 31
+\BOOKMARK [2][-]{subsection.3.1}{Diagram 1}{section.3}% 32
+\BOOKMARK [2][-]{subsection.3.2}{Diagram 2}{section.3}% 33
+\BOOKMARK [2][-]{subsection.3.3}{Diagram 3}{section.3}% 34
+\BOOKMARK [1][-]{section.4}{Sequence diagrams}{}% 35
+\BOOKMARK [2][-]{subsection.4.1}{Music Player}{section.4}% 36
+\BOOKMARK [2][-]{subsection.4.2}{Music Recorder}{section.4}% 37
+\BOOKMARK [1][-]{section.5}{Activity diagram}{}% 38

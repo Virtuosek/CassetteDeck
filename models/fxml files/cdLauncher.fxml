@@ -50,7 +50,7 @@
             <Font name="Verdana" size="24.0" />
          </font>
       </Label>
-      <CheckBox layoutX="97.0" layoutY="174.0" mnemonicParsing="false" style="-fx-text-fill: #DCDCDC;" text="Audio recorder functinality">
+      <CheckBox layoutX="97.0" layoutY="174.0" mnemonicParsing="false" style="-fx-text-fill: #DCDCDC;" text="Audio recorder functionality">
          <font>
             <Font name="Verdana" size="13.0" />
          </font>

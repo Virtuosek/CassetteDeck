@@ -25,9 +25,9 @@
                      <font>
                         <Font name="Verdana" size="13.0" />
                      </font></Label>
-                  <Label layoutX="111.0" layoutY="41.0" style="-fx-text-fill: #DCDCDC;" text="Audio player">
+                  <Label layoutX="93.0" layoutY="38.0" style="-fx-text-fill: #DCDCDC;" text="Audio player">
                      <font>
-                        <Font name="Verdana" size="13.0" />
+                        <Font name="Verdana" size="18.0" />
                      </font></Label>
                   <Label layoutX="33.0" layoutY="137.0" style="-fx-text-fill: #DCDCDC;" text="min">
                      <font>
@@ -51,9 +51,9 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="367.0" prefWidth="287.0" style="-fx-background-color: #909090;">
                <children>
-                  <Label layoutX="109.0" layoutY="39.0" style="-fx-text-fill: #DCDCDC;" text="Audio recorder">
+                  <Label layoutX="90.0" layoutY="39.0" style="-fx-text-fill: #DCDCDC;" text="Audio recorder">
                      <font>
-                        <Font size="13.0" />
+                        <Font name="Verdana" size="18.0" />
                      </font></Label>
                   <Label layoutX="231.0" layoutY="206.0" style="-fx-text-fill: #DCDCDC;" text="max">
                      <font>
@@ -101,13 +101,14 @@
       <Pane layoutX="14.0" layoutY="378.0" prefHeight="45.0" prefWidth="566.0">
          <children>
             <ProgressIndicator layoutX="468.0" layoutY="5.0" progress="0.0" style="-fx-text-fill: DCDCDC;" />
-            <RadioButton disable="true" layoutY="17.0" mnemonicParsing="false" style="-fx-text-fill: DCDCDC;" text="Magnetic head" />
+            <RadioButton disable="true" layoutY="17.0" mnemonicParsing="false" style="-fx-text-fill: DCDCDC;" text="Magnetic head a" />
             <Label layoutX="410.0" layoutY="14.0" style="-fx-text-fill: #DCDCDC;" text="Counter">
                <font>
                   <Font size="13.0" />
                </font></Label>
-            <RadioButton disable="true" layoutX="114.0" layoutY="17.0" mnemonicParsing="false" style="-fx-text-fill: DCDCDC;" text="Motor" />
+            <RadioButton disable="true" layoutX="283.0" layoutY="15.0" mnemonicParsing="false" style="-fx-text-fill: DCDCDC;" text="Motor" />
             <Button layoutX="507.0" layoutY="13.0" mnemonicParsing="false" text="Reset" />
+            <RadioButton disable="true" layoutX="124.0" layoutY="17.0" mnemonicParsing="false" style="-fx-text-fill: DCDCDC;" text="Magnetic head b" />
          </children>
       </Pane>
    </children>
