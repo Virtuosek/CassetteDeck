@@ -1,0 +1,38 @@
+\contentsline {section}{\numberline {1}Use case diagram}{1}{section.1}
+\contentsline {subsection}{\numberline {1.1}Diagram}{1}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Cases' description}{1}{subsection.1.2}
+\contentsline {subsubsection}{\numberline {1.2.1}Turn on/Turn off}{1}{subsubsection.1.2.1}
+\contentsline {subsubsection}{\numberline {1.2.2}Open/Close}{2}{subsubsection.1.2.2}
+\contentsline {subsubsection}{\numberline {1.2.3}Insert/Remove cassette}{2}{subsubsection.1.2.3}
+\contentsline {subsubsection}{\numberline {1.2.4}Plug in/out audio device}{3}{subsubsection.1.2.4}
+\contentsline {subsubsection}{\numberline {1.2.5}Use navigation commands}{3}{subsubsection.1.2.5}
+\contentsline {subsubsection}{\numberline {1.2.6}Press play}{3}{subsubsection.1.2.6}
+\contentsline {subsubsection}{\numberline {1.2.7}Press pause}{4}{subsubsection.1.2.7}
+\contentsline {subsubsection}{\numberline {1.2.8}Press stop}{4}{subsubsection.1.2.8}
+\contentsline {subsubsection}{\numberline {1.2.9}Press fast forward}{4}{subsubsection.1.2.9}
+\contentsline {subsubsection}{\numberline {1.2.10}Press fast rewind}{5}{subsubsection.1.2.10}
+\contentsline {subsubsection}{\numberline {1.2.11}Forward/Rewind to the next/previous song}{5}{subsubsection.1.2.11}
+\contentsline {subsubsection}{\numberline {1.2.12}Activate auto-reverse}{6}{subsubsection.1.2.12}
+\contentsline {subsubsection}{\numberline {1.2.13}Configure built-in stereo speakers}{6}{subsubsection.1.2.13}
+\contentsline {subsubsection}{\numberline {1.2.14}Adjust audio stereo balance}{6}{subsubsection.1.2.14}
+\contentsline {subsubsection}{\numberline {1.2.15}Adjust audio volume}{7}{subsubsection.1.2.15}
+\contentsline {subsubsection}{\numberline {1.2.16}Adjust audio volume between decks}{7}{subsubsection.1.2.16}
+\contentsline {subsubsection}{\numberline {1.2.17}Record}{8}{subsubsection.1.2.17}
+\contentsline {subsubsection}{\numberline {1.2.18}Plug in/out input audio device}{8}{subsubsection.1.2.18}
+\contentsline {subsubsection}{\numberline {1.2.19}Configure built-in microphone}{8}{subsubsection.1.2.19}
+\contentsline {subsubsection}{\numberline {1.2.20}Adjust mic stereo balance}{9}{subsubsection.1.2.20}
+\contentsline {subsubsection}{\numberline {1.2.21}Adjust mic audio volume}{9}{subsubsection.1.2.21}
+\contentsline {subsubsection}{\numberline {1.2.22}Adjust mic audio volume}{9}{subsubsection.1.2.22}
+\contentsline {subsubsection}{\numberline {1.2.23}Use recording commands}{10}{subsubsection.1.2.23}
+\contentsline {subsubsection}{\numberline {1.2.24}Start recording}{10}{subsubsection.1.2.24}
+\contentsline {subsubsection}{\numberline {1.2.25}Pause recording}{10}{subsubsection.1.2.25}
+\contentsline {subsubsection}{\numberline {1.2.26}Stop recording}{11}{subsubsection.1.2.26}
+\contentsline {section}{\numberline {2}Class diagram}{12}{section.2}
+\contentsline {section}{\numberline {3}State Charts Diagrams \textit {(Yakindu)}}{13}{section.3}
+\contentsline {subsection}{\numberline {3.1}Diagram 1}{13}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Diagram 2}{13}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Diagram 3}{14}{subsection.3.3}
+\contentsline {section}{\numberline {4}Sequence diagrams}{15}{section.4}
+\contentsline {subsection}{\numberline {4.1}Music Player}{15}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Music Recorder}{16}{subsection.4.2}
+\contentsline {section}{\numberline {5}Activity diagram}{17}{section.5}

@@ -1,0 +1,22 @@
+\textbf{Use case name} : Record \\
+\textbf{Summary} : User records music from external audio input device on cassette.\\
+\textbf{Actors} : User (primary), Audio Input Device (secondary)\\
+\textbf{Assumptions} : Cassette deck is connected to audio input device. Both devices and their connection are working
+correctly.\\
+\textbf{Preconditions} : Cassette desk is powered on. Cassette is inserted in cassette holder. Cassette desk is in idle state.\\
+\textbf{Basic course of action :}\\
+1. User pressesj button.\\
+2. System rewinds cassette to the beginning of the magnetic tape and stops.\\
+3. System releasesj button.\\
+4. User resets counter to 0.\\
+5. User selects audio input device, and starts playing audio from this device.\\
+6. User presses Û of the cassette deck.\\
+7. System engages magnetic head on tape and signals recording status with indicator light.\\
+8. System starts recording on the cassette from the selected input device.\\
+9. User depresses Û to stop recording.\\
+10. System disengages magnetic head from tape and signals idle status with indicator light.\\
+\textbf{Postconditions} : Same as preconditions.\\
+\textbf{Alternate courses :}\\
+9a : System detects that end of tape is reached. System releases Û button to stop recording. Go to step 10.\\
+9b : [If auto reverse functionality is present and enabled :] System detects that end of tape is reached. System
+disengages magnetic head.
