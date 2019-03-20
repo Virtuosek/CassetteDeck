@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="357.0" prefWidth="371.0" style="-fx-background-color: #413E3E;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="29.0" layoutY="99.0" style="-fx-text-fill: #DCDCDC;" text="Deck type">
+         <font>
+            <Font name="Verdana" size="13.0" />
+         </font>
+      </Label>
+      <RadioButton layoutX="110.0" layoutY="98.0" mnemonicParsing="false" style="-fx-text-fill: #DCDCDC;" text="Single deck">
+         <font>
+            <Font name="Verdana" size="13.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="deckType" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton layoutX="217.0" layoutY="98.0" mnemonicParsing="false" style="-fx-text-fill: #DCDCDC;" text="Double deck" toggleGroup="$deckType">
+         <font>
+            <Font name="Verdana" size="13.0" />
+         </font>
+      </RadioButton>
+      <CheckBox layoutX="96.0" layoutY="141.0" mnemonicParsing="false" style="-fx-text-fill: #909090;" text="Built-in audio speaker">
+         <font>
+            <Font name="Verdana" size="13.0" />
+         </font>
+      </CheckBox>
+      <CheckBox disable="true" layoutX="119.0" layoutY="208.0" mnemonicParsing="false" style="-fx-text-fill: #DCDCDC;" text="Built-in microphone">
+         <font>
+            <Font name="Verdana" size="13.0" />
+         </font>
+      </CheckBox>
+      <Button layoutX="104.0" layoutY="289.0" mnemonicParsing="false" text="Launch">
+         <font>
+            <Font name="Verdana" size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="186.0" layoutY="289.0" mnemonicParsing="false" text="Cancel">
+         <font>
+            <Font name="Verdana" size="13.0" />
+         </font>
+      </Button>
+      <Label graphicTextGap="6.0" layoutX="37.0" layoutY="36.0" style="-fx-text-fill: #DCDCDC;" text="Cassette deck launcher" textAlignment="CENTER" textOverrun="CLIP">
+         <font>
+            <Font name="Verdana" size="24.0" />
+         </font>
+      </Label>
+      <CheckBox layoutX="97.0" layoutY="174.0" mnemonicParsing="false" style="-fx-text-fill: #DCDCDC;" text="Audio recorder functionality">
+         <font>
+            <Font name="Verdana" size="13.0" />
+         </font>
+      </CheckBox>
+      <CheckBox layoutX="96.0" layoutY="240.0" mnemonicParsing="false" style="-fx-text-fill: #DCDCDC;" text="Auto reverse">
+         <font>
+            <Font name="Verdana" size="13.0" />
+         </font>
+      </CheckBox>
+   </children>
+</Pane>
