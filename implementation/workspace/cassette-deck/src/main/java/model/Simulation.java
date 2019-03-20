@@ -1,6 +1,5 @@
 package model;
 
-import java.awt.event.MouseAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,5 +11,11 @@ public class Simulation {
 	public Simulation() {
 		this.deck = new CassetteDeck();
 		this.cassettes = new ArrayList<>();
+	}
+	
+	public void start() {
+		while(true) {
+			
+		}
 	}
 }
