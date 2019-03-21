@@ -37,6 +37,12 @@ public class FastForwardingState implements State {
 	}
 	
 	@Override
+	public void pause() {
+		deck.setOnPause(!deck.isOnPause());
+		System.out.println("The pause button has been switched.");
+	}
+	
+	@Override
 	public void record() {
 		// TODO Auto-generated method stub
 		

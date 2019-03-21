@@ -7,6 +7,7 @@ public interface State {
 	public void open();
 	public void stop();
 	public void play();
+	public void pause();
 	public void record();
 	public void fastRewind();
 	public void fastForward();

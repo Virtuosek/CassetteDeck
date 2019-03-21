@@ -31,6 +31,7 @@ public class Deck {
 		recordBalance = 0;
 		counter = 0;
 		isAutoReversing = false;
+		isOnPause = false;
 		motor = new Motor();
 		head = new PlayHead();
 		holder = new CassetteHolder();
@@ -48,11 +49,11 @@ public class Deck {
 	}
 	
 	public void turnOn() {
-		// TODO not in states
+		state = idleState;
 	}
 	
 	public void turnOff() {
-		// TODO not in states
+		state = offState;
 	}
 	
 	public void open() {
@@ -60,14 +61,19 @@ public class Deck {
 	}
 
 	public void close() {
-		// TODO not in states
+		holder.close();
 	}
 	
-	public void insertCassette() {
-		// TODO not in states
+	public void insertCassette(Cassette cassette) {
+		if(holder.isOpen() && !holder.hasCassette()) {
+			holder.insertCassette(cassette);
+		}
 	}
+	
 	public void removeCassette() {
-		// TODO not in states
+		if(holder.isOpen()) {
+			holder.removeCassette();
+		}
 	}
 	
 	public void stop() {
@@ -76,11 +82,6 @@ public class Deck {
 	
 	public void play() {
 		state.play();
-	}
-	
-	public void pause() {
-		// TODO not in states
-		System.out.println("The pause button has been switched.");
 	}
 	
 	public void record() {
