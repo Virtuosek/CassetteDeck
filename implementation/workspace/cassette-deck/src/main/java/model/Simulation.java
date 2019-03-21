@@ -14,8 +14,8 @@ public class Simulation {
     private List<Cassette> cassettes;
 
     public Simulation() {
-        this.deck = new CassetteDeck();
-        this.cassettes = new ArrayList<>();
+        deck = new CassetteDeck();
+        cassettes = new ArrayList<>();
     }
 
     public void start() {

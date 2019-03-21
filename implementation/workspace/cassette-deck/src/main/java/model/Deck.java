@@ -11,108 +11,270 @@ public class Deck {
 	private Motor motor;
 	private PlayHead head;
 	private CassetteHolder holder;
-	private DeckControllerState state;
+	
+	private State offState;
+	private State idleState;
+	private State playingActiveState;
+	private State playingPauseState;
+	private State recordingActiveState;
+	private State recordingPauseState;
+	private State fastRewindingState;
+	private State fastForwardingState;
+	
+	private State state;
 	
 	public Deck() {
-		this.volume = 0;
-		this.balance = 0;
-		this.recordVolume = 0;
-		this.recordBalance = 0;
-		this.counter = 0;
-		this.isAutoReversing = false;
-		this.motor = new Motor();
-		this.head = new PlayHead();
-		this.holder = new CassetteHolder();
-		this.state = null;
+		volume = 0;
+		balance = 0;
+		recordVolume = 0;
+		recordBalance = 0;
+		counter = 0;
+		isAutoReversing = false;
+		motor = new Motor();
+		head = new PlayHead();
+		holder = new CassetteHolder();
+		
+		offState = new OffState(this);
+		idleState = new IdleState(this);
+		playingActiveState = new PlayingActiveState(this);
+		playingPauseState = new PlayingPauseState(this);
+		recordingActiveState = new RecordingActiveState(this);
+		recordingPauseState = new RecordingPauseState(this);
+		fastRewindingState = new FastRewindingState(this);
+		fastForwardingState = new FastForwardingState(this);
+		
+		state = offState;
+	}
+	
+	public void turnOn() {
+		state.turnOn();
+	}
+	
+	public void turnOff() {
+		state.turnOff();
+	}
+	
+	public void open() {
+		state.open();
+	}
+
+	public void close() {
+		// TODO not in states
+	}
+	
+	public void insertCassette() {
+		// TODO not in states
+	}
+	public void removeCassette() {
+		// TODO not in states
+	}
+	
+	public void stop() {
+		state.stop();
 	}
 	
 	public void play() {
-		// TODO
-		System.out.println("The deck is playing.");
+		state.play();
 	}
 	
 	public void pause() {
-		// TODO
-		System.out.println("On pause.");
-	}
-	
-	public void fastRewind() {
-		// TODO
-		System.out.println("The deck is fast rewinding.");
-	}
-	
-	public void fastForward() {
-		// TODO
-		System.out.println("The deck is fast forwarding.");
-	}
-	
-	public void previousSong() {
-		// TODO
-		System.out.println("Previous song.");
-	}
-	
-	public void nextSong() {
-		// TODO
-		System.out.println("Next song.");
-	}
-	
-	public void resetCounter() {
-		// TODO
-		System.out.println("The counter is reset to zero.");
-	}
-	
-	public void enableAutoReverse() {
-		// TODO
-		System.out.println("Auto-reverse is enabled.");
-	}
-	
-	public void disableAutoRevers() {
-		// TODO
-		System.out.println("Auto-reverse is disabled.");
+		state.pause();
+		// System.out.println("On pause.");
 	}
 	
 	public void record() {
-		// TODO
-		System.out.println("The deck is recording.");
+		state.record();
+		// System.out.println("The deck is recording.");
+	}
+	
+	public void fastRewind() {
+		state.fastRewind();
+		// System.out.println("The deck is fast rewinding.");
+	}
+	
+	public void fastForward() {
+		state.fastForward();
+		// System.out.println("The deck is fast forwarding.");
+	}
+	
+	public void previousSong() {
+		state.previousSong();
+		// System.out.println("Previous song.");
+	}
+	
+	public void nextSong() {
+		state.nextSong();
+		// System.out.println("Next song.");
+	}
+	
+	public void resetCounter() {
+		state.resetCounter();
+		// System.out.println("The counter is reset to zero.");
+	}
+	
+	public void enableAutoReverse() {
+		// TODO not in states
+		System.out.println("Auto-reverse is enabled.");
+	}
+	
+	public void disableAutoReverse() {
+		// TODO not in states
+		System.out.println("Auto-reverse is disabled.");
 	}
 	
 	public void turnVolumeLeft() {
-		// TODO
+		// TODO not in states
 		System.out.println("The volume has been decreased.");
 	}
 	
 	public void turnVolumeRight() {
-		// TODO
+		// TODO not in states
 		System.out.println("The volume has been increased.");
 	}
 	
 	public void turnBalanceLeft() {
-		// TODO
+		// TODO not in states
 		System.out.println("The balance has been turned to left.");
 	}
 	
 	public void turnBalanceRight() {
-		// TODO
+		// TODO not in states
 		System.out.println("The balance has been turned to right.");
 	}
 	
 	public void turnRecordVolumeLeft() {
-		// TODO
+		// TODO not in states
 		System.out.println("The record volume has been decreased.");
 	}
 	
 	public void turnRecordVolumeRight() {
-		// TODO
+		// TODO not in states
 		System.out.println("The record volume has been increased.");
 	}
 	
 	public void turnRecordBalanceLeft() {
-		// TODO
+		// TODO not in states
 		System.out.println("The record balance has been turned to left.");
 	}
 	
 	public void turnRecordBalanceRight() {
-		// TODO
+		// TODO not in states
 		System.out.println("The record balance has been turned to right.");
+	}
+	
+	
+	
+	
+
+	public int getVolume() {
+		return volume;
+	}
+
+	public void setVolume(int volume) {
+		this.volume = volume;
+	}
+
+	public int getBalance() {
+		return balance;
+	}
+
+	public void setBalance(int balance) {
+		this.balance = balance;
+	}
+
+	public int getRecordVolume() {
+		return recordVolume;
+	}
+
+	public void setRecordVolume(int recordVolume) {
+		this.recordVolume = recordVolume;
+	}
+
+	public int getRecordBalance() {
+		return recordBalance;
+	}
+
+	public void setRecordBalance(int recordBalance) {
+		this.recordBalance = recordBalance;
+	}
+
+	public int getCounter() {
+		return counter;
+	}
+
+	public void setCounter(int counter) {
+		this.counter = counter;
+	}
+
+	public boolean isAutoReversing() {
+		return isAutoReversing;
+	}
+
+	public void setAutoReversing(boolean isAutoReversing) {
+		this.isAutoReversing = isAutoReversing;
+	}
+
+	public Motor getMotor() {
+		return motor;
+	}
+
+	public void setMotor(Motor motor) {
+		this.motor = motor;
+	}
+
+	public PlayHead getHead() {
+		return head;
+	}
+
+	public void setHead(PlayHead head) {
+		this.head = head;
+	}
+
+	public CassetteHolder getHolder() {
+		return holder;
+	}
+
+	public void setHolder(CassetteHolder holder) {
+		this.holder = holder;
+	}
+
+	public State getOffState() {
+		return offState;
+	}
+
+	public State getIdleState() {
+		return idleState;
+	}
+
+	public State getPlayingActiveState() {
+		return playingActiveState;
+	}
+
+	public State getPlayingPauseState() {
+		return playingPauseState;
+	}
+
+	public State getRecordingActiveState() {
+		return recordingActiveState;
+	}
+
+	public State getRecordingPauseState() {
+		return recordingPauseState;
+	}
+
+	public State getFastRewindingState() {
+		return fastRewindingState;
+	}
+
+	public State getFastForwardingState() {
+		return fastForwardingState;
+	}
+
+	public void setState(State state) {
+		this.state = state;
+	}
+	
+	public State getState() {
+		return state;
 	}
 }

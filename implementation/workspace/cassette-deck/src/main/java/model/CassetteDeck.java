@@ -7,18 +7,18 @@ public class CassetteDeck {
 	private boolean isTurnedOn;
 	
 	public CassetteDeck() {
-		this.volume = 0;
-		this.deck = new Deck();
-		this.isTurnedOn = false;
+		volume = 0;
+		deck = new Deck();
+		isTurnedOn = false;
 	}
 	
 	public void turnOn() {
-		this.isTurnedOn = true;
+		isTurnedOn = true;
 		System.out.println("The cassette deck is turned on.");
 	}
 	
 	public void turnOff() {
-		this.isTurnedOn = false;
+		isTurnedOn = false;
 		System.out.println("Power is off.");
 	}
 	

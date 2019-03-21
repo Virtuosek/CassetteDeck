@@ -2,26 +2,42 @@ package model;
 
 public class CassetteHolder {
 
+	private boolean isOpen;
+	private boolean hasCassette;
 	private Cassette cassette;
-	private boolean isHolderOpen;
 	
 	public CassetteHolder() {
-		this.isHolderOpen = false;
+		isOpen = false;
+		hasCassette = false;
 	}
 	
 	public void open() {
-		this.isHolderOpen = true;
+		isOpen = true;
 	}
 	
 	public void close() {
-		this.isHolderOpen = false;
+		isOpen = false;
 	}
 	
 	public void insertCassette(Cassette cassette) {
 		this.cassette = cassette;
+		hasCassette = true;
 	}
 	
 	public void removeCassette() {
 		cassette = null;
+		hasCassette = false;
+	}
+
+	public boolean isOpen() {
+		return isOpen;
+	}
+
+	public boolean hasCassette() {
+		return hasCassette;
+	}
+
+	public Cassette getCassette() {
+		return cassette;
 	}
 }

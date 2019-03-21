@@ -5,10 +5,14 @@ public class Motor {
 	private boolean isTurnedOn;
 	
 	public Motor() {
-		this.isTurnedOn = false;
+		isTurnedOn = false;
 	}
 	
-	public void switchPower() {
-		this.isTurnedOn = !isTurnedOn;
+	public void turnOn() {
+		isTurnedOn = true;
+	}
+	
+	public void turnOff() {
+		isTurnedOn = false;
 	}
 }

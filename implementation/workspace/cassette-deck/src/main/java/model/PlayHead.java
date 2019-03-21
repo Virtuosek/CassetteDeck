@@ -2,17 +2,17 @@ package model;
 
 public class PlayHead {
 
-	private boolean engaged;
+	private boolean isEngaged;
 	
 	public PlayHead() {
-		this.engaged = false;
+		isEngaged = false;
 	}
 	
 	public void engage() {
-		this.engaged = true;
+		isEngaged = true;
 	}
 	
 	public void disengage() {
-		this.engaged = false;
+		isEngaged = false;
 	}
 }
