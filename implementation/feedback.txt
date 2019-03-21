@@ -1,0 +1,74 @@
+MAQUETTE:
+
+La maquette est présent, document de 3 pages.
+
+- Dans le launcher, il manque la détection de chansons.
+- Comme il s'agit d'un launcher, peut-on y revenir sans devoir relancer l'application ?
+- Comment fonctionnent les pannes ? Où peut-on voir qu'il y a un problème ou le déclencher ?
+- Le "built-in microphone" doit-il seulement être disponible si la fonctionalité du "audio recorder" est présent? Je ne penses pas. Par exemple, cela pourra être utile d'avoir un built-in microphone pour avoir un sorte de fonctionnalité de "karaoke" où il est possible de mixer le microphone et la musique sur la cassette simultanément, pour produire un output direct sur les speakers (sans enregistrement).
+- Ce serait mieux d'utiliser des boutons circulaires au lieu de sliders.
+- Pour le boutons Play, Pause, Stop, FR, FF, Recording, ce serait mieux d'utiliser les icônes habituels au lieu du texte.
+- Comment peut-on revenir au menu permettant de changer les options de configuration, à partir de la simulation du cassette deck?
+- Ou peut-on voir la valeur actuelle de counter? Elle doit etre visible à tout moment, sinon, cela ne sert à rien d'avoir un counter...
+- Comment peut-on choisir la source d'entrée pour l'enregistrement? La source d'entrée pourrait etre le built-in microphone ou un "external audio input device".
+- Il faut visualiser aussi la cassette qui est en train de jouer (au minimum, montrer la position du "tape")
+- Comment peut-on préciser la sortie audio? Cela pourra etre les built-in speakers ou les external speakers (si présent).
+- "Some buttons and options might be disabled" => Rather than just disabling the buttons, it would be better (more user friendly) if the buttons would not be shown!
+- For the image "Double Deck", it is strange to split the functionalist between "Audio player" and "Audio Recorder". It would be more logical to split between "Cassette Deck 1" and "Cassette Deck 2".
+
+------------------------------------
+
+RAPPORT DE MODELISATION:
+
+*** Use case diagrams + scenarios des uses cases:
+
+Le diagramme de use cases est présent et très complet.
+Il y a aussi les scénarios semi-structurés pour chaque use case.
+
+
+*** Interaction overview diagram + activity diagrams:
+
+Le diagramme est assez complet en ce qui concerne le nombre d'activités qui sont modélisés, mais il y a aussi de nombreux problèmes avec ce diagramme.
+
+- Il y a un barre de synchronisation de type "fork", qui ne se termine pas par un "join"
+- A quoi sert le "interruptible activity region" s'il n'y a pas de transition sortante?
+- Il y a de nombreuses activités qui n'ont pas de transition sortante. Donc cela implique qu'on reste "coincé" dans cette activité une fois qu'elle est terminée...
+- Pourquoi y a-t-il une activity "Power On/Off" et une autre activité différente "Power Off"?
+- Je n'ai pas compris le processus d'insertion de cassette: Si aucune cassette a été inséré, il est toujours possible d'exécuter l'activité "Remove cassette"?
+- Quelle est l'utilité des activités qui s'appellent "Previous Song", "Next Song", "Slider Button"? Sur base du nom de l'activité, on dirait que ce ne sont pas d'activités. Je n'ai donc pas trop compris à quoi cela sert...
+
+
+*** Statecharts:
+
+- Il y a trois statecharts, représentant des variantes avec différentes fonctionnalités incluses. Le diagram 3 est le plus complet.
+- Les statecharts sont bien exécutables avec Yakindu est assez conséquent. Meme insérer et retirer des cassettes est modélisé.
+- La modélisation de certaines choses n'est pas toujours cohérent. Par exemple, certaines fonctionnaliétes sont modélisés en utilisant 2 états dans une région concurrente (par exemple MotorOn et MotorOff), alors que d'autres utilisent uniquement une variable booléenne (par exemple autoReverse1), et encore d'autres utilisent une combinaison (par exemple il y a un état Pause et aussi une variable booléenne pause1).
+- Comment peut-on préciser la source d'entrée pour un recording? (Par exemple, l'autre cassette, external audio input, ou built-in microphone?) Comment peut-on préciser la source de sortie audio (par exemple built-in speakers ou external speakers)?
+- Comment peut-on changer le volume et la balance?
+
+
+*** Diagrammes de classes:
+
+Présent, mais trop simpliste.
+
+- Les classes Simulation, Deck, Cassette, et DeckControllerState n'ont aucune opération!
+- Il n'y a pas d'attribut correspondant aux opérations concernant les devices. Pas de classe non plus.
+- Dans Motor, switchPower risque de demander plus de réflexion. On risque
+  fortement de devoir débugger un problème venant d'un switchPower en trop. Il
+  serait mieux de pouvoir explicitement lancer et arrêter le moteur.
+- Comment se fait la communication entre les DockControllerState et le Deck ?
+  Par exemple, si on entre dans l'état Playing, il faut engager la tête de
+  lecture et lancer le moteur.
+- Comment empêche-t'on d'utiliser le autoreverse si l'option était désactivée ?
+
+
+*** Diagrammes de séquences:
+
+Présent
+
+- Les objets et les méthodes qui apparaissent dans les diagrammes ne sont pas dans le diagramme de classe.
+- Les messages de retour sont des appels de fonction.
+- Le deuxième diagramme de séquences est assez similaire au premier.
+
+- Où vérifie-t'on que l'appareil est bien branché ?
+- Le moteur n'intervient pas ?

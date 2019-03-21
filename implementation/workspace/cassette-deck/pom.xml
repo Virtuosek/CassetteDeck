@@ -10,15 +10,16 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
    
-    <!--    <dependencies>
+    <dependencies>
+        <!-- JavaFx styling -->
         <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-graphics</artifactId>
-            <version>12-ea+2</version>
+            <groupId>de.jensd</groupId>
+            <artifactId>fontawesomefx</artifactId>
+            <version>8.9</version>
         </dependency>
-    </dependencies>-->
+    </dependencies>
     
-    <!--    JavaFx plugin-->
+    <!-- JavaFx plugin -->
     <build>
         <plugins> 
             <plugin>
