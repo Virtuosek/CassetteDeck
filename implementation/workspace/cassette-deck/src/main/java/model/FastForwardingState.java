@@ -9,14 +9,12 @@ public class FastForwardingState implements State {
 	}
 	
 	@Override
-	public void turnOn() {
-		// TODO Auto-generated method stub
+	public void entry() {
 		
 	}
-
+	
 	@Override
-	public void turnOff() {
-		// TODO Auto-generated method stub
+	public void exit() {
 		
 	}
 
@@ -34,12 +32,6 @@ public class FastForwardingState implements State {
 	
 	@Override
 	public void play() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void pause() {
 		// TODO Auto-generated method stub
 		
 	}

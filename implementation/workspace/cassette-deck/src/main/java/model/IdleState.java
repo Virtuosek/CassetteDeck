@@ -9,74 +9,92 @@ public class IdleState implements State {
 	}
 	
 	@Override
-	public void turnOn() {
-		// TODO Auto-generated method stub
+	public void entry() {
 		
 	}
-
+	
 	@Override
-	public void turnOff() {
-		// TODO Auto-generated method stub
+	public void exit() {
 		
 	}
 
 	@Override
 	public void open() {
-		// TODO Auto-generated method stub
-		
+		deck.getHolder().open();
 	}
 
 	@Override
-	public void stop() {
-		// TODO Auto-generated method stub
+	public void stop() {	
 		
 	}
 	
 	@Override
 	public void play() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void pause() {
-		// TODO Auto-generated method stub
-		
+		if(isReadyToGoForward()) {
+			deck.setState(deck.getPlayingActiveState());
+			System.out.println("The deck is playing.");
+		}
 	}
 	
 	@Override
 	public void record() {
-		// TODO Auto-generated method stub
-		
+		if(isReadyToGoForward()) {
+			deck.setState(deck.getRecordingActiveState());
+			System.out.println("The deck is recording.");
+		}
 	}
 
 	@Override
 	public void fastRewind() {
-		// TODO Auto-generated method stub
-		
+		if(isReadyToRewind()) {
+			deck.setState(deck.getFastRewindingState());
+			System.out.println("The deck is fast rewinding.");
+			// TODO stop at the beginning
+		}		
 	}
 
 	@Override
 	public void fastForward() {
-		// TODO Auto-generated method stub
-		
+		if(isReadyToGoForward()) {
+			deck.setState(deck.getFastForwardingState());
+			System.out.println("The deck is fast forwarding.");
+			// TODO stop at the end
+		}		
 	}
 
 	@Override
 	public void previousSong() {
-		// TODO Auto-generated method stub
+		if(isReadyToRewind()) {
+			deck.setState(deck.getFastRewindingState());
+			System.out.println("Previous song.");
+			// TODO stop at previousSong
+		}
 		
 	}
 
 	@Override
 	public void nextSong() {
-		// TODO Auto-generated method stub
-		
+		if(isReadyToGoForward()) {
+			deck.setState(deck.getFastForwardingState());
+			System.out.println("Next song.");
+			// TODO stop at nextSong
+		}
 	}
 
 	@Override
 	public void resetCounter() {
-		// TODO Auto-generated method stub
-		
+		deck.setCounter(0);
+		System.out.println("The counter is reset to zero.");
+	}
+	
+	public boolean isReadyToGoForward() {
+		CassetteHolder holder = deck.getHolder();
+		return !holder.isOpen() && holder.hasCassette() && !holder.getCassette().isAtEnd();
+	}
+	
+	public boolean isReadyToRewind() {
+		CassetteHolder holder = deck.getHolder();
+		return !holder.isOpen() && holder.hasCassette() && !holder.getCassette().isAtStart();
 	}
 }
+	
