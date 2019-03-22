@@ -9,14 +9,12 @@ public class FastRewindingState implements State {
 	}
 	
 	@Override
-	public void turnOn() {
-		// TODO Auto-generated method stub
+	public void entry() {
 		
 	}
-
+	
 	@Override
-	public void turnOff() {
-		// TODO Auto-generated method stub
+	public void exit() {
 		
 	}
 
@@ -37,11 +35,11 @@ public class FastRewindingState implements State {
 		// TODO Auto-generated method stub
 		
 	}
-
+	
 	@Override
 	public void pause() {
-		// TODO Auto-generated method stub
-		
+		deck.setOnPause(!deck.isOnPause());
+		System.out.println("The pause button has been switched.");
 	}
 	
 	@Override

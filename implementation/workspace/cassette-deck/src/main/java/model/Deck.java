@@ -8,6 +8,7 @@ public class Deck {
 	private int recordBalance;
 	private int counter;
 	private boolean isAutoReversing;
+	private boolean isOnPause;
 	private Motor motor;
 	private PlayHead head;
 	private CassetteHolder holder;
@@ -30,6 +31,7 @@ public class Deck {
 		recordBalance = 0;
 		counter = 0;
 		isAutoReversing = false;
+		isOnPause = false;
 		motor = new Motor();
 		head = new PlayHead();
 		holder = new CassetteHolder();
@@ -47,11 +49,11 @@ public class Deck {
 	}
 	
 	public void turnOn() {
-		state.turnOn();
+		state = idleState;
 	}
 	
 	public void turnOff() {
-		state.turnOff();
+		state = offState;
 	}
 	
 	public void open() {
@@ -59,14 +61,19 @@ public class Deck {
 	}
 
 	public void close() {
-		// TODO not in states
+		holder.close();
 	}
 	
-	public void insertCassette() {
-		// TODO not in states
+	public void insertCassette(Cassette cassette) {
+		if(holder.isOpen() && !holder.hasCassette()) {
+			holder.insertCassette(cassette);
+		}
 	}
+	
 	public void removeCassette() {
-		// TODO not in states
+		if(holder.isOpen()) {
+			holder.removeCassette();
+		}
 	}
 	
 	public void stop() {
@@ -77,39 +84,28 @@ public class Deck {
 		state.play();
 	}
 	
-	public void pause() {
-		state.pause();
-		// System.out.println("On pause.");
-	}
-	
 	public void record() {
 		state.record();
-		// System.out.println("The deck is recording.");
 	}
 	
 	public void fastRewind() {
 		state.fastRewind();
-		// System.out.println("The deck is fast rewinding.");
 	}
 	
 	public void fastForward() {
 		state.fastForward();
-		// System.out.println("The deck is fast forwarding.");
 	}
 	
 	public void previousSong() {
 		state.previousSong();
-		// System.out.println("Previous song.");
 	}
 	
 	public void nextSong() {
 		state.nextSong();
-		// System.out.println("Next song.");
 	}
 	
 	public void resetCounter() {
 		state.resetCounter();
-		// System.out.println("The counter is reset to zero.");
 	}
 	
 	public void enableAutoReverse() {
@@ -214,6 +210,14 @@ public class Deck {
 		this.isAutoReversing = isAutoReversing;
 	}
 
+	public boolean isOnPause() {
+		return isOnPause;
+	}
+	
+	public void setOnPause(boolean isOnPause) {
+		this.isOnPause = isOnPause;
+	}
+	
 	public Motor getMotor() {
 		return motor;
 	}
@@ -271,7 +275,9 @@ public class Deck {
 	}
 
 	public void setState(State state) {
+		this.state.exit();
 		this.state = state;
+		this.state.entry();
 	}
 	
 	public State getState() {

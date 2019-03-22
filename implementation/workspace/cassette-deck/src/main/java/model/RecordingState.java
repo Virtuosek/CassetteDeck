@@ -1,6 +1,6 @@
 package model;
 
-public abstract class RecordingState implements State {
+public class RecordingState implements State {
 
 	private Deck deck;
 
@@ -9,14 +9,12 @@ public abstract class RecordingState implements State {
 	}
 	
 	@Override
-	public void turnOn() {
-		// TODO Auto-generated method stub
+	public void entry() {
 		
 	}
-
+	
 	@Override
-	public void turnOff() {
-		// TODO Auto-generated method stub
+	public void exit() {
 		
 	}
 
@@ -37,11 +35,11 @@ public abstract class RecordingState implements State {
 		// TODO Auto-generated method stub
 		
 	}
-
+	
 	@Override
 	public void pause() {
-		// TODO Auto-generated method stub
-		
+		deck.setOnPause(!deck.isOnPause());
+		System.out.println("The pause button has been switched.");
 	}
 	
 	@Override

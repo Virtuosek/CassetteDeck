@@ -13,11 +13,13 @@ public class CassetteDeck {
 	}
 	
 	public void turnOn() {
+		deck.turnOn();
 		isTurnedOn = true;
 		System.out.println("The cassette deck is turned on.");
 	}
 	
 	public void turnOff() {
+		deck.turnOff();
 		isTurnedOn = false;
 		System.out.println("Power is off.");
 	}

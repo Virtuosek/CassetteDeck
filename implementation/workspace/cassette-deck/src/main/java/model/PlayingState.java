@@ -1,6 +1,6 @@
 package model;
 
-public abstract class PlayingState implements State {
+public class PlayingState implements State {
 
 	private Deck deck;
 
@@ -9,15 +9,16 @@ public abstract class PlayingState implements State {
 	}
 	
 	@Override
-	public void turnOn() {
-		// TODO Auto-generated method stub
-		
+	public void entry() {
+		deck.getHead().engage();
+		if(!deck.isOnPause()) {
+			deck.getMotor().turnOn();
+		}
 	}
-
+	
 	@Override
-	public void turnOff() {
-		// TODO Auto-generated method stub
-		
+	public void exit() {
+		deck.getHead().disengage();
 	}
 
 	@Override
@@ -37,11 +38,11 @@ public abstract class PlayingState implements State {
 		// TODO Auto-generated method stub
 		
 	}
-
+	
 	@Override
 	public void pause() {
-		// TODO Auto-generated method stub
-		
+		deck.setOnPause(!deck.isOnPause());
+		System.out.println("The pause button has been switched.");
 	}
 	
 	@Override
