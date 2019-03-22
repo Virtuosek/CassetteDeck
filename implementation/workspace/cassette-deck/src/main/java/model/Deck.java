@@ -107,52 +107,52 @@ public class Deck {
 	}
 	
 	public void enableAutoReverse() {
-		// TODO not in states
+		setAutoReversing(true);
 		System.out.println("Auto-reverse is enabled.");
 	}
 	
 	public void disableAutoReverse() {
-		// TODO not in states
+		setAutoReversing(false);
 		System.out.println("Auto-reverse is disabled.");
 	}
 	
 	public void turnVolumeLeft() {
-		// TODO not in states
+		volume--;
 		System.out.println("The volume has been decreased.");
 	}
 	
 	public void turnVolumeRight() {
-		// TODO not in states
+		volume++;
 		System.out.println("The volume has been increased.");
 	}
 	
 	public void turnBalanceLeft() {
-		// TODO not in states
+		balance--;
 		System.out.println("The balance has been turned to left.");
 	}
 	
 	public void turnBalanceRight() {
-		// TODO not in states
+		balance++;
 		System.out.println("The balance has been turned to right.");
 	}
 	
 	public void turnRecordVolumeLeft() {
-		// TODO not in states
+		recordVolume--;
 		System.out.println("The record volume has been decreased.");
 	}
 	
 	public void turnRecordVolumeRight() {
-		// TODO not in states
+		recordVolume++;
 		System.out.println("The record volume has been increased.");
 	}
 	
 	public void turnRecordBalanceLeft() {
-		// TODO not in states
+		recordBalance--;
 		System.out.println("The record balance has been turned to left.");
 	}
 	
 	public void turnRecordBalanceRight() {
-		// TODO not in states
+		recordBalance++;
 		System.out.println("The record balance has been turned to right.");
 	}
 	
