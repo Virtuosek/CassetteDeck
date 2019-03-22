@@ -25,7 +25,7 @@ public class PlayingState implements State {
 		if(!deck.isOnPause()) {
 			deck.getMotor().turnOff();
 			// TODO Timer
-			System.out.println("The deck isn’t playing anymore.");
+			System.out.println("**STOP PLAYING**");
 		}
 	}
 
@@ -90,6 +90,6 @@ public class PlayingState implements State {
 		deck.getMotor().turnOn();
 		deck.getHolder().getCassette().setAtStart(false);
 		// TODO Timer
-		System.out.println("The deck is playing.");
+		System.out.println("**PLAYING**");
 	}
 }

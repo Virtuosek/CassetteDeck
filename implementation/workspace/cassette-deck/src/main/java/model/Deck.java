@@ -9,6 +9,7 @@ public class Deck {
 	private int counter;
 	private boolean isAutoReversing;
 	private boolean isOnPause;
+	private boolean isChangingSong;
 	private Motor motor;
 	private PlayHead head;
 	private CassetteHolder holder;
@@ -32,6 +33,7 @@ public class Deck {
 		counter = 0;
 		isAutoReversing = false;
 		isOnPause = false;
+		isChangingSong = false;
 		motor = new Motor();
 		head = new PlayHead();
 		holder = new CassetteHolder();
@@ -216,6 +218,14 @@ public class Deck {
 	
 	public void setOnPause(boolean isOnPause) {
 		this.isOnPause = isOnPause;
+	}
+	
+	public boolean isChangingSong() {
+		return isChangingSong;
+	}
+	
+	public void setChangingSong(boolean isChangingSong) {
+		this.isChangingSong = isChangingSong;
 	}
 	
 	public Motor getMotor() {

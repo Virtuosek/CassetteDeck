@@ -10,30 +10,32 @@ public class FastRewindingState implements State {
 	
 	@Override
 	public void entry() {
-		
+		deck.getMotor().turnOn();
+		deck.getHolder().getCassette().setAtEnd(false);
+		// TODO Timer
+		System.out.println("The deck is fast rewinding.");
 	}
 	
 	@Override
 	public void exit() {
-		
+		deck.getMotor().turnOff();
+		// TODO Timer
+		deck.setChangingSong(false);
 	}
 
 	@Override
 	public void open() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("The deck must be idle to open the holder.");
 	}
 
 	@Override
 	public void stop() {
-		// TODO Auto-generated method stub
-		
+		deck.setState(deck.getIdleState());
 	}
 	
 	@Override
 	public void play() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("The deck must be idle to play the tape.");				
 	}
 	
 	@Override
@@ -44,37 +46,31 @@ public class FastRewindingState implements State {
 	
 	@Override
 	public void record() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("The deck must be idle to launch a recording.");		
 	}
 
 	@Override
 	public void fastRewind() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("This button is already pressed.");		
 	}
 
 	@Override
 	public void fastForward() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("The deck must be idle to fast forward.");
 	}
 
 	@Override
 	public void previousSong() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("The deck must be idle to go back to the previous song.");		
 	}
 
 	@Override
 	public void nextSong() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("The deck must be idle to go to the next song.");			
 	}
 
 	@Override
 	public void resetCounter() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("The deck must be idle to reset the counter.");		
 	}
 }

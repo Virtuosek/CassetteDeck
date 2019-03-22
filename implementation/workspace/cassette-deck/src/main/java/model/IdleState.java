@@ -66,14 +66,15 @@ public class IdleState implements State {
 	public void previousSong() {
 		if(isReadyToRewind()) {
 			deck.setState(deck.getFastRewindingState());
+			deck.setChangingSong(true);
 		}
-		
 	}
 
 	@Override
 	public void nextSong() {
 		if(isReadyToGoForward()) {
 			deck.setState(deck.getFastForwardingState());
+			deck.setChangingSong(true);
 		}
 	}
 
