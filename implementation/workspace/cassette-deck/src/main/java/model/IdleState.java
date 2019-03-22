@@ -10,7 +10,7 @@ public class IdleState implements State {
 	
 	@Override
 	public void entry() {
-		
+		System.out.println("The deck is idle.");
 	}
 	
 	@Override
@@ -25,14 +25,13 @@ public class IdleState implements State {
 
 	@Override
 	public void stop() {	
-		
+		System.out.println("This button is already pressed.");
 	}
 	
 	@Override
 	public void play() {
 		if(isReadyToGoForward()) {
 			deck.setState(deck.getPlayingActiveState());
-			System.out.println("The deck is playing.");
 		}
 	}
 	
@@ -46,7 +45,6 @@ public class IdleState implements State {
 	public void record() {
 		if(isReadyToGoForward()) {
 			deck.setState(deck.getRecordingActiveState());
-			System.out.println("The deck is recording.");
 		}
 	}
 
@@ -54,8 +52,6 @@ public class IdleState implements State {
 	public void fastRewind() {
 		if(isReadyToRewind()) {
 			deck.setState(deck.getFastRewindingState());
-			System.out.println("The deck is fast rewinding.");
-			// TODO stop at the beginning
 		}		
 	}
 
@@ -63,8 +59,6 @@ public class IdleState implements State {
 	public void fastForward() {
 		if(isReadyToGoForward()) {
 			deck.setState(deck.getFastForwardingState());
-			System.out.println("The deck is fast forwarding.");
-			// TODO stop at the end
 		}		
 	}
 
@@ -72,8 +66,6 @@ public class IdleState implements State {
 	public void previousSong() {
 		if(isReadyToRewind()) {
 			deck.setState(deck.getFastRewindingState());
-			System.out.println("Previous song.");
-			// TODO stop at previousSong
 		}
 		
 	}
@@ -82,8 +74,6 @@ public class IdleState implements State {
 	public void nextSong() {
 		if(isReadyToGoForward()) {
 			deck.setState(deck.getFastForwardingState());
-			System.out.println("Next song.");
-			// TODO stop at nextSong
 		}
 	}
 
