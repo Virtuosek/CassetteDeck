@@ -10,7 +10,7 @@ public class OffState implements State {
 	
 	@Override
 	public void entry() {
-		
+
 	}
 	
 	@Override
@@ -25,12 +25,12 @@ public class OffState implements State {
 
 	@Override
 	public void stop() {
-		
+		System.out.println("The cassette deck is off.");
 	}
 	
 	@Override
 	public void play() {
-		
+		System.out.println("The cassette deck is off.");
 	}
 	
 	@Override
@@ -41,31 +41,31 @@ public class OffState implements State {
 	
 	@Override
 	public void record() {
-		
+		System.out.println("The cassette deck is off.");
 	}
 
 	@Override
 	public void fastRewind() {
-		
+		System.out.println("The cassette deck is off.");
 	}
 
 	@Override
 	public void fastForward() {
-		
+		System.out.println("The cassette deck is off.");
 	}
 
 	@Override
 	public void previousSong() {
-		
+		System.out.println("The cassette deck is off.");
 	}
 
 	@Override
 	public void nextSong() {
-		
+		System.out.println("The cassette deck is off.");
 	}
 
 	@Override
 	public void resetCounter() {
-		
+		System.out.println("The cassette deck is off.");
 	}
 }

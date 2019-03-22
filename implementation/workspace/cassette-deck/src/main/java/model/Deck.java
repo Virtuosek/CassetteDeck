@@ -16,10 +16,8 @@ public class Deck {
 	
 	private State offState;
 	private State idleState;
-	private State playingActiveState;
-	private State playingPauseState;
-	private State recordingActiveState;
-	private State recordingPauseState;
+	private State playingState;
+	private State recordingState;
 	private State fastRewindingState;
 	private State fastForwardingState;
 	
@@ -40,10 +38,8 @@ public class Deck {
 		
 		offState = new OffState(this);
 		idleState = new IdleState(this);
-		playingActiveState = new PlayingActiveState(this);
-		playingPauseState = new PlayingPauseState(this);
-		recordingActiveState = new RecordingActiveState(this);
-		recordingPauseState = new RecordingPauseState(this);
+		playingState = new PlayingState(this);
+		recordingState = new RecordingState(this);
 		fastRewindingState = new FastRewindingState(this);
 		fastForwardingState = new FastForwardingState(this);
 		
@@ -260,20 +256,12 @@ public class Deck {
 		return idleState;
 	}
 
-	public State getPlayingActiveState() {
-		return playingActiveState;
+	public State getPlayingState() {
+		return playingState;
 	}
 
-	public State getPlayingPauseState() {
-		return playingPauseState;
-	}
-
-	public State getRecordingActiveState() {
-		return recordingActiveState;
-	}
-
-	public State getRecordingPauseState() {
-		return recordingPauseState;
+	public State getRecordingState() {
+		return recordingState;
 	}
 
 	public State getFastRewindingState() {

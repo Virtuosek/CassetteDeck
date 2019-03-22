@@ -31,7 +31,7 @@ public class IdleState implements State {
 	@Override
 	public void play() {
 		if(isReadyToGoForward()) {
-			deck.setState(deck.getPlayingActiveState());
+			deck.setState(deck.getPlayingState());
 		}
 	}
 	
@@ -44,7 +44,7 @@ public class IdleState implements State {
 	@Override
 	public void record() {
 		if(isReadyToGoForward()) {
-			deck.setState(deck.getRecordingActiveState());
+			deck.setState(deck.getRecordingState());
 		}
 	}
 
