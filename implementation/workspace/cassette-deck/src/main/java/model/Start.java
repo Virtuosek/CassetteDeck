@@ -1,10 +1,7 @@
 package model;
 
+import controller.SceneCTRL;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class Start extends Application {
@@ -17,12 +14,8 @@ public class Start extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/cdLauncher_exp.fxml")); //make sure fxml files are in src/main/resources, otherwise it won't work.
-        stage.setTitle("Launcher");
-        stage.setScene(new Scene(root));
-        stage.show();
-        stage.getIcons().add(new Image("img/icon.png"));
-        System.out.println("User output: ");
+        SceneCTRL sctrl = new SceneCTRL();
+        sctrl.launchFXMLScene("/cdLauncher.fxml", "Launcher");
     }
 
 }

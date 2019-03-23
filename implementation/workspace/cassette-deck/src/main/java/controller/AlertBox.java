@@ -20,8 +20,13 @@ import javafx.stage.Stage;
  */
 public class AlertBox {
     
-    public static void display(String title, String message) {
+    public static void display(String title, String type, String message) {
         Stage window = new Stage();
+        switch(type){
+            case "error": window.getIcons().add(new Image("img/error.png"));
+                break;
+            case "alert": System.out.println("NIY");
+        }
         window.getIcons().add(new Image("img/error.png"));
         window.initModality(Modality.APPLICATION_MODAL);
         window.setTitle(title);
