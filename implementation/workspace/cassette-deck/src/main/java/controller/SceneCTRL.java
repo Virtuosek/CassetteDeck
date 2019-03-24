@@ -25,8 +25,10 @@ public class SceneCTRL {
             stage.initModality(Modality.APPLICATION_MODAL); //(a) keeps the user from manipulating the launcher while the deck window is open
             stage.setTitle(title);
             stage.setScene(new Scene(root));
-            stage.getIcons().add(new Image("img/icon.png"));
             stage.setResizable(false);
+            stage.sizeToScene(); //bugFixed: disables stage.setResizable(false); from adding extra margins
+            stage.getIcons().add(new Image("img/icon.png"));
+            //stage.setResizable(false);
             stage.showAndWait(); //works with (a)
         } catch (Exception e) {
             System.out.println("Error launching " + rootLoc + ": " + e);

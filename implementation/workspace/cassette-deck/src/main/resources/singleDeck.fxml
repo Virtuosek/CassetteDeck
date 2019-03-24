@@ -13,9 +13,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane prefHeight="434.0" prefWidth="605.0" style="-fx-background-color: #525050;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<Pane prefHeight="435.0" prefWidth="608.0" style="-fx-background-color: #525050;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fitHeight="545.0" fitWidth="751.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="532.0" fitWidth="836.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@img/background.jpg" />
          </image>
@@ -102,7 +102,7 @@
             </AnchorPane>
         </items>
       </SplitPane>
-      <Pane layoutX="12.0" layoutY="6.0" prefHeight="40.0" prefWidth="600.0">
+      <Pane layoutX="5.0" layoutY="6.0" prefHeight="40.0" prefWidth="600.0">
          <children>
             <Button mnemonicParsing="false">
                <graphic>
@@ -126,7 +126,7 @@
                </graphic></Button>
          </children>
       </Pane>
-      <Pane layoutY="378.0" prefHeight="45.0" prefWidth="600.0">
+      <Pane layoutY="378.0" prefHeight="45.0" prefWidth="606.0">
          <children>
             <ProgressIndicator layoutX="519.0" layoutY="11.0" progress="0.0" style="-fx-text-fill: DCDCDC;" />
             <RadioButton disable="true" layoutX="27.0" layoutY="15.0" mnemonicParsing="false" style="-fx-text-fill: DCDCDC;" text="Magnetic head a" />
