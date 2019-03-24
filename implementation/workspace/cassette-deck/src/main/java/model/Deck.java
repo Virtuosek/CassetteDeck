@@ -9,16 +9,15 @@ public class Deck {
 	private int counter;
 	private boolean isAutoReversing;
 	private boolean isOnPause;
+	private boolean isChangingSong;
 	private Motor motor;
 	private PlayHead head;
 	private CassetteHolder holder;
 	
 	private State offState;
 	private State idleState;
-	private State playingActiveState;
-	private State playingPauseState;
-	private State recordingActiveState;
-	private State recordingPauseState;
+	private State playingState;
+	private State recordingState;
 	private State fastRewindingState;
 	private State fastForwardingState;
 	
@@ -32,16 +31,15 @@ public class Deck {
 		counter = 0;
 		isAutoReversing = false;
 		isOnPause = false;
+		isChangingSong = false;
 		motor = new Motor();
 		head = new PlayHead();
 		holder = new CassetteHolder();
 		
 		offState = new OffState(this);
 		idleState = new IdleState(this);
-		playingActiveState = new PlayingActiveState(this);
-		playingPauseState = new PlayingPauseState(this);
-		recordingActiveState = new RecordingActiveState(this);
-		recordingPauseState = new RecordingPauseState(this);
+		playingState = new PlayingState(this);
+		recordingState = new RecordingState(this);
 		fastRewindingState = new FastRewindingState(this);
 		fastForwardingState = new FastForwardingState(this);
 		
@@ -109,52 +107,52 @@ public class Deck {
 	}
 	
 	public void enableAutoReverse() {
-		// TODO not in states
+		setAutoReversing(true);
 		System.out.println("Auto-reverse is enabled.");
 	}
 	
 	public void disableAutoReverse() {
-		// TODO not in states
+		setAutoReversing(false);
 		System.out.println("Auto-reverse is disabled.");
 	}
 	
 	public void turnVolumeLeft() {
-		// TODO not in states
+		volume--;
 		System.out.println("The volume has been decreased.");
 	}
 	
 	public void turnVolumeRight() {
-		// TODO not in states
+		volume++;
 		System.out.println("The volume has been increased.");
 	}
 	
 	public void turnBalanceLeft() {
-		// TODO not in states
+		balance--;
 		System.out.println("The balance has been turned to left.");
 	}
 	
 	public void turnBalanceRight() {
-		// TODO not in states
+		balance++;
 		System.out.println("The balance has been turned to right.");
 	}
 	
 	public void turnRecordVolumeLeft() {
-		// TODO not in states
+		recordVolume--;
 		System.out.println("The record volume has been decreased.");
 	}
 	
 	public void turnRecordVolumeRight() {
-		// TODO not in states
+		recordVolume++;
 		System.out.println("The record volume has been increased.");
 	}
 	
 	public void turnRecordBalanceLeft() {
-		// TODO not in states
+		recordBalance--;
 		System.out.println("The record balance has been turned to left.");
 	}
 	
 	public void turnRecordBalanceRight() {
-		// TODO not in states
+		recordBalance++;
 		System.out.println("The record balance has been turned to right.");
 	}
 	
@@ -218,6 +216,14 @@ public class Deck {
 		this.isOnPause = isOnPause;
 	}
 	
+	public boolean isChangingSong() {
+		return isChangingSong;
+	}
+	
+	public void setChangingSong(boolean isChangingSong) {
+		this.isChangingSong = isChangingSong;
+	}
+	
 	public Motor getMotor() {
 		return motor;
 	}
@@ -250,20 +256,12 @@ public class Deck {
 		return idleState;
 	}
 
-	public State getPlayingActiveState() {
-		return playingActiveState;
+	public State getPlayingState() {
+		return playingState;
 	}
 
-	public State getPlayingPauseState() {
-		return playingPauseState;
-	}
-
-	public State getRecordingActiveState() {
-		return recordingActiveState;
-	}
-
-	public State getRecordingPauseState() {
-		return recordingPauseState;
+	public State getRecordingState() {
+		return recordingState;
 	}
 
 	public State getFastRewindingState() {

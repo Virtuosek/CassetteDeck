@@ -26,6 +26,7 @@ public class SceneCTRL {
             stage.setTitle(title);
             stage.setScene(new Scene(root));
             stage.getIcons().add(new Image("img/icon.png"));
+            stage.setResizable(false);
             stage.showAndWait(); //works with (a)
         } catch (Exception e) {
             System.out.println("Error launching " + rootLoc + ": " + e);

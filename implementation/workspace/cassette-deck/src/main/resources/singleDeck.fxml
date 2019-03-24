@@ -7,13 +7,20 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane prefHeight="434.0" prefWidth="600.0" style="-fx-background-color: #525050;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<Pane prefHeight="434.0" prefWidth="605.0" style="-fx-background-color: #525050;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <SplitPane dividerPositions="0.5" layoutY="42.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="336.0" prefWidth="600.0">
+      <ImageView fitHeight="545.0" fitWidth="751.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/background.jpg" />
+         </image>
+      </ImageView>
+      <SplitPane dividerPositions="0.5" layoutY="42.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="336.0" prefWidth="606.0">
         <items>
           <AnchorPane style="-fx-background-color: #909090;">
                <children>
@@ -66,7 +73,7 @@
                   <FontAwesomeIconView fill="WHITE" glyphName="MUSIC" layoutX="49.0" layoutY="71.0" size="40" />
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="367.0" prefWidth="287.0" style="-fx-background-color: #909090;">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="334.0" prefWidth="323.0" style="-fx-background-color: #909090;">
                <children>
                   <Label layoutX="119.0" layoutY="47.0" style="-fx-text-fill: #DCDCDC;" text="Audio recorder">
                      <font>
@@ -95,7 +102,7 @@
             </AnchorPane>
         </items>
       </SplitPane>
-      <Pane layoutX="12.0" layoutY="6.0" prefHeight="40.0" prefWidth="576.0">
+      <Pane layoutX="12.0" layoutY="6.0" prefHeight="40.0" prefWidth="600.0">
          <children>
             <Button mnemonicParsing="false">
                <graphic>
@@ -123,7 +130,7 @@
          <children>
             <ProgressIndicator layoutX="519.0" layoutY="11.0" progress="0.0" style="-fx-text-fill: DCDCDC;" />
             <RadioButton disable="true" layoutX="27.0" layoutY="15.0" mnemonicParsing="false" style="-fx-text-fill: DCDCDC;" text="Magnetic head a" />
-            <Label layoutX="461.0" layoutY="14.0" style="-fx-text-fill: #DCDCDC;" text="Counter">
+            <Label layoutX="461.0" layoutY="14.0" text="Counter">
                <font>
                   <Font size="13.0" />
                </font></Label>

@@ -8,6 +8,7 @@ package controller;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.RadioButton;
+import javafx.stage.Stage;
 
 /**
  *
@@ -16,20 +17,23 @@ import javafx.scene.control.RadioButton;
 public class LauncherCTRL {
 
     public Button launchBtn, cancelBtn;
-    public CheckBox recCB, biSpeakerCB, biMicCB, musicDetectCB, autoReverseCB;
+    public CheckBox recCB, biSpeakerRB, biMicRB, musicDetectCB, autoReverseCB;
     public RadioButton doubleDeckRB, singleDeckRB;
-    public SceneCTRL sctrl = new SceneCTRL();
+    SceneCTRL sctrl;
 
     public void launchButtonFn() {
+        sctrl = new SceneCTRL();
         if (singleDeckRB.isSelected()) {
             if (recCB.isSelected()) {
-                sctrl.launchFXMLScene("/singleCD.fxml", "Single Deck");
+                sctrl.launchFXMLScene("/singleDeck.fxml", "Single deck");
             } else {
+
             }
         } else if (doubleDeckRB.isSelected()) {
             if (recCB.isSelected()) {
-                sctrl.launchFXMLScene("/doubleCD.fxml", "Double Deck");
+                sctrl.launchFXMLScene("/doubleDeck.fxml", "Double deck");
             } else {
+
             }
         } else {
             AlertBox.display("Deck", "error", "Please select deck type");
@@ -37,6 +41,7 @@ public class LauncherCTRL {
     }
 
     public void cancelButtonFn() {
-
+        Stage stage = (Stage) cancelBtn.getScene().getWindow();
+        stage.close();
     }
 }

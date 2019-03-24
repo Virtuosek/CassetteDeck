@@ -12,72 +12,84 @@ public class PlayingState implements State {
 	public void entry() {
 		deck.getHead().engage();
 		if(!deck.isOnPause()) {
-			deck.getMotor().turnOn();
+			launchMotor();
+		}
+		else {
+			System.out.println("The deck is on pause.");
 		}
 	}
 	
 	@Override
 	public void exit() {
 		deck.getHead().disengage();
+		if(!deck.isOnPause()) {
+			deck.getMotor().turnOff();
+			// TODO Timer
+			System.out.println("**STOP PLAYING**");
+		}
 	}
 
 	@Override
 	public void open() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("The deck must be idle to open the holder.");
 	}
 
 	@Override
 	public void stop() {
-		// TODO Auto-generated method stub
-		
+		deck.setState(deck.getIdleState());
 	}
 	
 	@Override
 	public void play() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("This button is already pressed.");
 	}
 	
 	@Override
 	public void pause() {
 		deck.setOnPause(!deck.isOnPause());
 		System.out.println("The pause button has been switched.");
+		if(!deck.isOnPause()) {
+			launchMotor();
+		}
+		else {
+			System.out.println("The deck is on pause.");
+		}
 	}
 	
 	@Override
 	public void record() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("The deck must be idle to launch a recording.");
 	}
 
 	@Override
 	public void fastRewind() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("The deck must be idle to fast rewind.");
 	}
 
 	@Override
 	public void fastForward() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("The deck must be idle to fast forward.");
 	}
 
 	@Override
 	public void previousSong() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("The deck must be idle to go back to the previous song.");
 	}
 
 	@Override
 	public void nextSong() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("The deck must be idle to go to the next song.");
 	}
 
 	@Override
 	public void resetCounter() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("The deck must be idle to reset the counter.");
+	}
+	
+	public void launchMotor() {
+		deck.getMotor().turnOn();
+		deck.getHolder().getCassette().setAtStart(false);
+		// TODO Timer
+		System.out.println("**PLAYING**");
 	}
 }

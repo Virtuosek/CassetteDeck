@@ -15,7 +15,7 @@ public class Start extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         SceneCTRL sctrl = new SceneCTRL();
-        sctrl.launchFXMLScene("/cdLauncher.fxml", "Launcher");
+        sctrl.launchFXMLScene("/deckLauncher.fxml", "Launcher");
     }
 
 }
