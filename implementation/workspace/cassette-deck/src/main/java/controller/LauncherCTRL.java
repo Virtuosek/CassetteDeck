@@ -36,7 +36,7 @@ public class LauncherCTRL {
 
             }
         } else {
-            AlertBox.display("Deck", "error", "Please select deck type");
+            AlertBox.display("Error", "error", "Please select deck type");
         }
     }
 

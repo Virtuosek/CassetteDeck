@@ -28,10 +28,9 @@ public class SceneCTRL {
             stage.setResizable(false);
             stage.sizeToScene(); //bugFixed: disables stage.setResizable(false); from adding extra margins
             stage.getIcons().add(new Image("img/icon.png"));
-            //stage.setResizable(false);
             stage.showAndWait(); //works with (a)
         } catch (Exception e) {
-            System.out.println("Error launching " + rootLoc + ": " + e);
+            System.out.println("Error launching " + rootLoc + ": " + e.getCause());
         }
     }
 }

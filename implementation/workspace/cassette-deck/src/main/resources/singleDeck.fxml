@@ -13,134 +13,155 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane prefHeight="435.0" prefWidth="608.0" style="-fx-background-color: #525050;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <ImageView fitHeight="532.0" fitWidth="836.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@img/background.jpg" />
-         </image>
-      </ImageView>
-      <SplitPane dividerPositions="0.5" layoutY="42.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="336.0" prefWidth="606.0">
-        <items>
-          <AnchorPane style="-fx-background-color: #909090;">
-               <children>
-                  <Button layoutX="105.0" layoutY="249.0" mnemonicParsing="false">
-                     <graphic>
-                        <FontAwesomeIconView glyphName="PAUSE" size="18" />
-                     </graphic></Button>
-                  <Button layoutX="73.0" layoutY="249.0" mnemonicParsing="false">
-                     <graphic>
-                        <FontAwesomeIconView glyphName="PLAY" size="18" />
-                     </graphic></Button>
-                  <Button layoutX="134.0" layoutY="249.0" mnemonicParsing="false">
-                     <graphic>
-                        <FontAwesomeIconView glyphName="STOP" size="18" />
-                     </graphic></Button>
-                  <Slider layoutX="77.0" layoutY="138.0" />
-                  <Slider layoutX="77.0" layoutY="205.0" />
-                  <Label layoutX="88.0" layoutY="101.0" style="-fx-text-fill: #DCDCDC;" text="Audio speaker volume">
-                     <font>
-                        <Font name="Verdana" size="13.0" />
-                     </font></Label>
-                  <Label layoutX="108.0" layoutY="182.0" style="-fx-text-fill: #DCDCDC;" text="Stereo balance">
-                     <font>
-                        <Font name="Verdana" size="13.0" />
-                     </font></Label>
-                  <Label layoutX="109.0" layoutY="46.0" style="-fx-text-fill: #DCDCDC;" text="Audio player">
-                     <font>
-                        <Font name="Verdana" size="18.0" />
-                     </font></Label>
-                  <Label layoutX="33.0" layoutY="137.0" style="-fx-text-fill: #DCDCDC;">
-                     <font>
-                        <Font name="Verdana" size="13.0" />
-                     </font></Label>
-                  <Label layoutX="234.0" layoutY="137.0" style="-fx-text-fill: #DCDCDC;">
-                     <font>
-                        <Font name="Verdana" size="13.0" />
-                     </font></Label>
-                  <Button layoutX="200.0" layoutY="249.0" mnemonicParsing="false">
-                     <graphic>
-                        <FontAwesomeIconView glyphName="FAST_FORWARD" size="18" />
-                     </graphic></Button>
-                  <Button layoutX="166.0" layoutY="249.0" mnemonicParsing="false">
-                     <graphic>
-                        <FontAwesomeIconView glyphName="FAST_BACKWARD" size="18" />
-                     </graphic></Button>
-                  <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_OFF" layoutX="43.0" layoutY="157.0" size="30" />
-                  <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_UP" layoutX="234.0" layoutY="157.0" size="30" />
-                  <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_UP" layoutX="234.0" layoutY="222.0" size="30" />
-                  <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_OFF" layoutX="43.0" layoutY="222.0" size="30" />
-                  <FontAwesomeIconView fill="WHITE" glyphName="MUSIC" layoutX="49.0" layoutY="71.0" size="40" />
-               </children>
-            </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="334.0" prefWidth="323.0" style="-fx-background-color: #909090;">
-               <children>
-                  <Label layoutX="119.0" layoutY="47.0" style="-fx-text-fill: #DCDCDC;" text="Audio recorder">
-                     <font>
-                        <Font name="Verdana" size="18.0" />
-                     </font></Label>
-                  <Label layoutX="61.0" layoutY="181.0" style="-fx-text-fill: #DCDCDC;" text="Stereo balance of recorded audio">
-                     <font>
+<Pane prefHeight="435.0" prefWidth="608.0" style="-fx-background-color: #525050;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SingleCTRL">
+    <children>
+        <ImageView fitHeight="532.0" fitWidth="836.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@img/background.jpg" />
+            </image>
+        </ImageView>
+        <SplitPane dividerPositions="0.5" layoutY="42.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="336.0" prefWidth="606.0">
+            <items>
+                <AnchorPane style="-fx-background-color: #909090;">
+                    <children>
+                        <Button layoutX="105.0" layoutY="249.0" mnemonicParsing="false">
+                            <graphic>
+                                <FontAwesomeIconView glyphName="PAUSE" size="18" />
+                            </graphic>
+                        </Button>
+                        <Button layoutX="73.0" layoutY="249.0" mnemonicParsing="false" fx:id="playBtn" onAction="#playFn">
+                            <graphic>
+                                <FontAwesomeIconView glyphName="PLAY" size="18"/>
+                            </graphic>
+                        </Button>
+                        <Button layoutX="134.0" layoutY="249.0" mnemonicParsing="false">
+                            <graphic>
+                                <FontAwesomeIconView glyphName="STOP" size="18" />
+                            </graphic>
+                        </Button>
+                        <Slider layoutX="77.0" layoutY="138.0" />
+                        <Slider layoutX="77.0" layoutY="205.0" />
+                        <Label layoutX="88.0" layoutY="101.0" style="-fx-text-fill: #DCDCDC;" text="Audio speaker volume">
+                            <font>
+                                <Font name="Verdana" size="13.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="108.0" layoutY="182.0" style="-fx-text-fill: #DCDCDC;" text="Stereo balance">
+                            <font>
+                                <Font name="Verdana" size="13.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="109.0" layoutY="46.0" style="-fx-text-fill: #DCDCDC;" text="Audio player">
+                            <font>
+                                <Font name="Verdana" size="18.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="33.0" layoutY="137.0" style="-fx-text-fill: #DCDCDC;">
+                            <font>
+                                <Font name="Verdana" size="13.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="234.0" layoutY="137.0" style="-fx-text-fill: #DCDCDC;">
+                            <font>
+                                <Font name="Verdana" size="13.0" />
+                            </font>
+                        </Label>
+                        <Button layoutX="200.0" layoutY="249.0" mnemonicParsing="false">
+                            <graphic>
+                                <FontAwesomeIconView glyphName="FAST_FORWARD" size="18" />
+                            </graphic>
+                        </Button>
+                        <Button layoutX="166.0" layoutY="249.0" mnemonicParsing="false">
+                            <graphic>
+                                <FontAwesomeIconView glyphName="FAST_BACKWARD" size="18" />
+                            </graphic>
+                        </Button>
+                        <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_OFF" layoutX="43.0" layoutY="157.0" size="30" />
+                        <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_UP" layoutX="234.0" layoutY="157.0" size="30" />
+                        <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_UP" layoutX="234.0" layoutY="222.0" size="30" />
+                        <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_OFF" layoutX="43.0" layoutY="222.0" size="30" />
+                        <FontAwesomeIconView fill="WHITE" glyphName="MUSIC" layoutX="49.0" layoutY="71.0" size="40" />
+                    </children>
+                </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="334.0" prefWidth="323.0" style="-fx-background-color: #909090;">
+                    <children>
+                        <Label layoutX="119.0" layoutY="47.0" style="-fx-text-fill: #DCDCDC;" text="Audio recorder">
+                            <font>
+                                <Font name="Verdana" size="18.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="61.0" layoutY="181.0" style="-fx-text-fill: #DCDCDC;" text="Stereo balance of recorded audio">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="85.0" layoutY="103.0" style="-fx-text-fill: #DCDCDC;" text="Recorded audio volume">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                        </Label>
+                        <Slider layoutX="74.0" layoutY="207.0" />
+                        <Slider layoutX="74.0" layoutY="140.0" />
+                        <Button layoutX="143.0" layoutY="251.0" mnemonicParsing="false">
+                            <graphic>
+                                <FontAwesomeIconView glyphName="MICROPHONE" size="18" />
+                            </graphic>
+                        </Button>
+                        <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_UP" layoutX="239.0" layoutY="157.0" size="30" />
+                        <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_UP" layoutX="242.0" layoutY="222.0" size="30" />
+                        <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_OFF" layoutX="30.0" layoutY="153.0" size="30" />
+                        <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_OFF" layoutX="28.0" layoutY="221.0" size="30" />
+                        <FontAwesomeIconView fill="WHITE" glyphName="MICROPHONE" layoutX="66.0" layoutY="72.0" size="40" />
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+        <Pane layoutX="5.0" layoutY="6.0" prefHeight="40.0" prefWidth="600.0">
+            <children>
+                <Button mnemonicParsing="false">
+                    <graphic>
+                        <FontAwesomeIconView glyphName="POWER_OFF" size="18" />
+                    </graphic>
+                </Button>
+                <Label layoutX="457.0" layoutY="5.0" style="-fx-text-fill: #DCDCDC;" text="Cassette">
+                    <font>
                         <Font size="13.0" />
-                     </font></Label>
-                  <Label layoutX="85.0" layoutY="103.0" style="-fx-text-fill: #DCDCDC;" text="Recorded audio volume">
-                     <font>
+                    </font>
+                </Label>
+                <Button layoutX="41.0" mnemonicParsing="false" fx:id="ejectBtn" onAction="#ejectFn">
+                    <graphic>
+                        <FontAwesomeIconView glyphName="EJECT" size="18" />
+                    </graphic>
+                </Button>
+                <Button layoutX="512.0" layoutY="1.0" mnemonicParsing="false" fx:id="insertBtn" onAction="#insertFn">
+                    <graphic>
+                        <FontAwesomeIconView glyphName="ARROW_DOWN" size="18" />
+                    </graphic>
+                </Button>
+                <Button layoutX="545.0" layoutY="1.0" mnemonicParsing="false">
+                    <graphic>
+                        <FontAwesomeIconView glyphName="REMOVE" size="18" />
+                    </graphic>
+                </Button>
+            </children>
+        </Pane>
+        <Pane layoutY="378.0" prefHeight="45.0" prefWidth="606.0">
+            <children>
+                <ProgressIndicator layoutX="519.0" layoutY="11.0" progress="0.0" style="-fx-text-fill: DCDCDC;" />
+                <RadioButton disable="true" layoutX="27.0" layoutY="15.0" mnemonicParsing="false" style="-fx-text-fill: DCDCDC;" text="Magnetic head a" />
+                <Label layoutX="461.0" layoutY="14.0" text="Counter">
+                    <font>
                         <Font size="13.0" />
-                     </font></Label>
-                  <Slider layoutX="74.0" layoutY="207.0" />
-                  <Slider layoutX="74.0" layoutY="140.0" />
-                  <Button layoutX="143.0" layoutY="251.0" mnemonicParsing="false">
-                     <graphic>
-                        <FontAwesomeIconView glyphName="MICROPHONE" size="18" />
-                     </graphic></Button>
-                  <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_UP" layoutX="239.0" layoutY="157.0" size="30" />
-                  <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_UP" layoutX="242.0" layoutY="222.0" size="30" />
-                  <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_OFF" layoutX="30.0" layoutY="153.0" size="30" />
-                  <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_OFF" layoutX="28.0" layoutY="221.0" size="30" />
-                  <FontAwesomeIconView fill="WHITE" glyphName="MICROPHONE" layoutX="66.0" layoutY="72.0" size="40" />
-               </children>
-            </AnchorPane>
-        </items>
-      </SplitPane>
-      <Pane layoutX="5.0" layoutY="6.0" prefHeight="40.0" prefWidth="600.0">
-         <children>
-            <Button mnemonicParsing="false">
-               <graphic>
-                  <FontAwesomeIconView glyphName="POWER_OFF" size="18" />
-               </graphic></Button>
-            <Label layoutX="457.0" layoutY="5.0" style="-fx-text-fill: #DCDCDC;" text="Cassette">
-               <font>
-                  <Font size="13.0" />
-               </font></Label>
-            <Button layoutX="41.0" mnemonicParsing="false">
-               <graphic>
-                  <FontAwesomeIconView glyphName="EJECT" size="18" />
-               </graphic></Button>
-            <Button layoutX="512.0" layoutY="1.0" mnemonicParsing="false">
-               <graphic>
-                  <FontAwesomeIconView glyphName="ARROW_DOWN" size="18" />
-               </graphic></Button>
-            <Button layoutX="545.0" layoutY="1.0" mnemonicParsing="false">
-               <graphic>
-                  <FontAwesomeIconView glyphName="REMOVE" size="18" />
-               </graphic></Button>
-         </children>
-      </Pane>
-      <Pane layoutY="378.0" prefHeight="45.0" prefWidth="606.0">
-         <children>
-            <ProgressIndicator layoutX="519.0" layoutY="11.0" progress="0.0" style="-fx-text-fill: DCDCDC;" />
-            <RadioButton disable="true" layoutX="27.0" layoutY="15.0" mnemonicParsing="false" style="-fx-text-fill: DCDCDC;" text="Magnetic head a" />
-            <Label layoutX="461.0" layoutY="14.0" text="Counter">
-               <font>
-                  <Font size="13.0" />
-               </font></Label>
-            <RadioButton disable="true" layoutX="283.0" layoutY="15.0" mnemonicParsing="false" style="-fx-text-fill: DCDCDC;" text="Motor" />
-            <Button layoutX="554.0" layoutY="9.0" mnemonicParsing="false">
-               <graphic>
-                  <FontAwesomeIconView glyphName="REFRESH" size="18" />
-               </graphic></Button>
-            <RadioButton disable="true" layoutX="151.0" layoutY="15.0" mnemonicParsing="false" style="-fx-text-fill: DCDCDC;" text="Magnetic head b" />
-         </children>
-      </Pane>
-   </children>
+                    </font>
+                </Label>
+                <RadioButton disable="true" layoutX="283.0" layoutY="15.0" mnemonicParsing="false" style="-fx-text-fill: DCDCDC;" text="Motor" />
+                <Button layoutX="554.0" layoutY="9.0" mnemonicParsing="false">
+                    <graphic>
+                        <FontAwesomeIconView glyphName="REFRESH" size="18" />
+                    </graphic>
+                </Button>
+                <RadioButton disable="true" layoutX="151.0" layoutY="15.0" mnemonicParsing="false" style="-fx-text-fill: DCDCDC;" text="Magnetic head b" />
+            </children>
+        </Pane>
+    </children>
 </Pane>

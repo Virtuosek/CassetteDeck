@@ -25,7 +25,8 @@ public class AlertBox {
         switch(type){
             case "error": window.getIcons().add(new Image("img/error.png"));
                 break;
-            case "alert": System.out.println("NIY");
+            case "alert": window.getIcons().add(new Image("img/alert.png"));
+                break;
         }
         window.getIcons().add(new Image("img/error.png"));
         window.initModality(Modality.APPLICATION_MODAL);
