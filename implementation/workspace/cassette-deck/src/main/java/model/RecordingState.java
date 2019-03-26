@@ -28,9 +28,14 @@ public class RecordingState implements State {
 			System.out.println("**STOP RECORDING**");
 		}
 	}
+	
+	@Override
+	public void insert(Cassette cassette) {
+		System.out.println("The deck must be idle to open the holder.");
+	}
 
 	@Override
-	public void open() {
+	public void eject() {
 		System.out.println("The deck must be idle to open the holder.");
 	}
 

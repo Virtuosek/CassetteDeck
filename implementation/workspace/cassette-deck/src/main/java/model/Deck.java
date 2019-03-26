@@ -11,7 +11,7 @@ public class Deck {
 	private boolean isOnPause;
 	private boolean isChangingSong;
 	private Motor motor;
-	private PlayHead head;
+	private PlaybackHead head;
 	private CassetteHolder holder;
 	
 	private State offState;
@@ -33,7 +33,7 @@ public class Deck {
 		isOnPause = false;
 		isChangingSong = false;
 		motor = new Motor();
-		head = new PlayHead();
+		head = new PlaybackHead();
 		holder = new CassetteHolder();
 		
 		offState = new OffState(this);
@@ -54,24 +54,12 @@ public class Deck {
 		state = offState;
 	}
 	
-	public void open() {
-		state.open();
-	}
-
-	public void close() {
-		holder.close();
+	public void eject() {
+		state.eject();
 	}
 	
-	public void insertCassette(Cassette cassette) {
-		if(holder.isOpen() && !holder.hasCassette()) {
-			holder.insertCassette(cassette);
-		}
-	}
-	
-	public void removeCassette() {
-		if(holder.isOpen()) {
-			holder.removeCassette();
-		}
+	public void insert(Cassette cassette) {
+		state.insert(cassette);
 	}
 	
 	public void stop() {
@@ -80,6 +68,10 @@ public class Deck {
 	
 	public void play() {
 		state.play();
+	}
+	
+	public void pause() {
+		state.pause();
 	}
 	
 	public void record() {
@@ -232,11 +224,11 @@ public class Deck {
 		this.motor = motor;
 	}
 
-	public PlayHead getHead() {
+	public PlaybackHead getHead() {
 		return head;
 	}
 
-	public void setHead(PlayHead head) {
+	public void setHead(PlaybackHead head) {
 		this.head = head;
 	}
 

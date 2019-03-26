@@ -1,13 +1,17 @@
 package model;
 
+import java.io.File;
+
 public class Cassette {
 
 	private boolean isAtStart;
 	private boolean isAtEnd;
+	private File songFile;
 	
-	public Cassette() {
+	public Cassette(File songFile) {
 		isAtStart = true;
 		isAtEnd = false;
+		this.songFile = songFile;
 	}
 
 	public boolean isAtStart() {
@@ -24,5 +28,9 @@ public class Cassette {
 
 	public void setAtEnd(boolean isAtEnd) {
 		this.isAtEnd = isAtEnd;
+	}
+
+	public File getSongFile() {
+		return songFile;
 	}
 }

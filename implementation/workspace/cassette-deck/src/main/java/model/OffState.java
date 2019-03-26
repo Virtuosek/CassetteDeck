@@ -17,10 +17,31 @@ public class OffState implements State {
 	public void exit() {
 		
 	}
+	
+	@Override
+	public void insert(Cassette cassette) {
+		deck.getHolder().open();
+		boolean isInserted = deck.getHolder().putCassette(cassette);
+		deck.getHolder().close();
+		if(isInserted) {
+			System.out.println("A new cassette has been inserted.");
+		}
+		else {
+			System.out.println("There's already a cassette in the holder.");
+		}
+	}
 
 	@Override
-	public void open() {
+	public void eject() {
 		deck.getHolder().open();
+		boolean isEjected = deck.getHolder().removeCassette();
+		deck.getHolder().close();
+		if(isEjected) {
+			System.out.println("The cassette has been ejected.");
+		}
+		else {
+			System.out.println("There is no cassette in the holder.");
+		}
 	}
 
 	@Override

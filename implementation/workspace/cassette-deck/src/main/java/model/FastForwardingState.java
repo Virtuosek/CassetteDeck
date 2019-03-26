@@ -22,9 +22,14 @@ public class FastForwardingState implements State {
 		// TODO Timer
 		deck.setChangingSong(false);
 	}
+	
+	@Override
+	public void insert(Cassette cassette) {
+		System.out.println("The deck must be idle to open the holder.");
+	}
 
 	@Override
-	public void open() {
+	public void eject() {
 		System.out.println("The deck must be idle to open the holder.");
 	}
 

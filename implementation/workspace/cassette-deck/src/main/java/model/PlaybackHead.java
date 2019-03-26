@@ -1,10 +1,10 @@
 package model;
 
-public class PlayHead {
+public class PlaybackHead {
 
 	private boolean isEngaged;
 	
-	public PlayHead() {
+	public PlaybackHead() {
 		isEngaged = false;
 	}
 	

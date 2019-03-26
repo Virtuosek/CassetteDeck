@@ -1,5 +1,9 @@
 package model;
 
+import java.io.FileInputStream;
+
+import javazoom.jl.player.Player;
+
 public class PlayingState implements State {
 
 	private Deck deck;
@@ -12,7 +16,7 @@ public class PlayingState implements State {
 	public void entry() {
 		deck.getHead().engage();
 		if(!deck.isOnPause()) {
-			launchMotor();
+			launchPlayback();
 		}
 		else {
 			System.out.println("The deck is on pause.");
@@ -28,9 +32,14 @@ public class PlayingState implements State {
 			System.out.println("**STOP PLAYING**");
 		}
 	}
+	
+	@Override
+	public void insert(Cassette cassette) {
+		System.out.println("The deck must be idle to open the holder.");
+	}
 
 	@Override
-	public void open() {
+	public void eject() {
 		System.out.println("The deck must be idle to open the holder.");
 	}
 
@@ -49,7 +58,7 @@ public class PlayingState implements State {
 		deck.setOnPause(!deck.isOnPause());
 		System.out.println("The pause button has been switched.");
 		if(!deck.isOnPause()) {
-			launchMotor();
+			launchPlayback();
 		}
 		else {
 			System.out.println("The deck is on pause.");
@@ -86,9 +95,19 @@ public class PlayingState implements State {
 		System.out.println("The deck must be idle to reset the counter.");
 	}
 	
-	public void launchMotor() {
+	public void launchPlayback() {
 		deck.getMotor().turnOn();
 		deck.getHolder().getCassette().setAtStart(false);
+		new Thread() {
+			public void run() {
+				try {
+					Player p = new Player(new FileInputStream(deck.getHolder().getCassette().getSongFile())); //loads song into player
+					p.play();
+				} catch (Exception e) {
+					System.out.println(e.getCause());
+				}
+			}
+		}.start();
 		// TODO Timer
 		System.out.println("**PLAYING**");
 	}

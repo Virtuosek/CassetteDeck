@@ -19,14 +19,22 @@ public class CassetteHolder {
 		isOpen = false;
 	}
 	
-	public void insertCassette(Cassette cassette) {
-		this.cassette = cassette;
-		hasCassette = true;
+	public boolean putCassette(Cassette cassette) {
+		if(isOpen() && !hasCassette) {
+			this.cassette = cassette;
+			hasCassette = true;
+			return true;
+		}
+		return false;
 	}
 	
-	public void removeCassette() {
-		cassette = null;
-		hasCassette = false;
+	public boolean removeCassette() {
+		if(isOpen() && hasCassette) {
+			cassette = null;
+			hasCassette = false;
+			return true;
+		}
+		return false;
 	}
 
 	public boolean isOpen() {
