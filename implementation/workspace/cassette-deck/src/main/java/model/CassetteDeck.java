@@ -1,13 +1,16 @@
 package model;
 
-public class CassetteDeck {
+public abstract class CassetteDeck {
 
-	private int volume;
 	private Deck deck;
 	private boolean isTurnedOn;
+	private boolean hasRecorder;
+	private boolean hasMicrophone;
+	private boolean hasSpeakers;
+	private boolean hasAutoReverse;
+	private boolean hasSongDetection;
 	
-	public CassetteDeck() {
-		volume = 0;
+	public CassetteDeck(boolean hasRecorder, boolean hasMicrophone, boolean hasSpeakers, boolean hasAutoReverse, boolean hasSongDetection) {
 		deck = new Deck();
 		isTurnedOn = false;
 	}
@@ -22,11 +25,6 @@ public class CassetteDeck {
 		deck.turnOff();
 		isTurnedOn = false;
 		System.out.println("Power is off.");
-	}
-	
-	public void adjustVolumeSlider(int volume) {
-		this.volume = volume;
-		System.out.println("The slider is on " + volume + ".");
 	}
 	
 	public void plugInputDevice() {
@@ -47,5 +45,64 @@ public class CassetteDeck {
 	public void unplugOutputDevice() {
 		// TODO
 		System.out.println("Output device plugged out.");
+	}
+
+	public Deck getDeck() {
+		return deck;
+	}
+
+	public boolean isTurnedOn() {
+		return isTurnedOn;
+	}
+
+	public void setTurnedOn(boolean isTurnedOn) {
+		this.isTurnedOn = isTurnedOn;
+	}
+
+	public boolean hasRecorder() {
+		return hasRecorder;
+	}
+
+	public void setRecorder(boolean hasRecorder) {
+		this.hasRecorder = hasRecorder;
+	}
+
+	public boolean hasMicrophone() {
+		return hasMicrophone;
+	}
+
+	public void setMicrophone(boolean hasMicrophone) {
+		this.hasMicrophone = hasMicrophone;
+	}
+
+	public boolean hasSpeakers() {
+		return hasSpeakers;
+	}
+
+	public void setSpeakers(boolean hasSpeakers) {
+		this.hasSpeakers = hasSpeakers;
+	}
+
+	public boolean hasAutoReverse() {
+		return hasAutoReverse;
+	}
+
+	public void setAutoReverse(boolean hasAutoReverse) {
+		this.hasAutoReverse = hasAutoReverse;
+	}
+
+	public boolean hasSongDetection() {
+		return hasSongDetection;
+	}
+
+	public void setSongDetection(boolean hasSongDetection) {
+		this.hasSongDetection = hasSongDetection;
+	}
+
+	@Override
+	public String toString() {
+		return "CassetteDeck [deck=" + deck + ", isTurnedOn=" + isTurnedOn + ", hasRecorder=" + hasRecorder
+				+ ", hasMicrophone=" + hasMicrophone + ", hasSpeakers=" + hasSpeakers + ", hasAutoReverse="
+				+ hasAutoReverse + ", hasSongDetection=" + hasSongDetection + "]";
 	}
 }
