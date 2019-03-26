@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controller;
 
 import javafx.geometry.Pos;
@@ -14,10 +9,6 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-/**
- *
- * @author Virtuosek
- */
 public class AlertBox {
     
     public static void display(String title, String type, String message) {
@@ -45,5 +36,4 @@ public class AlertBox {
         window.setScene(scene);
         window.showAndWait();
     }
-    
 }

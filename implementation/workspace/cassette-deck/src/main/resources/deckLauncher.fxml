@@ -30,12 +30,12 @@
                 <Font name="Verdana" size="13.0" />
             </font>
         </RadioButton>
-        <CheckBox alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="91.0" layoutY="118.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" style="-fx-text-fill: #DCDCDC;" text="Built-in audio speaker" fx:id="biSpeakerRB">
+        <CheckBox alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="91.0" layoutY="118.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" style="-fx-text-fill: #DCDCDC;" text="Built-in audio speaker" fx:id="biSpeakerCB">
             <font>
                 <Font name="Verdana" size="13.0" />
             </font>
         </CheckBox>
-        <CheckBox alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="90.0" layoutY="185.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" style="-fx-text-fill: #DCDCDC;" text="Built-in microphone" fx:id="biMicRB">
+        <CheckBox alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="90.0" layoutY="185.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" style="-fx-text-fill: #DCDCDC;" text="Built-in microphone" fx:id="biMicCB">
             <font>
                 <Font name="Verdana" size="13.0" />
             </font>

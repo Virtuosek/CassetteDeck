@@ -13,6 +13,11 @@ public abstract class CassetteDeck {
 	public CassetteDeck(boolean hasRecorder, boolean hasMicrophone, boolean hasSpeakers, boolean hasAutoReverse, boolean hasSongDetection) {
 		deck = new Deck();
 		isTurnedOn = false;
+		this.hasRecorder = hasRecorder;
+		this.hasMicrophone = hasMicrophone;
+		this.hasSpeakers = hasSpeakers;
+		this.hasAutoReverse = hasAutoReverse;
+		this.hasSongDetection = hasSongDetection;
 	}
 	
 	public void turnOn() {
