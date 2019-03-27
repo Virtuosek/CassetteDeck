@@ -3,6 +3,8 @@ package model;
 public class FastRewindingState implements State {
 
 	private Deck deck;
+	private double startTime;
+	private double endTime;
 	
 	public FastRewindingState(Deck deck) {
 		this.deck = deck;
@@ -13,6 +15,7 @@ public class FastRewindingState implements State {
 		deck.getMotor().turnOn();
 		deck.getHolder().getCassette().setAtEnd(false);
 		// TODO Timer
+		startTime = System.currentTimeMillis();
 		System.out.println("The deck is fast rewinding.");
 	}
 	
@@ -20,9 +23,14 @@ public class FastRewindingState implements State {
 	public void exit() {
 		deck.getMotor().turnOff();
 		// TODO Timer
+		endTime = System.currentTimeMillis();
+		boolean isAtStart = deck.getAudioManager().fastRewind(endTime - startTime);
+		if(isAtStart) {
+			deck.getHolder().getCassette().setAtStart(true);
+		}
 		deck.setChangingSong(false);
 	}
-	
+
 	@Override
 	public void insert(Cassette cassette) {
 		System.out.println("The deck must be idle to open the holder.");

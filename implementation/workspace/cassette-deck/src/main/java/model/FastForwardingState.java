@@ -3,6 +3,8 @@ package model;
 public class FastForwardingState implements State {
 	
 	private Deck deck;
+	private double startTime;
+	private double endTime;
 
 	public FastForwardingState(Deck deck) {
 		this.deck = deck;
@@ -13,6 +15,7 @@ public class FastForwardingState implements State {
 		deck.getMotor().turnOn();
 		deck.getHolder().getCassette().setAtStart(false);
 		// TODO Timer
+		startTime = System.currentTimeMillis();
 		System.out.println("The deck is fast forwarding.");
 	}
 	
@@ -20,6 +23,11 @@ public class FastForwardingState implements State {
 	public void exit() {
 		deck.getMotor().turnOff();
 		// TODO Timer
+		endTime = System.currentTimeMillis();
+		boolean isAtEnd = deck.getAudioManager().fastForward(endTime - startTime);
+		if(isAtEnd) {
+			deck.getHolder().getCassette().setAtEnd(true);
+		}
 		deck.setChangingSong(false);
 	}
 	

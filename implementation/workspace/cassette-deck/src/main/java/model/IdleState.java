@@ -11,7 +11,6 @@ public class IdleState implements State {
 	@Override
 	public void entry() {
 		System.out.println("The deck is idle.");
-		deck.getAudioManager().stop();
 	}
 	
 	@Override

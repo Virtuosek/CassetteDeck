@@ -24,6 +24,7 @@ public class PlayingState implements State {
 		deck.getHead().disengage();
 		if(!deck.isOnPause()) {
 			deck.getMotor().turnOff();
+			deck.getAudioManager().pause();
 			// TODO Timer
 			System.out.println("**STOP PLAYING**");
 		}
@@ -57,6 +58,7 @@ public class PlayingState implements State {
 			launchPlayback();
 		}
 		else {
+			deck.getAudioManager().pause();
 			System.out.println("The deck is on pause.");
 		}
 	}
