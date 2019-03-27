@@ -60,8 +60,8 @@ public class DoubleCTRL extends SimulationCTRL {
         System.out.println("*INSERT BUTTON 1 PRESSED*");
         File songFile = null;
         if(!cassetteDeck.getDeck().getHolder().hasCassette()) {
-        	audm = new AudioManager();
-        	songFile = audm.openFile();
+        	fileLoader = new FileLoader();
+        	songFile = fileLoader.openFile();
         }
         cassetteDeck.getDeck().insert(new Cassette(songFile));
     }
@@ -105,8 +105,8 @@ public class DoubleCTRL extends SimulationCTRL {
         System.out.println("*INSERT BUTTON 2 PRESSED*");
         File songFile = null;
         if(!doubleCassetteDeck.getDeck2().getHolder().hasCassette()) {
-        	audm = new AudioManager();
-        	songFile = audm.openFile();
+        	fileLoader = new FileLoader();
+        	songFile = fileLoader.openFile();
         }
         doubleCassetteDeck.getDeck2().insert(new Cassette(songFile));
     }

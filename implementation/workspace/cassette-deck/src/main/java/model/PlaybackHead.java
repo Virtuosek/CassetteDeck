@@ -17,4 +17,8 @@ public class PlaybackHead {
 		isEngaged = false;
 		System.out.println("The play head is disengaged.");
 	}
+	
+	public boolean isEngaged() {
+		return isEngaged;
+	}
 }

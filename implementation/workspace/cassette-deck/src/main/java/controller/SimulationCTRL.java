@@ -52,7 +52,7 @@ public abstract class SimulationCTRL {
 	protected ProgressIndicator progressPI;
 	
 	protected CassetteDeck cassetteDeck;
-    protected AudioManager audm;
+    protected FileLoader fileLoader;
     
     public void powerFn() {
     	System.out.println("*POWER BUTTON PRESSED*");

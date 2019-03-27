@@ -1,9 +1,5 @@
 package model;
 
-import java.io.FileInputStream;
-
-import javazoom.jl.player.Player;
-
 public class PlayingState implements State {
 
 	private Deck deck;
@@ -98,16 +94,7 @@ public class PlayingState implements State {
 	public void launchPlayback() {
 		deck.getMotor().turnOn();
 		deck.getHolder().getCassette().setAtStart(false);
-		new Thread() {
-			public void run() {
-				try {
-					Player p = new Player(new FileInputStream(deck.getHolder().getCassette().getSongFile())); //loads song into player
-					p.play();
-				} catch (Exception e) {
-					System.out.println(e.getCause());
-				}
-			}
-		}.start();
+		deck.getAudioManager().play();
 		// TODO Timer
 		System.out.println("**PLAYING**");
 	}

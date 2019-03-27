@@ -16,8 +16,8 @@ public class SingleCTRL extends SimulationCTRL {
         System.out.println("*INSERT BUTTON PRESSED*");
         File songFile = null;
         if(!cassetteDeck.getDeck().getHolder().hasCassette()) {
-        	audm = new AudioManager();
-        	songFile = audm.openFile();
+        	fileLoader = new FileLoader();
+        	songFile = fileLoader.openFile();
         }
         cassetteDeck.getDeck().insert(new Cassette(songFile));
     }

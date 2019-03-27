@@ -13,6 +13,7 @@ public class Deck {
 	private Motor motor;
 	private PlaybackHead head;
 	private CassetteHolder holder;
+	private AudioManager audioManager;
 	
 	private State offState;
 	private State idleState;
@@ -35,6 +36,7 @@ public class Deck {
 		motor = new Motor();
 		head = new PlaybackHead();
 		holder = new CassetteHolder();
+		audioManager = new AudioManager();
 		
 		offState = new OffState(this);
 		idleState = new IdleState(this);
@@ -238,6 +240,10 @@ public class Deck {
 
 	public void setHolder(CassetteHolder holder) {
 		this.holder = holder;
+	}
+	
+	public AudioManager getAudioManager() {
+		return audioManager;
 	}
 
 	public State getOffState() {

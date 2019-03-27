@@ -17,4 +17,8 @@ public class Motor {
 		isTurnedOn = false;
 		System.out.println("The motor is off.");
 	}
+	
+	public boolean isTurnedOn() {
+		return isTurnedOn;
+	}
 }

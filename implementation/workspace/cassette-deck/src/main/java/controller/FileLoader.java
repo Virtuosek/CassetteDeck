@@ -3,7 +3,7 @@ package controller;
 import java.io.File;
 import javax.swing.JFileChooser;
 
-public class AudioManager {
+public class FileLoader {
 
     public File openFile() {
         try {
