@@ -12,7 +12,7 @@ public class RecordingState implements State {
 	public void entry() {
 		deck.getHead().engage();
 		if(!deck.isOnPause()) {
-			launchMotor();
+			launchRecord();
 		}
 		else {
 			System.out.println("The deck is on pause.");
@@ -24,6 +24,7 @@ public class RecordingState implements State {
 		deck.getHead().disengage();
 		if(!deck.isOnPause()) {
 			deck.getMotor().turnOff();
+			deck.getAudioManager().stopRecord();
 			// TODO Timer
 			System.out.println("**STOP RECORDING**");
 		}
@@ -54,9 +55,10 @@ public class RecordingState implements State {
 		deck.setOnPause(!deck.isOnPause());
 		System.out.println("The pause button has been switched.");
 		if(!deck.isOnPause()) {
-			launchMotor();
+			launchRecord();
 		}
 		else {
+			deck.getAudioManager().pause();
 			System.out.println("The deck is on pause.");
 		}
 	}
@@ -91,9 +93,10 @@ public class RecordingState implements State {
 		System.out.println("The deck must be idle to reset the counter.");
 	}
 	
-	public void launchMotor() {
+	public void launchRecord() {
 		deck.getMotor().turnOn();
 		deck.getHolder().getCassette().setAtStart(false);
+		deck.getAudioManager().record();
 		// TODO Timer
 		System.out.println("**RECORDING**");
 	}

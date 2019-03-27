@@ -13,6 +13,7 @@ public class Start extends Application {
 	public static final String DOUBLE_LOCATION = "/doubleDeck.fxml";
 	private static final String ICON_LOCATION = "img/icon.png";
 	private static final String WINDOW_NAME = "Cassette Deck Simulator";
+	public static final double FAST_PLAYBACK_SPEED_FACTOR = 10.;
 	
     @Override
     public void start(Stage window) throws Exception {
