@@ -10,6 +10,7 @@ import javafx.scene.control.Slider;
 import javafx.scene.control.SplitPane;
 import model.Cassette;
 import model.CassetteDeck;
+import model.DoubleCassetteDeck;
 
 public class DoubleCTRL extends SimulationCTRL {
 
@@ -48,98 +49,101 @@ public class DoubleCTRL extends SimulationCTRL {
 	@FXML
 	private ProgressIndicator progress2PI;
 	
-	   public void eject1Fn() {
-	    	System.out.println("*EJECT BUTTON PRESSED*");
-	    	cassetteDeck.getDeck().eject();
-	    }
-	    
-	    public void insert1Fn() {
-	        System.out.println("*INSERT BUTTON PRESSED*");
-	        File songFile = null;
-	        if(!cassetteDeck.getDeck().getHolder().hasCassette()) {
-	        	audm = new AudioManager();
-	        	songFile = audm.openFile();
-	        }
-	        cassetteDeck.getDeck().insert(new Cassette(songFile));
-	    }
+	private DoubleCassetteDeck doubleCassetteDeck;
+		
+    public void eject1Fn() {
+    	System.out.println("*EJECT BUTTON 1 PRESSED*");
+    	cassetteDeck.getDeck().eject();
+    }
+    
+    public void insert1Fn() {
+        System.out.println("*INSERT BUTTON 1 PRESSED*");
+        File songFile = null;
+        if(!cassetteDeck.getDeck().getHolder().hasCassette()) {
+        	audm = new AudioManager();
+        	songFile = audm.openFile();
+        }
+        cassetteDeck.getDeck().insert(new Cassette(songFile));
+    }
 
-	    public void play1Fn() {
-	    	System.out.println("*PLAY BUTTON PRESSED*");
-	        cassetteDeck.getDeck().play();
-	    }
-	    
-	    public void pause1Fn() {
-	    	System.out.println("*PAUSE BUTTON PRESSED*");
-	    	cassetteDeck.getDeck().pause();
-	    }
-	    
-	    public void stop1Fn() {
-	    	System.out.println("*STOP BUTTON PRESSED*");
-	    	cassetteDeck.getDeck().stop();
-	    }
-	    
-	    public void fastRewind1Fn() {
-	    	System.out.println("*FAST REWIND BUTTON PRESSED*");
-	    	cassetteDeck.getDeck().fastRewind();
-	    }
-	    
-	    public void fastForward1Fn() {
-	    	System.out.println("*FAST FORWARD BUTTON PRESSED*");
-	    	cassetteDeck.getDeck().fastForward();
-	    }
-	    
-	    public void record1Fn() {
-	    	System.out.println("*RECORD BUTTON PRESSED*");
-	    	cassetteDeck.getDeck().record();
-	    }
-	    
-	    public void eject2Fn() {
-	    	System.out.println("*EJECT BUTTON PRESSED*");
-	    	cassetteDeck.getDeck().eject();
-	    }
-	    
-	    public void insert2Fn() {
-	        System.out.println("*INSERT BUTTON PRESSED*");
-	        File songFile = null;
-	        if(!cassetteDeck.getDeck().getHolder().hasCassette()) {
-	        	audm = new AudioManager();
-	        	songFile = audm.openFile();
-	        }
-	        cassetteDeck.getDeck().insert(new Cassette(songFile));
-	    }
+    public void play1Fn() {
+    	System.out.println("*PLAY BUTTON 1 PRESSED*");
+        cassetteDeck.getDeck().play();
+    }
+    
+    public void pause1Fn() {
+    	System.out.println("*PAUSE BUTTON 1 PRESSED*");
+    	cassetteDeck.getDeck().pause();
+    }
+    
+    public void stop1Fn() {
+    	System.out.println("*STOP BUTTON 1 PRESSED*");
+    	cassetteDeck.getDeck().stop();
+    }
+    
+    public void fastRewind1Fn() {
+    	System.out.println("*FAST REWIND BUTTON 1 PRESSED*");
+    	cassetteDeck.getDeck().fastRewind();
+    }
+    
+    public void fastForward1Fn() {
+    	System.out.println("*FAST FORWARD BUTTON 1 PRESSED*");
+    	cassetteDeck.getDeck().fastForward();
+    }
+    
+    public void record1Fn() {
+    	System.out.println("*RECORD BUTTON 1 PRESSED*");
+    	cassetteDeck.getDeck().record();
+    }
+    
+    public void eject2Fn() {
+    	System.out.println("*EJECT BUTTON 2 PRESSED*");
+    	doubleCassetteDeck.getDeck2().eject();
+    }
+    
+    public void insert2Fn() {
+        System.out.println("*INSERT BUTTON 2 PRESSED*");
+        File songFile = null;
+        if(!doubleCassetteDeck.getDeck2().getHolder().hasCassette()) {
+        	audm = new AudioManager();
+        	songFile = audm.openFile();
+        }
+        doubleCassetteDeck.getDeck2().insert(new Cassette(songFile));
+    }
 
-	    public void play2Fn() {
-	    	System.out.println("*PLAY BUTTON PRESSED*");
-	        cassetteDeck.getDeck().play();
-	    }
-	    
-	    public void pause2Fn() {
-	    	System.out.println("*PAUSE BUTTON PRESSED*");
-	    	cassetteDeck.getDeck().pause();
-	    }
-	    
-	    public void stop2Fn() {
-	    	System.out.println("*STOP BUTTON PRESSED*");
-	    	cassetteDeck.getDeck().stop();
-	    }
-	    
-	    public void fastRewind2Fn() {
-	    	System.out.println("*FAST REWIND BUTTON PRESSED*");
-	    	cassetteDeck.getDeck().fastRewind();
-	    }
-	    
-	    public void fastForward2Fn() {
-	    	System.out.println("*FAST FORWARD BUTTON PRESSED*");
-	    	cassetteDeck.getDeck().fastForward();
-	    }
-	    
-	    public void record2Fn() {
-	    	System.out.println("*RECORD BUTTON PRESSED*");
-	    	cassetteDeck.getDeck().record();
-	    }
-	    
-	    @Override
-	    public void init(CassetteDeck cassetteDeck) {
-	    	this.cassetteDeck = cassetteDeck;
-	    }
+    public void play2Fn() {
+    	System.out.println("*PLAY BUTTON 2 PRESSED*");
+    	doubleCassetteDeck.getDeck2().play();
+    }
+    
+    public void pause2Fn() {
+    	System.out.println("*PAUSE BUTTON 2 PRESSED*");
+    	doubleCassetteDeck.getDeck2().pause();
+    }
+    
+    public void stop2Fn() {
+    	System.out.println("*STOP BUTTON 2 PRESSED*");
+    	doubleCassetteDeck.getDeck2().stop();
+    }
+    
+    public void fastRewind2Fn() {
+    	System.out.println("*FAST REWIND BUTTON 2 PRESSED*");
+    	doubleCassetteDeck.getDeck2().fastRewind();
+    }
+    
+    public void fastForward2Fn() {
+    	System.out.println("*FAST FORWARD BUTTON 2 PRESSED*");
+    	doubleCassetteDeck.getDeck2().fastForward();
+    }
+    
+    public void record2Fn() {
+    	System.out.println("*RECORD BUTTON 2 PRESSED*");
+    	doubleCassetteDeck.getDeck2().record();
+    }
+    
+    @Override
+    public void init(CassetteDeck cassetteDeck) {
+    	this.cassetteDeck = cassetteDeck;
+    	doubleCassetteDeck = (DoubleCassetteDeck) cassetteDeck;
+    }
 }

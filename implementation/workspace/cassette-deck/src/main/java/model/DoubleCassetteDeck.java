@@ -15,4 +15,16 @@ public class DoubleCassetteDeck extends CassetteDeck {
 		this.volumeSlider = volume;
 		System.out.println("The slider is on " + volume + ".");
 	}
+	
+	public int getVolumeSlider() {
+		return volumeSlider;
+	}
+	
+	public void setVolumeSlider(int volumeSlider) {
+		this.volumeSlider = volumeSlider;
+	}
+	
+	public Deck getDeck2() {
+		return deck2;
+	}
 }

@@ -6,7 +6,7 @@ import model.Cassette;
 import model.CassetteDeck;
 
 public class SingleCTRL extends SimulationCTRL {
-	   
+	
 	public void ejectFn() {
     	System.out.println("*EJECT BUTTON PRESSED*");
     	cassetteDeck.getDeck().eject();

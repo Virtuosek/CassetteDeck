@@ -1,5 +1,6 @@
 package controller;
 
+import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.RadioButton;
@@ -9,27 +10,50 @@ import model.CassetteDeck;
 import model.DoubleCassetteDeck;
 import model.SceneLoader;
 import model.SingleCassetteDeck;
+import model.Start;
 
 public class LauncherCTRL {
 
-    public Button launchBtn, cancelBtn;
-    public CheckBox recCB, biSpeakerCB, biMicCB, musicDetectCB, autoReverseCB;
-    public RadioButton doubleDeckRB, singleDeckRB;
+	@FXML
+    private Button launchBtn;
+	@FXML
+    private Button cancelBtn;
+	@FXML
+	private CheckBox biSpeakerCB;
+	@FXML
+	private CheckBox recCB;
+	@FXML
+	private CheckBox biMicCB;
+	@FXML
+	private CheckBox autoReverseCB;
+	@FXML
+	private CheckBox musicDetectionCB;
+	@FXML
+	private RadioButton singleDeckRB;
+	@FXML
+	private RadioButton doubleDeckRB;
+    
     private CassetteDeck cassetteDeck;
 
     public void launchButtonFn() {        
-        if (singleDeckRB.isSelected()) {
+        if(singleDeckRB.isSelected()) {
         	cassetteDeck = new SingleCassetteDeck(
         			recCB.isSelected(),
                     biMicCB.isSelected(),
                     biSpeakerCB.isSelected(),
                     autoReverseCB.isSelected(),
-                    musicDetectCB.isSelected()
+                    musicDetectionCB.isSelected()
             );
-        	loadSimulation("/singleDeck.fxml");
-        } else if (doubleDeckRB.isSelected()) {
-        	cassetteDeck = new DoubleCassetteDeck(false, false, false, false, false);
-        	loadSimulation("/doubleDeck.fxml");
+        	loadSimulation(Start.SINGLE_LOCATION);
+        } else if(doubleDeckRB.isSelected()) {
+        	cassetteDeck = new DoubleCassetteDeck(
+        			recCB.isSelected(),
+                    biMicCB.isSelected(),
+                    biSpeakerCB.isSelected(),
+                    autoReverseCB.isSelected(),
+                    musicDetectionCB.isSelected()
+        	);
+        	loadSimulation(Start.DOUBLE_LOCATION);
         } else {
             AlertBox.display("Error", "error", "Please select deck type");
         }
