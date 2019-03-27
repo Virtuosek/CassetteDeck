@@ -54,8 +54,20 @@ public class SingleCTRL extends SimulationCTRL {
     
     public void init(CassetteDeck cassetteDeck) {
     	this.cassetteDeck = cassetteDeck;
+    	if(!cassetteDeck.hasSpeakers()) {
+    		
+    	}
     	if(!cassetteDeck.hasRecorder()) {
     		playerAndRecorderSP.getItems().remove(1);
+    	}
+    	if(!cassetteDeck.hasMicrophone()) {
+    		
+    	}
+    	if(!cassetteDeck.hasAutoReverse()) {
+    		
+    	}
+    	if(!cassetteDeck.hasSongDetection()) {
+    		
     	}
     }
 }

@@ -145,5 +145,20 @@ public class DoubleCTRL extends SimulationCTRL {
     public void init(CassetteDeck cassetteDeck) {
     	this.cassetteDeck = cassetteDeck;
     	doubleCassetteDeck = (DoubleCassetteDeck) cassetteDeck;
+    	if(!cassetteDeck.hasSpeakers()) {
+    		
+    	}
+    	if(!cassetteDeck.hasRecorder()) {
+    		
+    	}
+    	if(!cassetteDeck.hasMicrophone()) {
+    		
+    	}
+    	if(!cassetteDeck.hasAutoReverse()) {
+    		
+    	}
+    	if(!cassetteDeck.hasSongDetection()) {
+    		
+    	}
     }
 }
