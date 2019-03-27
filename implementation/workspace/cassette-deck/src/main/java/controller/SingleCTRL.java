@@ -21,12 +21,12 @@ public class SingleCTRL extends SimulationCTRL {
         cassetteDeck.getDeck().insert(new Cassette(songFile));
     }
 
-    public void backFn() {
-        System.out.println("*BACK BUTTON PRESSED*");
-    }
-
     public void flipFn() {
         System.out.println("*FLIP BUTTON PRESSED*");
+    }
+    
+    public void resetCounterFn() {
+    	
     }
 
     public void playFn() {
@@ -52,6 +52,14 @@ public class SingleCTRL extends SimulationCTRL {
     public void fastForwardFn() {
         System.out.println("*FAST FORWARD BUTTON PRESSED*");
         cassetteDeck.getDeck().fastForward();
+    }
+    
+    public void previousSongFn() {
+    	
+    }
+    
+    public void nextSongFn() {
+    	
     }
 
     public void recordFn() {
