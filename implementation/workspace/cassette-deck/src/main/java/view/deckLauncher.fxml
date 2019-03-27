@@ -60,7 +60,7 @@
                 <Font name="Verdana" size="13.0" />
             </font>
         </CheckBox>
-        <CheckBox alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="90.0" layoutY="261.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" style="-fx-text-fill: #DCDCDC;" text="Music detection" fx:id="musicDetectCB">
+        <CheckBox alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="90.0" layoutY="261.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" style="-fx-text-fill: #DCDCDC;" text="Music detection" fx:id="musicDetectionCB">
             <font>
                 <Font name="Verdana" size="13.0" />
             </font>

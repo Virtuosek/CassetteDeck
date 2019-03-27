@@ -8,9 +8,9 @@ import javafx.stage.Stage;
 
 public class Start extends Application {
 	
-	public static final String ROOT_LOCATION = "/deckLauncher.fxml";
-	public static final String SINGLE_LOCATION = "/singleDeck.fxml";
-	public static final String DOUBLE_LOCATION = "/doubleDeck.fxml";
+	public static final String ROOT_LOCATION = "/view/deckLauncher.fxml";
+	public static final String SINGLE_LOCATION = "/view/singleDeck.fxml";
+	public static final String DOUBLE_LOCATION = "/view/doubleDeck.fxml";
 	private static final String ICON_LOCATION = "img/icon.png";
 	private static final String WINDOW_NAME = "Cassette Deck Simulator";
 	
