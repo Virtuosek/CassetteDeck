@@ -2,7 +2,8 @@ package controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.ProgressIndicator;
+import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.Slider;
 import javafx.scene.control.SplitPane;
@@ -23,13 +24,19 @@ public abstract class SimulationCTRL {
 	@FXML
 	protected Slider recordBalanceS;
 	@FXML
+	protected Label statusL;
+	@FXML
 	protected Button powerBtn;
 	@FXML
 	protected Button ejectBtn;
 	@FXML
 	protected Button insertBtn;
 	@FXML
-	protected Button returnBtn;
+	protected Button backBtn;
+	@FXML
+	protected Button flipBtn;
+	@FXML
+	protected Button resetCounterBtn;
 	@FXML
 	protected Button playBtn;
 	@FXML
@@ -41,6 +48,10 @@ public abstract class SimulationCTRL {
 	@FXML
 	protected Button fastForwardBtn;
 	@FXML
+	protected Button previousSongBtn;
+	@FXML
+	protected Button nextSongBtn;
+	@FXML
 	protected Button recordBtn;
 	@FXML
 	protected RadioButton magneticHeadARB;
@@ -49,7 +60,7 @@ public abstract class SimulationCTRL {
 	@FXML
 	protected RadioButton motorRB;
 	@FXML
-	protected ProgressIndicator progressPI;
+	protected ProgressBar progressPB;
 	
 	protected CassetteDeck cassetteDeck;
     protected FileLoader fileLoader;
@@ -64,8 +75,9 @@ public abstract class SimulationCTRL {
     	}
     }
     
-    public void returnFn() {
-    	Stage window = (Stage) returnBtn.getScene().getWindow();
+    public void backFn() {
+        System.out.println("*BACK BUTTON PRESSED*");
+    	Stage window = (Stage) backBtn.getScene().getWindow();
     	SceneLoader<LauncherCTRL> loader = new SceneLoader<>();
     	loader.loadScene(window, "/deckLauncher.fxml");
     }

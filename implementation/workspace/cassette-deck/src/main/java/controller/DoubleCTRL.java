@@ -4,6 +4,8 @@ import java.io.File;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.Slider;
@@ -25,9 +27,15 @@ public class DoubleCTRL extends SimulationCTRL {
 	@FXML
 	private Slider recordBalance2S;
 	@FXML
+	private Label status2L;
+	@FXML
 	private Button eject2Btn;
 	@FXML
 	private Button insert2Btn;
+	@FXML
+	private Button flip2Btn;
+	@FXML
+	private Button resetCounterBtn;
 	@FXML
 	private Button play2Btn;
 	@FXML
@@ -39,6 +47,10 @@ public class DoubleCTRL extends SimulationCTRL {
 	@FXML
 	private Button fastForward2Btn;
 	@FXML
+	private Button previousSongBtn;
+	@FXML
+	private Button nextSongBtn;
+	@FXML
 	private Button record2Btn;
 	@FXML
 	private RadioButton magneticHeadA2RB;
@@ -47,7 +59,7 @@ public class DoubleCTRL extends SimulationCTRL {
 	@FXML
 	private RadioButton motor2RB;
 	@FXML
-	private ProgressIndicator progress2PI;
+	private ProgressBar progress2PB;
 	
 	private DoubleCassetteDeck doubleCassetteDeck;
 		
@@ -64,6 +76,14 @@ public class DoubleCTRL extends SimulationCTRL {
         	songFile = fileLoader.openFile();
         }
         cassetteDeck.getDeck().insert(new Cassette(songFile));
+    }
+    
+    public void flip1Fn() {
+        System.out.println("*FLIP BUTTON PRESSED*");
+    }
+    
+    public void resetCounter1Fn() {
+    	
     }
 
     public void play1Fn() {
@@ -91,6 +111,15 @@ public class DoubleCTRL extends SimulationCTRL {
     	cassetteDeck.getDeck().fastForward();
     }
     
+    public void previousSong1Fn() {
+    	
+    }
+    
+    public void nextSong1Fn() {
+    	
+    }
+
+    
     public void record1Fn() {
     	System.out.println("*RECORD BUTTON 1 PRESSED*");
     	cassetteDeck.getDeck().record();
@@ -109,6 +138,14 @@ public class DoubleCTRL extends SimulationCTRL {
         	songFile = fileLoader.openFile();
         }
         doubleCassetteDeck.getDeck2().insert(new Cassette(songFile));
+    }
+    
+    public void flip2Fn() {
+    	
+    }
+    
+    public void resetCounter2Fn() {
+    	
     }
 
     public void play2Fn() {
@@ -134,6 +171,14 @@ public class DoubleCTRL extends SimulationCTRL {
     public void fastForward2Fn() {
     	System.out.println("*FAST FORWARD BUTTON 2 PRESSED*");
     	doubleCassetteDeck.getDeck2().fastForward();
+    }
+    
+    public void previousSong2Fn() {
+    	
+    }
+    
+    public void nextSong2Fn() {
+    	
     }
     
     public void record2Fn() {
