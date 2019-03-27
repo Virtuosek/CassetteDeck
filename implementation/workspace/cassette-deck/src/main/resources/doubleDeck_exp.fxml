@@ -145,11 +145,11 @@
                                        <graphic>
                                           <FontAwesomeIconView glyphName="STOP" size="18" />
                                        </graphic></Button>
-                                    <Button mnemonicParsing="false">
+                                    <Button fx:id="fastRewindBtn" mnemonicParsing="false">
                                        <graphic>
                                           <FontAwesomeIconView glyphName="FAST_BACKWARD" size="18" />
                                        </graphic></Button>
-                                    <Button mnemonicParsing="false">
+                                    <Button fx:id="fastRewindBtn" mnemonicParsing="false">
                                        <graphic>
                                           <FontAwesomeIconView glyphName="FAST_FORWARD" size="18" />
                                        </graphic></Button>
@@ -322,7 +322,7 @@
                                        </graphic></Button>
                                     <Button mnemonicParsing="false">
                                        <graphic>
-                                          <FontAwesomeIconView glyphName="FAST_BACKWARD" size="18" />
+                                          <FontAwesomeIconView fx:id="fastRewindBtn2" glyphName="FAST_BACKWARD" size="18" />
                                        </graphic></Button>
                                     <Button mnemonicParsing="false">
                                        <graphic>
