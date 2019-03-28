@@ -64,6 +64,16 @@ public class SingleCTRL extends SimulationCTRL {
     	System.out.println("*NEXT SONG BUTTON PRESSED*");
     	cassetteDeck.getDeck().nextSong();
     }
+    
+    public void autoReverseFn() {
+    	System.out.println("*AUTO REVERSE BUTTON PRESSED*");
+    	if(cassetteDeck.getDeck().isAutoReversing()) {
+    		cassetteDeck.getDeck().disableAutoReverse();
+    	}
+    	else {
+    		cassetteDeck.getDeck().enableAutoReverse();;
+    	}
+    }
 
     public void recordFn() {
         System.out.println("*RECORD BUTTON PRESSED*");

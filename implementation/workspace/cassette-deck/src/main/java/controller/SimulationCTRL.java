@@ -52,6 +52,8 @@ public abstract class SimulationCTRL {
 	@FXML
 	protected Button nextSongBtn;
 	@FXML
+	protected Button autoReverseBtn;
+	@FXML
 	protected Button recordBtn;
 	@FXML
 	protected RadioButton magneticHeadARB;

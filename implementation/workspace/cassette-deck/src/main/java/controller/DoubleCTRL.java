@@ -6,7 +6,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
-import javafx.scene.control.ProgressIndicator;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.Slider;
 import javafx.scene.control.SplitPane;
@@ -35,7 +34,7 @@ public class DoubleCTRL extends SimulationCTRL {
 	@FXML
 	private Button flip2Btn;
 	@FXML
-	private Button resetCounterBtn;
+	private Button resetCounter2Btn;
 	@FXML
 	private Button play2Btn;
 	@FXML
@@ -47,9 +46,11 @@ public class DoubleCTRL extends SimulationCTRL {
 	@FXML
 	private Button fastForward2Btn;
 	@FXML
-	private Button previousSongBtn;
+	private Button previousSong2Btn;
 	@FXML
-	private Button nextSongBtn;
+	private Button nextSong2Btn;
+	@FXML
+	private Button autoReverse2Btn;
 	@FXML
 	private Button record2Btn;
 	@FXML
@@ -123,6 +124,16 @@ public class DoubleCTRL extends SimulationCTRL {
     	cassetteDeck.getDeck().nextSong();
     }
     
+    public void autoReverse1Fn() {
+    	System.out.println("*AUTO REVERSE BUTTON 1 PRESSED*");
+    	if(cassetteDeck.getDeck().isAutoReversing()) {
+    		cassetteDeck.getDeck().disableAutoReverse();
+    	}
+    	else {
+    		cassetteDeck.getDeck().enableAutoReverse();;
+    	}
+    }
+    
     public void record1Fn() {
     	System.out.println("*RECORD BUTTON 1 PRESSED*");
     	cassetteDeck.getDeck().record();
@@ -186,6 +197,16 @@ public class DoubleCTRL extends SimulationCTRL {
     public void nextSong2Fn() {
     	System.out.println("*NEXT SONG BUTTON 2 PRESSED*");
     	doubleCassetteDeck.getDeck2().nextSong();
+    }
+    
+    public void autoReverse2Fn() {
+    	System.out.println("*AUTO REVERSE BUTTON 2 PRESSED*");
+    	if(doubleCassetteDeck.getDeck2().isAutoReversing()) {
+    		doubleCassetteDeck.getDeck2().disableAutoReverse();
+    	}
+    	else {
+    		doubleCassetteDeck.getDeck2().enableAutoReverse();;
+    	}
     }
     
     public void record2Fn() {
