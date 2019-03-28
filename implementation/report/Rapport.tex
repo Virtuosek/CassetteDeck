@@ -45,7 +45,33 @@ Academic year 2018-2019
 
 \section{Implementation choices}
 \label{sec:implChoices}
-%\pagebreak
+\subsection{Software and technologies}
+\subsubsection{\textit{Scene Builder}}
+\begin{center}
+\includegraphics[width=2cm]{./img/SceneBuilder.png}\\
+\end{center}
+For not only the modeling but also the implementation phase of the project, we have used \textit{Scene Builder} to design the \textit{JavaFx GUI}.\\
+\textit{FXML} files were generated and introduced to our project.
+\subsubsection{\textit{Maven}}
+\begin{center}
+\includegraphics[width=2.5cm]{./img/maven.png}\\
+\end{center}
+We have chosen \textit{maven} to easily manage jar files and organize the project.
+\subsubsection{\textit{IDE}s}
+\begin{center}
+\includegraphics[width=2.5cm]{./img/netBeans.png} \& \includegraphics[width=5cm]{./img/eclipse.png}
+\end{center}
+To be sure the application is \textit{IDE}-independent, we have used each a different java \textit{IDE}, \textit{Netbeans} and \textit{Eclipse}. It is note worthy that we have encountered some behavioral differences caused by these \textit{IDEs}, noticeably, the path each one uses to acces the \textit{fxml} files.
+\subsection{\textit{MVC}}
+\begin{center}
+\includegraphics[width=5cm]{./img/mvc.png}
+\end{center}
+We have tried to use as best we could the Model, View, Controler architecture, the project uses 2 of the 3 packages, "model" and "controller", for the "view" we have encountered -as said above- differences between the \textit{IDE}s which forced us to place the \textit{fxml} files in the src/main/resources folder.
+\subsection{\textit{JUnit?}}
+\subsection{Section2?}
+\pagebreak
+
+
 \section{Modeling differences}
 There have been some changes to the model since its conception in the \textbf{Modeling Report}, notably:
 \begin{itemize}
@@ -54,14 +80,14 @@ There have been some changes to the model since its conception in the \textbf{Mo
 \begin{center}
 \includegraphics[width=5cm]{./img/deckLauncher.png}\\
 \end{center}
-\item  In case of a double deck, the functionality is split to two decks instead of \textit{Player} and \textit{Recorder} in the previous model.
+\item  In case of a double deck, the functionality is split to two decks instead of "Player" and "Recorder" in the previous model.
 \item Added missing \textit{Previous/Next} Song, \textit{Flip Cassette} and \textit{Source} -if the deck has a built-in audio Speaker- buttons.
 \begin{center}
 \includegraphics[width=10cm]{./img/doubleDeck_noF.png}\\
 \end{center}
 \item Replaced buttons' text with icons and a mouse-over tooltip to display their name.
 \item Removed "Remove cassette" button, due to its redundancy with the Eject button. In this simulation, ejecting the cassette holder and removing the cassette within are both done by clicking the "Eject" button.
-\item "Pause" button is now centered between the \textit{Player} and \textit{Recorder}.
+\item "Pause" button is now centered between the "Player" and "Recorder".
 
 \end{itemize}
 

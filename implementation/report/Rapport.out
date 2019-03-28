@@ -1,5 +1,12 @@
 \BOOKMARK [1][-]{section.1}{Implementation choices}{}% 1
-\BOOKMARK [1][-]{section.2}{Modeling differences}{}% 2
-\BOOKMARK [1][-]{section.3}{Design Patterns}{}% 3
-\BOOKMARK [1][-]{section.4}{Known Issues}{}% 4
-\BOOKMARK [1][-]{section.5}{Miscellaneous}{}% 5
+\BOOKMARK [2][-]{subsection.1.1}{Software and technologies}{section.1}% 2
+\BOOKMARK [3][-]{subsubsection.1.1.1}{Scene Builder}{subsection.1.1}% 3
+\BOOKMARK [3][-]{subsubsection.1.1.2}{Maven}{subsection.1.1}% 4
+\BOOKMARK [3][-]{subsubsection.1.1.3}{IDEs}{subsection.1.1}% 5
+\BOOKMARK [2][-]{subsection.1.2}{MVC}{section.1}% 6
+\BOOKMARK [2][-]{subsection.1.3}{JUnit?}{section.1}% 7
+\BOOKMARK [2][-]{subsection.1.4}{Section2?}{section.1}% 8
+\BOOKMARK [1][-]{section.2}{Modeling differences}{}% 9
+\BOOKMARK [1][-]{section.3}{Design Patterns}{}% 10
+\BOOKMARK [1][-]{section.4}{Known Issues}{}% 11
+\BOOKMARK [1][-]{section.5}{Miscellaneous}{}% 12
