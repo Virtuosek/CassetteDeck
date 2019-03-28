@@ -79,11 +79,13 @@ public class DoubleCTRL extends SimulationCTRL {
     }
     
     public void flip1Fn() {
-        System.out.println("*FLIP BUTTON PRESSED*");
+        System.out.println("*FLIP BUTTON 1 PRESSED*");
+        // TODO
     }
     
     public void resetCounter1Fn() {
-    	
+    	System.out.println("*RESET COUNTER BUTTON 1 PRESSED*");
+    	cassetteDeck.getDeck().resetCounter();
     }
 
     public void play1Fn() {
@@ -112,13 +114,14 @@ public class DoubleCTRL extends SimulationCTRL {
     }
     
     public void previousSong1Fn() {
-    	
+    	System.out.println("*PREVIOUS SONG BUTTON 1 PRESSED*");
+    	cassetteDeck.getDeck().previousSong();
     }
     
     public void nextSong1Fn() {
-    	
+    	System.out.println("*NEXT SONG BUTTON 1 PRESSED*");
+    	cassetteDeck.getDeck().nextSong();
     }
-
     
     public void record1Fn() {
     	System.out.println("*RECORD BUTTON 1 PRESSED*");
@@ -141,11 +144,13 @@ public class DoubleCTRL extends SimulationCTRL {
     }
     
     public void flip2Fn() {
-    	
+        System.out.println("*FLIP BUTTON 2 PRESSED*");
+        // TODO
     }
     
     public void resetCounter2Fn() {
-    	
+    	System.out.println("*RESET COUNTER BUTTON 2 PRESSED*");
+    	doubleCassetteDeck.getDeck2().resetCounter();
     }
 
     public void play2Fn() {
@@ -174,11 +179,13 @@ public class DoubleCTRL extends SimulationCTRL {
     }
     
     public void previousSong2Fn() {
-    	
+    	System.out.println("*PREVIOUS SONG BUTTON 2 PRESSED*");
+    	doubleCassetteDeck.getDeck2().previousSong();
     }
     
     public void nextSong2Fn() {
-    	
+    	System.out.println("*NEXT SONG BUTTON 2 PRESSED*");
+    	doubleCassetteDeck.getDeck2().nextSong();
     }
     
     public void record2Fn() {

@@ -26,7 +26,8 @@ public class SingleCTRL extends SimulationCTRL {
     }
     
     public void resetCounterFn() {
-    	
+    	System.out.println("*RESET COUNTER BUTTON PRESSED*");
+    	cassetteDeck.getDeck().resetCounter();
     }
 
     public void playFn() {
@@ -55,11 +56,13 @@ public class SingleCTRL extends SimulationCTRL {
     }
     
     public void previousSongFn() {
-    	
+    	System.out.println("*PREVIOUS SONG BUTTON PRESSED*");
+    	cassetteDeck.getDeck().previousSong();
     }
     
     public void nextSongFn() {
-    	
+    	System.out.println("*NEXT SONG BUTTON PRESSED*");
+    	cassetteDeck.getDeck().nextSong();
     }
 
     public void recordFn() {
