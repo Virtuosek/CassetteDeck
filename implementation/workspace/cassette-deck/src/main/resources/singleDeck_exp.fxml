@@ -8,11 +8,13 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SingleCTRL">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #413E3E;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SingleCTRL">
    <top>
       <BorderPane BorderPane.alignment="CENTER">
          <left>
@@ -52,8 +54,14 @@
                      <center>
                         <VBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
                            <children>
-                              <Label text="Deck 1" />
-                              <Label text="STATUS" />
+                              <Label style="-fx-text-fill: #DCDCDC;" text="Deck 1">
+                                 <font>
+                                    <Font name="Verdana" size="13.0" />
+                                 </font></Label>
+                              <Label style="-fx-text-fill: #DCDCDC;" text="STATUS">
+                                 <font>
+                                    <Font name="Verdana" size="13.0" />
+                                 </font></Label>
                            </children>
                            <padding>
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -63,7 +71,10 @@
                      <right>
                         <VBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
                            <children>
-                              <Label text="TIME" />
+                              <Label style="-fx-text-fill: #DCDCDC;" text="TIME">
+                                 <font>
+                                    <Font name="Verdana" size="13.0" />
+                                 </font></Label>
                               <ProgressBar progress="0.0" />
                               <Button fx:id="resetCounterBtn" mnemonicParsing="false" onAction="#resetCounterFn">
                                  <graphic>
@@ -81,7 +92,10 @@
                               <Button fx:id="flipBtn" mnemonicParsing="false" onAction="#flipFn">
                                  <graphic>
                                     <FontAwesomeIconView glyphName="ROTATE_RIGHT" size="18" />
-                                 </graphic></Button>
+                                 </graphic>
+                                 <tooltip>
+                                    <Tooltip text="Flip cassette" />
+                                 </tooltip></Button>
                               <Button fx:id="insertBtn" mnemonicParsing="false" onAction="#insertFn">
                                  <graphic>
                                     <FontAwesomeIconView glyphName="ARROW_DOWN" size="18" />
@@ -103,35 +117,50 @@
                            <children>
                               <HBox spacing="10.0">
                                  <children>
-                                    <Label text="Player" />
-                                    <Label text="Song Detection Enabled" />
+                                    <Label style="-fx-text-fill: #DCDCDC;" text="Player">
+                                       <font>
+                                          <Font name="Verdana" size="13.0" />
+                                       </font>
+                                       <graphic>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="MUSIC" size="18" />
+                                       </graphic></Label>
+                                    <Label style="-fx-text-fill: #DCDCDC;" text="Song Detection Enabled">
+                                       <font>
+                                          <Font name="Verdana" size="13.0" />
+                                       </font></Label>
                                  </children>
                               </HBox>
-                              <Label text="Volume" />
+                              <Label style="-fx-text-fill: #DCDCDC;" text="Volume">
+                                 <font>
+                                    <Font name="Verdana" size="13.0" />
+                                 </font></Label>
                               <HBox spacing="10.0">
                                  <children>
                                     <Label>
                                        <graphic>
-                                          <FontAwesomeIconView glyphName="VOLUME_OFF" size="30" />
+                                          <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_OFF" size="30" />
                                        </graphic></Label>
                                     <Slider fx:id="playerVolumeSl" />
                                     <Label>
                                        <graphic>
-                                          <FontAwesomeIconView glyphName="VOLUME_UP" size="25" />
+                                          <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_UP" size="25" />
                                        </graphic></Label>
                                  </children>
                               </HBox>
-                              <Label text="Stereo balance" />
+                              <Label style="-fx-text-fill: #DCDCDC;" text="Stereo balance">
+                                 <font>
+                                    <Font name="Verdana" size="13.0" />
+                                 </font></Label>
                               <HBox layoutX="20.0" layoutY="74.0" spacing="10.0">
                                  <children>
                                     <Label>
                                        <graphic>
-                                          <FontAwesomeIconView glyphName="VOLUME_OFF" size="30" />
+                                          <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_OFF" size="30" />
                                        </graphic></Label>
                                     <Slider fx:id="playerStereoSl" />
                                     <Label>
                                        <graphic>
-                                          <FontAwesomeIconView glyphName="VOLUME_UP" size="25" />
+                                          <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_UP" size="25" />
                                        </graphic></Label>
                                  </children>
                               </HBox>
@@ -157,32 +186,44 @@
                                  </children>
                               </HBox>
                               <Separator prefHeight="0.0" prefWidth="200.0" />
-                              <Label text="Recorder" />
-                              <Label text="Volume" />
+                              <Label style="-fx-text-fill: #DCDCDC;" text="Recorder">
+                                 <font>
+                                    <Font name="Verdana" size="13.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="MICROPHONE" size="18" />
+                                 </graphic></Label>
+                              <Label style="-fx-text-fill: #DCDCDC;" text="Volume">
+                                 <font>
+                                    <Font name="Verdana" size="13.0" />
+                                 </font></Label>
                               <HBox spacing="10.0">
                                  <children>
                                     <Label>
                                        <graphic>
-                                          <FontAwesomeIconView glyphName="VOLUME_OFF" size="30" />
+                                          <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_OFF" size="30" />
                                        </graphic></Label>
                                     <Slider fx:id="recorderVolumeSl" />
                                     <Label>
                                        <graphic>
-                                          <FontAwesomeIconView glyphName="VOLUME_UP" size="25" />
+                                          <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_UP" size="25" />
                                        </graphic></Label>
                                  </children>
                               </HBox>
-                              <Label text="Stereo balance" />
+                              <Label style="-fx-text-fill: #DCDCDC;" text="Stereo balance">
+                                 <font>
+                                    <Font name="Verdana" size="13.0" />
+                                 </font></Label>
                               <HBox spacing="10.0">
                                  <children>
                                     <Label>
                                        <graphic>
-                                          <FontAwesomeIconView glyphName="VOLUME_OFF" size="30" />
+                                          <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_OFF" size="30" />
                                        </graphic></Label>
                                     <Slider fx:id="recorderStereoSl" />
                                     <Label>
                                        <graphic>
-                                          <FontAwesomeIconView glyphName="VOLUME_UP" size="25" />
+                                          <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_UP" size="25" />
                                        </graphic></Label>
                                  </children>
                               </HBox>
@@ -194,11 +235,11 @@
                                  <children>
                                     <VBox spacing="10.0">
                                        <children>
-                                          <RadioButton mnemonicParsing="false" text="Head A" />
-                                          <RadioButton mnemonicParsing="false" text="Head B" />
+                                          <RadioButton mnemonicParsing="false" text="Head A" textFill="WHITE" />
+                                          <RadioButton mnemonicParsing="false" text="Head B" textFill="WHITE" />
                                        </children>
                                     </VBox>
-                                    <RadioButton mnemonicParsing="false" text="Motor" />
+                                    <RadioButton mnemonicParsing="false" text="Motor" textFill="WHITE" />
                                  </children>
                               </HBox>
                            </children>

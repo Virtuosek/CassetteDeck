@@ -14,59 +14,57 @@ import model.Start;
 
 public class LauncherCTRL {
 
-	@FXML
+    @FXML
     private Button launchBtn;
-	@FXML
+    @FXML
     private Button cancelBtn;
-	@FXML
-	private CheckBox biSpeakerCB;
-	@FXML
-	private CheckBox recCB;
-	@FXML
-	private CheckBox biMicCB;
-	@FXML
-	private CheckBox autoReverseCB;
-	@FXML
-	private CheckBox musicDetectionCB;
-	@FXML
-	private RadioButton singleDeckRB;
-	@FXML
-	private RadioButton doubleDeckRB;
-    
+    @FXML
+    private CheckBox biSpeakerCB;
+    @FXML
+    private CheckBox recCB;
+    @FXML
+    private CheckBox biMicCB;
+    @FXML
+    private CheckBox autoReverseCB;
+    @FXML
+    private CheckBox musicDetectionCB;
+    @FXML
+    private RadioButton singleDeckRB;
+    @FXML
+    private RadioButton doubleDeckRB;
+
     private CassetteDeck cassetteDeck;
 
-    public void launchButtonFn() {        
-        if(singleDeckRB.isSelected()) {
-        	cassetteDeck = new SingleCassetteDeck(
-        			recCB.isSelected(),
+    public void launchButtonFn() {
+        if (singleDeckRB.isSelected()) {
+            cassetteDeck = new SingleCassetteDeck(
+                    recCB.isSelected(),
                     biMicCB.isSelected(),
                     biSpeakerCB.isSelected(),
                     autoReverseCB.isSelected(),
                     musicDetectionCB.isSelected()
             );
-        	loadSimulation(Start.SINGLE_LOCATION);
-        } else if(doubleDeckRB.isSelected()) {
-        	cassetteDeck = new DoubleCassetteDeck(
-        			recCB.isSelected(),
+            loadSimulation(Start.SINGLE_LOCATION);
+        } else if (doubleDeckRB.isSelected()) {
+            cassetteDeck = new DoubleCassetteDeck(
+                    recCB.isSelected(),
                     biMicCB.isSelected(),
                     biSpeakerCB.isSelected(),
                     autoReverseCB.isSelected(),
                     musicDetectionCB.isSelected()
-        	);
-        	loadSimulation(Start.DOUBLE_LOCATION);
-        } else {
-            AlertBox.display("Error", "error", "Please select deck type");
+            );
+            loadSimulation(Start.DOUBLE_LOCATION);
         }
     }
-    
+
     public void cancelButtonFn() {
         Stage stage = (Stage) cancelBtn.getScene().getWindow();
         stage.close();
     }
-    
+
     public void loadSimulation(String location) {
-    	Stage window = (Stage) singleDeckRB.getScene().getWindow();
-    	SceneLoader<SimulationCTRL> loader = new SceneLoader<>();
-    	loader.loadSceneWithData(window, location, cassetteDeck, CassetteDeck.class);
+        Stage window = (Stage) singleDeckRB.getScene().getWindow();
+        SceneLoader<SimulationCTRL> loader = new SceneLoader<>();
+        loader.loadSceneWithData(window, location, cassetteDeck, CassetteDeck.class);
     }
 }

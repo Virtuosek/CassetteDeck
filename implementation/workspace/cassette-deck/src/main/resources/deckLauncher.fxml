@@ -9,15 +9,14 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="366.0" prefWidth="321.0" style="-fx-background-color: #413E3E;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="controller.LauncherCTRL">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="366.0" prefWidth="321.0" style="-fx-background-color: #413E3E;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LauncherCTRL">
     <children>
         <Label contentDisplay="CENTER" layoutX="32.0" layoutY="44.0" nodeOrientation="LEFT_TO_RIGHT" style="-fx-text-fill: #DCDCDC;" text="Deck type">
             <font>
                 <Font name="Verdana" size="24.0" />
             </font>
         </Label>
-        <RadioButton contentDisplay="CENTER" layoutX="190.0" layoutY="42.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" style="-fx-text-fill: #DCDCDC;" text="Single deck" fx:id="singleDeckRB">
+        <RadioButton fx:id="singleDeckRB" contentDisplay="CENTER" layoutX="190.0" layoutY="42.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" selected="true" style="-fx-text-fill: #DCDCDC;" text="Single deck">
             <font>
                 <Font name="Verdana" size="13.0" />
             </font>
@@ -25,42 +24,42 @@
                 <ToggleGroup fx:id="deckType" />
             </toggleGroup>
         </RadioButton>
-        <RadioButton layoutX="190.0" layoutY="74.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" style="-fx-text-fill: #DCDCDC;" text="Double deck" toggleGroup="$deckType" fx:id="doubleDeckRB">
+        <RadioButton fx:id="doubleDeckRB" layoutX="190.0" layoutY="74.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" style="-fx-text-fill: #DCDCDC;" text="Double deck" toggleGroup="$deckType">
             <font>
                 <Font name="Verdana" size="13.0" />
             </font>
         </RadioButton>
-        <CheckBox alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="91.0" layoutY="118.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" style="-fx-text-fill: #DCDCDC;" text="Built-in audio speaker" fx:id="biSpeakerCB">
+        <CheckBox fx:id="biSpeakerCB" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="91.0" layoutY="118.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" style="-fx-text-fill: #DCDCDC;" text="Built-in audio speaker">
             <font>
                 <Font name="Verdana" size="13.0" />
             </font>
         </CheckBox>
-        <CheckBox alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="90.0" layoutY="185.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" style="-fx-text-fill: #DCDCDC;" text="Built-in microphone" fx:id="biMicCB">
+        <CheckBox fx:id="biMicCB" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="90.0" layoutY="185.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" style="-fx-text-fill: #DCDCDC;" text="Built-in microphone">
             <font>
                 <Font name="Verdana" size="13.0" />
             </font>
         </CheckBox>
-        <Button contentDisplay="CENTER" layoutX="90.0" layoutY="315.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" text="Launch" fx:id="launchBtn" onAction="#launchButtonFn">
+        <Button fx:id="launchBtn" contentDisplay="CENTER" layoutX="90.0" layoutY="315.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#launchButtonFn" text="Launch">
             <font>
                 <Font name="Verdana" size="13.0" />
             </font>
         </Button>
-        <Button contentDisplay="CENTER" layoutX="176.0" layoutY="315.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" text="Cancel" fx:id="cancelBtn" onAction="#cancelButtonFn">
+        <Button fx:id="cancelBtn" contentDisplay="CENTER" layoutX="176.0" layoutY="315.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#cancelButtonFn" text="Cancel">
             <font>
                 <Font name="Verdana" size="13.0" />
             </font>
         </Button>
-        <CheckBox alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="90.0" layoutY="153.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" style="-fx-text-fill: #DCDCDC;" text="Audio recorder functionality" fx:id="recCB">
+        <CheckBox fx:id="recCB" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="90.0" layoutY="153.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" style="-fx-text-fill: #DCDCDC;" text="Audio recorder functionality">
             <font>
                 <Font name="Verdana" size="13.0" />
             </font>
         </CheckBox>
-        <CheckBox alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="91.0" layoutY="223.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" style="-fx-text-fill: #DCDCDC;" text="Auto reverse" fx:id="autoReverseCB">
+        <CheckBox fx:id="autoReverseCB" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="91.0" layoutY="223.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" style="-fx-text-fill: #DCDCDC;" text="Auto reverse">
             <font>
                 <Font name="Verdana" size="13.0" />
             </font>
         </CheckBox>
-        <CheckBox alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="90.0" layoutY="261.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" style="-fx-text-fill: #DCDCDC;" text="Music detection" fx:id="musicDetectionCB">
+        <CheckBox fx:id="musicDetectionCB" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="90.0" layoutY="261.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" style="-fx-text-fill: #DCDCDC;" text="Music detection">
             <font>
                 <Font name="Verdana" size="13.0" />
             </font>
