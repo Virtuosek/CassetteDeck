@@ -125,7 +125,7 @@
                            <children>
                               <HBox fx:id="playerHeaderHB" spacing="10.0">
                                  <children>
-                                    <Label style="-fx-text-fill: #DCDCDC;" text="Player">
+                                    <Label style="-fx-text-fill: #DCDCDC;" text="Player 1">
                                        <font>
                                           <Font name="Verdana" size="13.0" />
                                        </font>
@@ -362,7 +362,7 @@
                            <children>
                               <HBox fx:id="playerHeader2HB" spacing="10.0">
                                  <children>
-                                    <Label style="-fx-text-fill: #DCDCDC;" text="Player">
+                                    <Label style="-fx-text-fill: #DCDCDC;" text="Player 2">
                                        <font>
                                           <Font name="Verdana" size="13.0" />
                                        </font>

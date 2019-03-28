@@ -44,8 +44,27 @@ Academic year 2018-2019
 \setcounter{page}{1}
 
 \section{Implementation choices}
+\label{sec:implChoices}
 %\pagebreak
 \section{Modeling differences}
+There have been some changes to the model since its conception in the \textbf{Modeling Report}, notably:
+\begin{itemize}
+\item The use of \textit{GridPaneLayout} and \textit{H/VBoxes }to contain the different nodes.
+\item In the Launcher, the function "Built-in microphone" is no longer disabled if the "Audio recorder functionality" isn't checked, also, a "Music detection"\textit{checkbox} has been added.
+\begin{center}
+\includegraphics[width=5cm]{./img/deckLauncher.png}\\
+\end{center}
+\item  In case of a double deck, the functionality is split to two decks instead of \textit{Player} and \textit{Recorder} in the previous model.
+\item Added missing \textit{Previous/Next} Song, \textit{Flip Cassette} and \textit{Source} -if the deck has a built-in audio Speaker- buttons.
+\begin{center}
+\includegraphics[width=10cm]{./img/doubleDeck_noF.png}\\
+\end{center}
+\item Replaced buttons' text with icons and a mouse-over tooltip to display their name.
+\item Removed "Remove cassette" button, due to its redundancy with the Eject button. In this simulation, ejecting the cassette holder and removing the cassette within are both done by clicking the "Eject" button.
+\item "Pause" button is now centered between the \textit{Player} and \textit{Recorder}.
+
+\end{itemize}
+
 %\pagebreak
 \section{Design Patterns}
 %\pagebreak
@@ -53,9 +72,10 @@ Academic year 2018-2019
 %\pagebreak
 \section{Miscellaneous}
 \begin{itemize}
-  \item Git repository: \url{https://github.com/Virtuosek/CassetteDeck}
   \item Video link: %\url{https://youtube.com}
+  \item Git repository: \url{https://github.com/Virtuosek/CassetteDeck}
 \end{itemize}
+Note that the repository is private, please send a contribution request to either $\href{mailto:remagkes@gmail.com}{remagkes@gmail.com} $ or $\href{mailto:_}{theoEmail}$
 
 
 
