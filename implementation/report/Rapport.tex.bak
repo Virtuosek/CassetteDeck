@@ -52,8 +52,11 @@ Academic year 2018-2019
 \section{Known Issues}
 %\pagebreak
 \section{Miscellaneous}
+\begin{itemize}
+  \item Git repository: \url{https://github.com/Virtuosek/CassetteDeck}
+  \item Video link: %\url{https://youtube.com}
+\end{itemize}
 
-If need be, a link to the git repository used for this project:\\
-\url{https://github.com/Virtuosek/CassetteDeck}
+
 
 \end{document}

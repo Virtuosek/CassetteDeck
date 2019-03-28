@@ -65,7 +65,7 @@
                            <children>
                               <Label text="TIME" />
                               <ProgressBar progress="0.0" />
-                              <Button mnemonicParsing="false">
+                              <Button fx:id="resetCounterBtn" mnemonicParsing="false" onAction="#resetCounterFn">
                                  <graphic>
                                     <FontAwesomeIconView glyphName="REFRESH" size="18" />
                                  </graphic></Button>
@@ -78,7 +78,7 @@
                      <left>
                         <HBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
                            <children>
-                              <Button fx:id="flipFn" mnemonicParsing="false" onAction="#flipFn">
+                              <Button fx:id="flipBtn" mnemonicParsing="false" onAction="#flipFn">
                                  <graphic>
                                     <FontAwesomeIconView glyphName="ROTATE_RIGHT" size="18" />
                                  </graphic></Button>
@@ -114,7 +114,7 @@
                                        <graphic>
                                           <FontAwesomeIconView glyphName="VOLUME_OFF" size="30" />
                                        </graphic></Label>
-                                    <Slider />
+                                    <Slider fx:id="playerVolumeSl" />
                                     <Label>
                                        <graphic>
                                           <FontAwesomeIconView glyphName="VOLUME_UP" size="25" />
@@ -128,7 +128,7 @@
                                        <graphic>
                                           <FontAwesomeIconView glyphName="VOLUME_OFF" size="30" />
                                        </graphic></Label>
-                                    <Slider />
+                                    <Slider fx:id="playerStereoSl" />
                                     <Label>
                                        <graphic>
                                           <FontAwesomeIconView glyphName="VOLUME_UP" size="25" />
@@ -145,15 +145,15 @@
                                        <graphic>
                                           <FontAwesomeIconView glyphName="STOP" size="18" />
                                        </graphic></Button>
-                                    <Button fx:id="fastRewindBtn" mnemonicParsing="false">
+                                    <Button fx:id="fastRewindBtn" mnemonicParsing="false" onAction="#fastRewindFn">
                                        <graphic>
                                           <FontAwesomeIconView glyphName="FAST_BACKWARD" size="18" />
                                        </graphic></Button>
-                                    <Button fx:id="fastRewindBtn" mnemonicParsing="false">
+                                    <Button fx:id="fastForwardBtn" mnemonicParsing="false" onAction="#fastForwardFn">
                                        <graphic>
                                           <FontAwesomeIconView glyphName="FAST_FORWARD" size="18" />
                                        </graphic></Button>
-                                    <Button mnemonicParsing="false" text="AR" />
+                                    <Button fx:id="autoReverseBtn" mnemonicParsing="false" onAction="#autoReverseFn" text="AR" />
                                  </children>
                               </HBox>
                               <Separator prefHeight="0.0" prefWidth="200.0" />
@@ -165,7 +165,7 @@
                                        <graphic>
                                           <FontAwesomeIconView glyphName="VOLUME_OFF" size="30" />
                                        </graphic></Label>
-                                    <Slider />
+                                    <Slider fx:id="recorderVolumeSl" />
                                     <Label>
                                        <graphic>
                                           <FontAwesomeIconView glyphName="VOLUME_UP" size="25" />
@@ -179,14 +179,14 @@
                                        <graphic>
                                           <FontAwesomeIconView glyphName="VOLUME_OFF" size="30" />
                                        </graphic></Label>
-                                    <Slider />
+                                    <Slider fx:id="recorderStereoSl" />
                                     <Label>
                                        <graphic>
                                           <FontAwesomeIconView glyphName="VOLUME_UP" size="25" />
                                        </graphic></Label>
                                  </children>
                               </HBox>
-                              <Button mnemonicParsing="false" text="Record">
+                              <Button fx:id="recordBtn" mnemonicParsing="false" onAction="#recordFn" text="Record">
                                  <graphic>
                                     <FontAwesomeIconView glyphName="MICROPHONE" size="18" />
                                  </graphic></Button>
@@ -208,7 +208,7 @@
                         </VBox>
                         <BorderPane HBox.hgrow="ALWAYS">
                            <center>
-                              <Button mnemonicParsing="false" BorderPane.alignment="CENTER">
+                              <Button fx:id="pauseBtn" mnemonicParsing="false" onAction="#pauseFn" BorderPane.alignment="CENTER">
                                  <graphic>
                                     <FontAwesomeIconView glyphName="PAUSE" size="18" />
                                  </graphic></Button>
@@ -240,7 +240,7 @@
                            <children>
                               <Label text="TIME" />
                               <ProgressBar progress="0.0" />
-                              <Button mnemonicParsing="false">
+                              <Button fx:id="resetCounter2Btn" mnemonicParsing="false" onAction="#resetCounter2Fn">
                                  <graphic>
                                     <FontAwesomeIconView glyphName="REFRESH" size="18" />
                                  </graphic></Button>
@@ -253,15 +253,15 @@
                      <left>
                         <HBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
                            <children>
-                              <Button fx:id="flipFn1" mnemonicParsing="false" onAction="#flipFn">
+                              <Button fx:id="flip2Btn" mnemonicParsing="false" onAction="#flip2Fn">
                                  <graphic>
                                     <FontAwesomeIconView glyphName="ROTATE_RIGHT" size="18" />
                                  </graphic></Button>
-                              <Button fx:id="insertBtn1" mnemonicParsing="false" onAction="#insertFn">
+                              <Button fx:id="insert2Btn" mnemonicParsing="false" onAction="#insert2Fn">
                                  <graphic>
                                     <FontAwesomeIconView glyphName="ARROW_DOWN" size="18" />
                                  </graphic></Button>
-                              <Button fx:id="ejectBtn1" mnemonicParsing="false" onAction="#ejectFn">
+                              <Button fx:id="eject2Btn" mnemonicParsing="false" onAction="#eject2Fn">
                                  <graphic>
                                     <FontAwesomeIconView glyphName="EJECT" size="18" />
                                  </graphic></Button>
@@ -289,7 +289,7 @@
                                        <graphic>
                                           <FontAwesomeIconView glyphName="VOLUME_OFF" size="30" />
                                        </graphic></Label>
-                                    <Slider />
+                                    <Slider fx:id="playerVolume2Sl" />
                                     <Label>
                                        <graphic>
                                           <FontAwesomeIconView glyphName="VOLUME_UP" size="25" />
@@ -303,7 +303,7 @@
                                        <graphic>
                                           <FontAwesomeIconView glyphName="VOLUME_OFF" size="30" />
                                        </graphic></Label>
-                                    <Slider />
+                                    <Slider fx:id="playerStereo2Sl" />
                                     <Label>
                                        <graphic>
                                           <FontAwesomeIconView glyphName="VOLUME_UP" size="25" />
@@ -312,23 +312,23 @@
                               </HBox>
                               <HBox spacing="10.0" VBox.vgrow="ALWAYS">
                                  <children>
-                                    <Button mnemonicParsing="false">
+                                    <Button fx:id="play2Btn" mnemonicParsing="false" onAction="#play2Fn">
                                        <graphic>
                                           <FontAwesomeIconView glyphName="PLAY" size="18" />
                                        </graphic></Button>
-                                    <Button mnemonicParsing="false">
+                                    <Button fx:id="stop2Btn" mnemonicParsing="false" onAction="#stop2Fn">
                                        <graphic>
                                           <FontAwesomeIconView glyphName="STOP" size="18" />
                                        </graphic></Button>
-                                    <Button mnemonicParsing="false">
+                                    <Button fx:id="fastRewind2Btn" mnemonicParsing="false" onAction="#fastRewind2Fn">
                                        <graphic>
                                           <FontAwesomeIconView fx:id="fastRewindBtn2" glyphName="FAST_BACKWARD" size="18" />
                                        </graphic></Button>
-                                    <Button mnemonicParsing="false">
+                                    <Button fx:id="fastForward2Btn" mnemonicParsing="false" onAction="#fastForward2Fn">
                                        <graphic>
                                           <FontAwesomeIconView glyphName="FAST_FORWARD" size="18" />
                                        </graphic></Button>
-                                    <Button mnemonicParsing="false" text="AR" />
+                                    <Button fx:id="autoReverse2Btn" mnemonicParsing="false" onAction="#autoReverse2Fn" text="AR" />
                                  </children>
                               </HBox>
                               <Separator prefHeight="0.0" prefWidth="200.0" />
@@ -340,7 +340,7 @@
                                        <graphic>
                                           <FontAwesomeIconView glyphName="VOLUME_OFF" size="30" />
                                        </graphic></Label>
-                                    <Slider />
+                                    <Slider fx:id="recorderVolume2Sl" />
                                     <Label>
                                        <graphic>
                                           <FontAwesomeIconView glyphName="VOLUME_UP" size="25" />
@@ -354,14 +354,14 @@
                                        <graphic>
                                           <FontAwesomeIconView glyphName="VOLUME_OFF" size="30" />
                                        </graphic></Label>
-                                    <Slider />
+                                    <Slider fx:id="recorderStereo2Sl" />
                                     <Label>
                                        <graphic>
                                           <FontAwesomeIconView glyphName="VOLUME_UP" size="25" />
                                        </graphic></Label>
                                  </children>
                               </HBox>
-                              <Button mnemonicParsing="false" text="Record">
+                              <Button fx:id="record2Btn" mnemonicParsing="false" onAction="#record2Fn" text="Record">
                                  <graphic>
                                     <FontAwesomeIconView glyphName="MICROPHONE" size="18" />
                                  </graphic></Button>
@@ -383,7 +383,7 @@
                         </VBox>
                         <BorderPane HBox.hgrow="ALWAYS">
                            <center>
-                              <Button mnemonicParsing="false" BorderPane.alignment="CENTER">
+                              <Button fx:id="pause2Btn" mnemonicParsing="false" onAction="#pause2Fn" BorderPane.alignment="CENTER">
                                  <graphic>
                                     <FontAwesomeIconView glyphName="PAUSE" size="18" />
                                  </graphic></Button>
