@@ -3,6 +3,8 @@ package model;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import tools.Start;
+
 public class FastForwardingState implements State {
 	
 	private Deck deck;

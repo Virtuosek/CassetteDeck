@@ -8,15 +8,16 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.Slider;
-import javafx.scene.control.SplitPane;
+import javafx.scene.layout.VBox;
 import model.Cassette;
 import model.CassetteDeck;
 import model.DoubleCassetteDeck;
+import tools.FileLoader;
 
 public class DoubleCTRL extends SimulationCTRL {
 
 	@FXML
-	private SplitPane playerAndRecorder2SP;
+	private VBox deckControllerVB;
 	@FXML
 	private Slider volume2S;
 	@FXML
@@ -33,6 +34,8 @@ public class DoubleCTRL extends SimulationCTRL {
 	private Button insert2Btn;
 	@FXML
 	private Button flip2Btn;
+	@FXML
+	private Button playerSource2Btn;
 	@FXML
 	private Button resetCounter2Btn;
 	@FXML
@@ -52,6 +55,8 @@ public class DoubleCTRL extends SimulationCTRL {
 	@FXML
 	private Button autoReverse2Btn;
 	@FXML
+	private Button recorderSource2Btn;
+	@FXML
 	private Button record2Btn;
 	@FXML
 	private RadioButton magneticHeadA2RB;
@@ -66,17 +71,17 @@ public class DoubleCTRL extends SimulationCTRL {
 		
     public void eject1Fn() {
     	System.out.println("*EJECT BUTTON 1 PRESSED*");
-    	cassetteDeck.getDeck().eject();
+    	doubleCassetteDeck.getDeck().eject();
     }
     
     public void insert1Fn() {
         System.out.println("*INSERT BUTTON 1 PRESSED*");
         File songFile = null;
-        if(!cassetteDeck.getDeck().getHolder().hasCassette()) {
+        if(!doubleCassetteDeck.getDeck().getHolder().hasCassette()) {
         	fileLoader = new FileLoader();
         	songFile = fileLoader.openFile();
         }
-        cassetteDeck.getDeck().insert(new Cassette(songFile));
+        doubleCassetteDeck.getDeck().insert(new Cassette(songFile));
     }
     
     public void flip1Fn() {
@@ -84,59 +89,69 @@ public class DoubleCTRL extends SimulationCTRL {
         // TODO
     }
     
+    public void playerSource1Fn() {
+    	System.out.println("*PLAYER SOURCE BUTTON 1 PRESSED*");
+    	// TODO
+    }
+    
     public void resetCounter1Fn() {
     	System.out.println("*RESET COUNTER BUTTON 1 PRESSED*");
-    	cassetteDeck.getDeck().resetCounter();
+    	doubleCassetteDeck.getDeck().resetCounter();
     }
 
     public void play1Fn() {
     	System.out.println("*PLAY BUTTON 1 PRESSED*");
-        cassetteDeck.getDeck().play();
+    	doubleCassetteDeck.getDeck().play();
     }
     
     public void pause1Fn() {
     	System.out.println("*PAUSE BUTTON 1 PRESSED*");
-    	cassetteDeck.getDeck().pause();
+    	doubleCassetteDeck.getDeck().pause();
     }
     
     public void stop1Fn() {
     	System.out.println("*STOP BUTTON 1 PRESSED*");
-    	cassetteDeck.getDeck().stop();
+    	doubleCassetteDeck.getDeck().stop();
     }
     
     public void fastRewind1Fn() {
     	System.out.println("*FAST REWIND BUTTON 1 PRESSED*");
-    	cassetteDeck.getDeck().fastRewind();
+    	doubleCassetteDeck.getDeck().fastRewind();
     }
     
     public void fastForward1Fn() {
     	System.out.println("*FAST FORWARD BUTTON 1 PRESSED*");
-    	cassetteDeck.getDeck().fastForward();
+    	doubleCassetteDeck.getDeck().fastForward();
     }
     
     public void previousSong1Fn() {
     	System.out.println("*PREVIOUS SONG BUTTON 1 PRESSED*");
-    	cassetteDeck.getDeck().previousSong();
+    	doubleCassetteDeck.getDeck().previousSong();
     }
     
     public void nextSong1Fn() {
     	System.out.println("*NEXT SONG BUTTON 1 PRESSED*");
-    	cassetteDeck.getDeck().nextSong();
+    	doubleCassetteDeck.getDeck().nextSong();
     }
     
     public void autoReverse1Fn() {
     	System.out.println("*AUTO REVERSE BUTTON 1 PRESSED*");
-    	if(cassetteDeck.getDeck().isAutoReversing()) {
-    		cassetteDeck.getDeck().disableAutoReverse();
+    	if(doubleCassetteDeck.getDeck().isAutoReversing()) {
+    		doubleCassetteDeck.getDeck().disableAutoReverse();
     	}
     	else {
-    		cassetteDeck.getDeck().enableAutoReverse();;
+    		doubleCassetteDeck.getDeck().enableAutoReverse();;
     	}
+    }
+    
+    public void recorderSource1Fn() {
+    	System.out.println("*RECORDER SOURCE BUTTON 1 PRESSED*");
+    	// TODO
     }
     
     public void record1Fn() {
     	System.out.println("*RECORD BUTTON 1 PRESSED*");
-    	cassetteDeck.getDeck().record();
+    	doubleCassetteDeck.getDeck().record();
     }
     
     public void eject2Fn() {
@@ -157,6 +172,11 @@ public class DoubleCTRL extends SimulationCTRL {
     public void flip2Fn() {
         System.out.println("*FLIP BUTTON 2 PRESSED*");
         // TODO
+    }
+    
+    public void playerSource2Fn() {
+    	System.out.println("*PLAYER SOURCE BUTTON 2 PRESSED*");
+    	// TODO
     }
     
     public void resetCounter2Fn() {
@@ -209,6 +229,11 @@ public class DoubleCTRL extends SimulationCTRL {
     	}
     }
     
+    public void recorderSource2Fn() {
+    	System.out.println("*RECORDER SOURCE BUTTON 2 PRESSED*");
+    	// TODO
+    }
+    
     public void record2Fn() {
     	System.out.println("*RECORD BUTTON 2 PRESSED*");
     	doubleCassetteDeck.getDeck2().record();
@@ -216,22 +241,23 @@ public class DoubleCTRL extends SimulationCTRL {
     
     @Override
     public void init(CassetteDeck cassetteDeck) {
-    	this.cassetteDeck = cassetteDeck;
+    	super.init(cassetteDeck);
     	doubleCassetteDeck = (DoubleCassetteDeck) cassetteDeck;
-    	if(!cassetteDeck.hasSpeakers()) {
-    		
-    	}
-    	if(!cassetteDeck.hasRecorder()) {
-    		
-    	}
-    	if(!cassetteDeck.hasMicrophone()) {
-    		
-    	}
-    	if(!cassetteDeck.hasAutoReverse()) {
-    		
-    	}
-    	if(!cassetteDeck.hasSongDetection()) {
-    		
-    	}
+		
+        if(!cassetteDeck.hasSpeakers()) {
+        	
+        }
+        if(!cassetteDeck.hasRecorder()) {
+        	
+        }
+        if(!cassetteDeck.hasMicrophone()) {
+
+        }
+        if(!cassetteDeck.hasAutoReverse()) {
+
+        }
+        if(!cassetteDeck.hasSongDetection()) {
+
+        }
     }
 }

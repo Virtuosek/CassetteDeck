@@ -1,11 +1,13 @@
 package controller;
 
 import java.io.File;
+
 import model.Cassette;
 import model.CassetteDeck;
+import tools.FileLoader;
 
 public class SingleCTRL extends SimulationCTRL {
-
+	
     public void ejectFn() {
         System.out.println("*EJECT BUTTON PRESSED*");
         cassetteDeck.getDeck().eject();
@@ -23,6 +25,12 @@ public class SingleCTRL extends SimulationCTRL {
 
     public void flipFn() {
         System.out.println("*FLIP BUTTON PRESSED*");
+        // TODO
+    }
+    
+    public void playerSourceFn() {
+    	System.out.println("*PLAYER SOURCE BUTTON PRESSED*");
+    	// TODO
     }
     
     public void resetCounterFn() {
@@ -74,28 +82,37 @@ public class SingleCTRL extends SimulationCTRL {
     		cassetteDeck.getDeck().enableAutoReverse();;
     	}
     }
+    
+    public void recorderSourceFn() {
+    	System.out.println("*RECORDER SOURCE BUTTON PRESSED*");
+    	// TODO
+    }
 
     public void recordFn() {
         System.out.println("*RECORD BUTTON PRESSED*");
         cassetteDeck.getDeck().record();
     }
-
+    
     public void init(CassetteDeck cassetteDeck) {
-        this.cassetteDeck = cassetteDeck;
-        if (!cassetteDeck.hasSpeakers()) {
-
+    	super.init(cassetteDeck);
+    	
+        if(!cassetteDeck.hasSpeakers()) {
+        	playerHeaderHB.getChildren().remove(playerSourceBtn);
         }
-        if (!cassetteDeck.hasRecorder()) {
-//            playerAndRecorderSP.getItems().remove(1);
+        if(!cassetteDeck.hasRecorder()) {
+        	playerAndRecorderHB.getChildren().remove(recorderVB);
         }
-        if (!cassetteDeck.hasMicrophone()) {
-
+        if(!cassetteDeck.hasMicrophone()) {
+        	recorderHeaderHB.getChildren().remove(recorderSourceBtn);
         }
-        if (!cassetteDeck.hasAutoReverse()) {
-
+        if(!cassetteDeck.hasAutoReverse()) {
+        	navigationHB.getChildren().remove(autoReverseBtn);
+        	headsVB.getChildren().remove(magneticHeadBRB);
+        	magneticHeadARB.setText("Head");
         }
-        if (!cassetteDeck.hasSongDetection()) {
-
+        if(!cassetteDeck.hasSongDetection()) {
+        	navigationHB.getChildren().remove(previousSongBtn);
+        	navigationHB.getChildren().remove(nextSongBtn);
         }
     }
 }

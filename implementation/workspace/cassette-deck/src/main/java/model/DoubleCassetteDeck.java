@@ -16,6 +16,18 @@ public class DoubleCassetteDeck extends CassetteDeck {
 		System.out.println("The slider is on " + volume + ".");
 	}
 	
+	@Override
+	public void turnOn() {
+		super.turnOn();
+		deck2.turnOn();
+	}
+	
+	@Override
+	public void turnOff() {
+		super.turnOff();
+		deck2.turnOff();
+	}
+	
 	public int getVolumeSlider() {
 		return volumeSlider;
 	}

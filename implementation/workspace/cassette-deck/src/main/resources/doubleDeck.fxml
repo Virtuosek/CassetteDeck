@@ -1,265 +1,476 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.Slider?>
-<?import javafx.scene.control.SplitPane?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane prefHeight="582.0" prefWidth="1068.0" style="-fx-background-color: #525050;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <ImageView fitHeight="615.0" fitWidth="1225.0" opacity="0.34" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@img/background.jpg" />
-         </image>
-      </ImageView>
-      <SplitPane dividerPositions="0.5215355805243446" layoutY="62.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="414.0" prefWidth="1070.0">
-         <items>
-            <AnchorPane prefHeight="421.0" prefWidth="529.0" style="-fx-background-color: #909090;">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DoubleCTRL">
+   <top>
+      <BorderPane BorderPane.alignment="CENTER">
+         <left>
+            <HBox alignment="CENTER" BorderPane.alignment="CENTER">
                <children>
-                  <Slider layoutX="208.0" layoutY="363.0" />
-                  <Label layoutX="235.0" layoutY="326.0" style="-fx-text-fill: #DCDCDC;" text="Volume slider" />
-                  <Label layoutX="227.0" layoutY="34.0" style="-fx-text-fill: #DCDCDC;" text="Audio player">
-                     <font>
-                        <Font name="Verdana" size="18.0" />
-                     </font></Label>
-                  <Label layoutX="150.0" layoutY="387.0" style="-fx-text-fill: #DCDCDC;" />
-                  <Label layoutX="346.0" layoutY="387.0" style="-fx-text-fill: #DCDCDC;" />
-                  <Label layoutX="50.0" layoutY="95.0" style="-fx-text-fill: #DCDCDC;" text="1">
-                     <font>
-                        <Font name="Verdana" size="18.0" />
-                     </font></Label>
-                  <Label layoutX="226.0" layoutY="131.0" style="-fx-text-fill: #DCDCDC;">
-                     <font>
-                        <Font name="Verdana" size="13.0" />
-                     </font></Label>
-                  <Label layoutX="30.0" layoutY="131.0" style="-fx-text-fill: #DCDCDC;">
-                     <font>
-                        <Font name="Verdana" size="13.0" />
-                     </font></Label>
-                  <Label layoutX="109.0" layoutY="118.0" style="-fx-text-fill: #DCDCDC;" text="Volume slider">
-                     <font>
-                        <Font name="Verdana" size="13.0" />
-                     </font></Label>
-                  <Slider layoutX="73.0" layoutY="147.0" />
-                  <Label layoutX="226.0" layoutY="194.0" style="-fx-text-fill: #DCDCDC;">
-                     <font>
-                        <Font name="Verdana" size="13.0" />
-                     </font></Label>
-                  <Label layoutX="30.0" layoutY="194.0" style="-fx-text-fill: #DCDCDC;">
-                     <font>
-                        <Font name="Verdana" size="13.0" />
-                     </font></Label>
-                  <Label layoutX="107.0" layoutY="183.0" style="-fx-text-fill: #DCDCDC;" text="Volume slider">
-                     <font>
-                        <Font name="Verdana" size="13.0" />
-                     </font></Label>
-                  <Slider layoutX="73.0" layoutY="211.0" />
-                  <Button layoutX="65.0" layoutY="257.0" mnemonicParsing="false">
+                  <Button fx:id="backBtn" mnemonicParsing="false" onAction="#backFn">
                      <graphic>
-                        <FontAwesomeIconView glyphName="PLAY" size="18" />
+                        <FontAwesomeIconView glyphName="ARROW_LEFT" size="18" />
                      </graphic></Button>
-                  <Button layoutX="127.0" layoutY="257.0" mnemonicParsing="false">
-                     <graphic>
-                        <FontAwesomeIconView glyphName="STOP" size="18" />
-                     </graphic></Button>
-                  <Button layoutX="94.0" layoutY="257.0" mnemonicParsing="false">
-                     <graphic>
-                        <FontAwesomeIconView glyphName="PAUSE" size="18" />
-                     </graphic></Button>
-                  <Button layoutX="188.0" layoutY="257.0" mnemonicParsing="false">
-                     <graphic>
-                        <FontAwesomeIconView glyphName="FAST_FORWARD" size="18" />
-                     </graphic></Button>
-                  <Button layoutX="156.0" layoutY="257.0" mnemonicParsing="false">
-                     <graphic>
-                        <FontAwesomeIconView glyphName="FAST_BACKWARD" size="18" />
-                     </graphic></Button>
-                  <Button layoutX="415.0" layoutY="257.0" mnemonicParsing="false">
-                     <graphic>
-                        <FontAwesomeIconView glyphName="FAST_BACKWARD" size="18" />
-                     </graphic></Button>
-                  <Button layoutX="449.0" layoutY="257.0" mnemonicParsing="false">
-                     <graphic>
-                        <FontAwesomeIconView glyphName="FAST_FORWARD" size="18" />
-                     </graphic></Button>
-                  <Button layoutX="349.0" layoutY="257.0" mnemonicParsing="false">
-                     <graphic>
-                        <FontAwesomeIconView glyphName="PAUSE" size="18" />
-                     </graphic></Button>
-                  <Button layoutX="383.0" layoutY="257.0" mnemonicParsing="false">
-                     <graphic>
-                        <FontAwesomeIconView glyphName="STOP" size="18" />
-                     </graphic></Button>
-                  <Button layoutX="317.0" layoutY="257.0" mnemonicParsing="false">
-                     <graphic>
-                        <FontAwesomeIconView glyphName="PLAY" size="18" />
-                     </graphic></Button>
-                  <Slider layoutX="320.0" layoutY="211.0" />
-                  <Label layoutX="354.0" layoutY="183.0" style="-fx-text-fill: #DCDCDC;" text="Volume slider">
-                     <font>
-                        <Font name="Verdana" size="13.0" />
-                     </font></Label>
-                  <Label layoutX="278.0" layoutY="194.0" style="-fx-text-fill: #DCDCDC;">
-                     <font>
-                        <Font name="Verdana" size="13.0" />
-                     </font></Label>
-                  <Label layoutX="474.0" layoutY="194.0" style="-fx-text-fill: #DCDCDC;">
-                     <font>
-                        <Font name="Verdana" size="13.0" />
-                     </font></Label>
-                  <Slider layoutX="320.0" layoutY="147.0" />
-                  <Label layoutX="356.0" layoutY="118.0" style="-fx-text-fill: #DCDCDC;" text="Volume slider">
-                     <font>
-                        <Font name="Verdana" size="13.0" />
-                     </font></Label>
-                  <Label layoutX="278.0" layoutY="131.0" style="-fx-text-fill: #DCDCDC;">
-                     <font>
-                        <Font name="Verdana" size="13.0" />
-                     </font></Label>
-                  <Label layoutX="474.0" layoutY="131.0" style="-fx-text-fill: #DCDCDC;">
-                     <font>
-                        <Font name="Verdana" size="13.0" />
-                     </font></Label>
-                  <Label layoutX="297.0" layoutY="95.0" style="-fx-text-fill: #DCDCDC;" text="2">
-                     <font>
-                        <Font name="Verdana" size="18.0" />
-                     </font></Label>
-                  <Button layoutX="100.0" layoutY="287.0" mnemonicParsing="false" text="Auto Reverse" />
-                  <Button layoutX="358.0" layoutY="287.0" mnemonicParsing="false" text="Auto Reverse" />
-                  <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_OFF" layoutX="51.0" layoutY="164.0" size="25" />
-                  <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_UP" layoutX="358.0" layoutY="380.0" size="30" />
-                  <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_OFF" layoutX="179.0" layoutY="379.0" size="30" />
-                  <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_OFF" layoutX="51.0" layoutY="228.0" size="25" />
-                  <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_UP" layoutX="218.0" layoutY="164.0" size="25" />
-                  <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_UP" layoutX="222.0" layoutY="228.0" size="25" />
-                  <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_OFF" layoutX="303.0" layoutY="165.0" size="30" />
-                  <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_OFF" layoutX="302.0" layoutY="227.0" size="30" />
-                  <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_UP" layoutX="465.0" layoutY="167.0" size="25" />
-                  <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_UP" layoutX="467.0" layoutY="227.0" size="25" />
-                  <FontAwesomeIconView fill="WHITE" glyphName="MUSIC" layoutX="166.0" layoutY="59.0" size="40" />
                </children>
-            </AnchorPane>
-            <AnchorPane prefHeight="421.0" prefWidth="484.0" style="-fx-background-color: #909090;">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+         </left>
+         <right>
+            <HBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label layoutX="214.0" layoutY="26.0" style="-fx-text-fill: #DCDCDC;" text="Audio recorder">
-                     <font>
-                        <Font name="Verdana" size="18.0" />
-                     </font></Label>
-                  <Label layoutX="20.0" layoutY="186.0" style="-fx-text-fill: #DCDCDC;" text="Stereo balance of recorded audio">
-                     <font>
-                        <Font name="Verdana" size="13.0" />
-                     </font></Label>
-                  <Label layoutX="64.0" layoutY="117.0" style="-fx-text-fill: #DCDCDC;" text="Recorded audio volume">
-                     <font>
-                        <Font name="Verdana" size="13.0" />
-                     </font></Label>
-                  <Slider layoutX="58.0" layoutY="212.0" />
-                  <Slider layoutX="58.0" layoutY="145.0" />
-                  <Button layoutX="119.0" layoutY="266.0" mnemonicParsing="false" text="Record" />
-                  <Label layoutX="27.0" layoutY="91.0" style="-fx-text-fill: #DCDCDC;" text="1">
-                     <font>
-                        <Font name="Verdana" size="18.0" />
-                     </font></Label>
-                  <Label layoutX="281.0" layoutY="91.0" style="-fx-text-fill: #DCDCDC;" text="2">
-                     <font>
-                        <Font name="Verdana" size="18.0" />
-                     </font></Label>
-                  <Button layoutX="359.0" layoutY="266.0" mnemonicParsing="false" text="Record" />
-                  <Slider layoutX="307.0" layoutY="147.0" />
-                  <Slider layoutX="307.0" layoutY="214.0" />
-                  <Label layoutX="300.0" layoutY="120.0" style="-fx-text-fill: #DCDCDC;" text="Recorded audio volume">
-                     <font>
-                        <Font name="Verdana" size="13.0" />
-                     </font></Label>
-                  <Label layoutX="277.0" layoutY="189.0" style="-fx-text-fill: #DCDCDC;" text="Stereo balance of recorded audio">
-                     <font>
-                        <Font name="Verdana" size="13.0" />
-                     </font></Label>
-                  <FontAwesomeIconView fill="WHITE" glyphName="MICROPHONE" layoutX="158.0" layoutY="60.0" size="40" />
-                  <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_OFF" layoutX="38.0" layoutY="160.0" size="25" />
-                  <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_OFF" layoutX="37.0" layoutY="228.0" size="25" />
-                  <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_OFF" layoutX="282.0" layoutY="165.0" size="25" />
-                  <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_OFF" layoutX="282.0" layoutY="232.0" size="25" />
-                  <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_UP" layoutX="204.0" layoutY="160.0" size="25" />
-                  <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_UP" layoutX="204.0" layoutY="228.0" size="25" />
-                  <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_UP" layoutX="455.0" layoutY="158.0" size="25" />
-                  <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_UP" layoutX="455.0" layoutY="230.0" size="25" />
+                  <Button fx:id="powerBtn" mnemonicParsing="false" onAction="#powerFn">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="POWER_OFF" size="18" />
+                     </graphic></Button>
                </children>
-            </AnchorPane>
-         </items>
-      </SplitPane>
-      <Pane prefHeight="54.0" prefWidth="1070.0">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+         </right>
+      </BorderPane>
+   </top>
+   <center>
+      <HBox BorderPane.alignment="TOP_LEFT">
          <children>
-            <Label layoutX="752.0" layoutY="21.0" style="-fx-text-fill: #DCDCDC;" text="Cassette 1">
-               <font>
-                  <Font name="Verdana" size="13.0" />
-               </font></Label>
-            <Button layoutX="57.0" layoutY="8.0" mnemonicParsing="false" text="1">
-               <graphic>
-                  <FontAwesomeIconView glyphName="EJECT" size="18" />
-               </graphic></Button>
-            <Button layoutX="830.0" layoutY="13.0" mnemonicParsing="false">
-               <graphic>
-                  <FontAwesomeIconView glyphName="ARROW_DOWN" size="18" />
-               </graphic></Button>
-            <Button layoutX="863.0" layoutY="13.0" mnemonicParsing="false">
-               <graphic>
-                  <FontAwesomeIconView glyphName="REMOVE" size="18" />
-               </graphic></Button>
-            <Button layoutX="99.0" layoutY="8.0" mnemonicParsing="false" text="2">
-               <graphic>
-                  <FontAwesomeIconView glyphName="EJECT" size="18" />
-               </graphic></Button>
-            <Button layoutX="1025.0" layoutY="12.0" mnemonicParsing="false">
-               <graphic>
-                  <FontAwesomeIconView glyphName="REMOVE" size="18" />
-               </graphic></Button>
-            <Button layoutX="992.0" layoutY="12.0" mnemonicParsing="false">
-               <graphic>
-                  <FontAwesomeIconView glyphName="ARROW_DOWN" size="18" />
-               </graphic></Button>
-            <Label layoutX="913.0" layoutY="21.0" style="-fx-text-fill: #DCDCDC;" text="Cassette 2">
-               <font>
-                  <Font name="Verdana" size="13.0" />
-               </font></Label>
-            <Button layoutX="14.0" layoutY="8.0" mnemonicParsing="false">
-               <graphic>
-                  <FontAwesomeIconView glyphName="POWER_OFF" size="18" />
-               </graphic>
-            </Button>
+            <VBox>
+               <children>
+                  <BorderPane>
+                     <center>
+                        <VBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label text="Deck 1" textFill="WHITE">
+                                 <font>
+                                    <Font name="Verdana" size="13.0" />
+                                 </font></Label>
+                              <Label text="STATUS" textFill="WHITE">
+                                 <font>
+                                    <Font name="Verdana" size="13.0" />
+                                 </font></Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                     </center>
+                     <right>
+                        <VBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label text="TIME" textFill="WHITE">
+                                 <font>
+                                    <Font name="Verdana" size="13.0" />
+                                 </font></Label>
+                              <ProgressBar progress="0.0" />
+                              <Button fx:id="resetCounterBtn" mnemonicParsing="false">
+<!--                                  onAction="#resetCounter1Fn"-->
+                                 <graphic>
+                                    <FontAwesomeIconView glyphName="REFRESH" size="18" />
+                                 </graphic></Button>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                     </right>
+                     <left>
+                        <HBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Button fx:id="flipBtn" mnemonicParsing="false" onAction="#flip1Fn">
+                                 <graphic>
+                                    <FontAwesomeIconView glyphName="ROTATE_RIGHT" size="18" />
+                                 </graphic></Button>
+                              <Button fx:id="insertBtn" mnemonicParsing="false" onAction="#insert1Fn">
+                                 <graphic>
+                                    <FontAwesomeIconView glyphName="ARROW_DOWN" size="18" />
+                                 </graphic></Button>
+                              <Button fx:id="ejectBtn" mnemonicParsing="false" onAction="#eject1Fn">
+                                 <graphic>
+                                    <FontAwesomeIconView glyphName="EJECT" size="18" />
+                                 </graphic></Button>
+                           </children>
+                           <padding>
+                              <Insets left="10.0" right="10.0" />
+                           </padding>
+                        </HBox>
+                     </left>
+                  </BorderPane>
+                  <HBox>
+                     <children>
+                        <VBox fillWidth="false" spacing="10.0">
+                           <children>
+                              <HBox spacing="10.0">
+                                 <children>
+                                    <Label text="Player" textFill="WHITE">
+                                       <font>
+                                          <Font name="Verdana" size="13.0" />
+                                       </font>
+                                       <graphic>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="MUSIC" size="18" />
+                                       </graphic></Label>
+                                    <Label text="Song Detection Enabled" textFill="WHITE">
+                                       <font>
+                                          <Font name="Verdana" size="13.0" />
+                                       </font></Label>
+                                 </children>
+                              </HBox>
+                              <Label text="Volume" textFill="WHITE">
+                                 <font>
+                                    <Font name="Verdana" size="13.0" />
+                                 </font></Label>
+                              <HBox spacing="10.0">
+                                 <children>
+                                    <Label>
+                                       <graphic>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_OFF" size="30" />
+                                       </graphic></Label>
+                                    <Slider fx:id="playerVolumeSl" />
+                                    <Label>
+                                       <graphic>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_UP" size="25" />
+                                       </graphic></Label>
+                                 </children>
+                              </HBox>
+                              <Label text="Stereo balance" textFill="WHITE">
+                                 <font>
+                                    <Font name="Verdana" size="13.0" />
+                                 </font></Label>
+                              <HBox layoutX="20.0" layoutY="74.0" spacing="10.0">
+                                 <children>
+                                    <Label>
+                                       <graphic>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_OFF" size="30" />
+                                       </graphic></Label>
+                                    <Slider fx:id="playerStereoSl" />
+                                    <Label>
+                                       <graphic>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_UP" size="25" />
+                                       </graphic></Label>
+                                 </children>
+                              </HBox>
+                              <HBox spacing="10.0" VBox.vgrow="ALWAYS">
+                                 <children>
+                                    <Button fx:id="playBtn" mnemonicParsing="false" onAction="#play1Fn">
+                                       <graphic>
+                                          <FontAwesomeIconView glyphName="PLAY" size="18" />
+                                       </graphic></Button>
+                                    <Button fx:id="stopBtn" mnemonicParsing="false" onAction="#stop1Fn">
+                                       <graphic>
+                                          <FontAwesomeIconView glyphName="STOP" size="18" />
+                                       </graphic></Button>
+                                    <Button fx:id="fastRewindBtn" mnemonicParsing="false" onAction="#fastRewind1Fn">
+                                       <graphic>
+                                          <FontAwesomeIconView glyphName="FAST_BACKWARD" size="18" />
+                                       </graphic></Button>
+                                    <Button fx:id="fastForwardBtn" mnemonicParsing="false" onAction="#fastForward1Fn">
+                                       <graphic>
+                                          <FontAwesomeIconView glyphName="FAST_FORWARD" size="18" />
+                                       </graphic></Button>
+                                    <Button fx:id="autoReverseBtn" mnemonicParsing="false" onAction="#autoReverse1Fn" text="AR" />
+                                 </children>
+                              </HBox>
+                              <Separator prefHeight="0.0" prefWidth="200.0" />
+                              <Label text="Recorder" textFill="WHITE">
+                                 <font>
+                                    <Font name="Verdana" size="13.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="MICROPHONE" size="18" />
+                                 </graphic></Label>
+                              <Label text="Volume" textFill="WHITE">
+                                 <font>
+                                    <Font name="Verdana" size="13.0" />
+                                 </font></Label>
+                              <HBox spacing="10.0">
+                                 <children>
+                                    <Label>
+                                       <graphic>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_OFF" size="30" />
+                                       </graphic></Label>
+                                    <Slider fx:id="recorderVolumeSl" />
+                                    <Label>
+                                       <graphic>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_UP" size="25" />
+                                       </graphic></Label>
+                                 </children>
+                              </HBox>
+                              <Label text="Stereo balance" textFill="WHITE">
+                                 <font>
+                                    <Font name="Verdana" size="13.0" />
+                                 </font></Label>
+                              <HBox spacing="10.0">
+                                 <children>
+                                    <Label>
+                                       <graphic>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_OFF" size="30" />
+                                       </graphic></Label>
+                                    <Slider fx:id="recorderStereoSl" />
+                                    <Label>
+                                       <graphic>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_UP" size="25" />
+                                       </graphic></Label>
+                                 </children>
+                              </HBox>
+                              <Button fx:id="recordBtn" mnemonicParsing="false" onAction="#record1Fn" text="Record">
+                                 <graphic>
+                                    <FontAwesomeIconView glyphName="MICROPHONE" size="18" />
+                                 </graphic></Button>
+                              <HBox spacing="10.0">
+                                 <children>
+                                    <VBox spacing="10.0">
+                                       <children>
+                                          <RadioButton mnemonicParsing="false" text="Head A" textFill="WHITE" />
+                                          <RadioButton mnemonicParsing="false" text="Head B" textFill="WHITE" />
+                                       </children>
+                                    </VBox>
+                                    <RadioButton mnemonicParsing="false" text="Motor" textFill="WHITE" />
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                        <BorderPane HBox.hgrow="ALWAYS">
+                           <center>
+                              <Button fx:id="pauseBtn" mnemonicParsing="false" onAction="#pause1Fn" BorderPane.alignment="CENTER">
+                                 <graphic>
+                                    <FontAwesomeIconView glyphName="PAUSE" size="18" />
+                                 </graphic></Button>
+                           </center>
+                        </BorderPane>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+            <VBox layoutX="10.0" layoutY="10.0">
+               <children>
+                  <BorderPane>
+                     <center>
+                        <VBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label text="Deck 1" textFill="WHITE">
+                                 <font>
+                                    <Font name="Verdana" size="13.0" />
+                                 </font></Label>
+                              <Label text="STATUS" textFill="WHITE">
+                                 <font>
+                                    <Font name="Verdana" size="13.0" />
+                                 </font></Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                     </center>
+                     <right>
+                        <VBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label text="TIME" textFill="WHITE">
+                                 <font>
+                                    <Font name="Verdana" size="13.0" />
+                                 </font></Label>
+                              <ProgressBar progress="0.0" />
+                              <Button fx:id="resetCounter2Btn" mnemonicParsing="false" onAction="#resetCounter2Fn">
+                                 <graphic>
+                                    <FontAwesomeIconView glyphName="REFRESH" size="18" />
+                                 </graphic></Button>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                     </right>
+                     <left>
+                        <HBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Button fx:id="flip2Btn" mnemonicParsing="false" onAction="#flip2Fn">
+                                 <graphic>
+                                    <FontAwesomeIconView glyphName="ROTATE_RIGHT" size="18" />
+                                 </graphic></Button>
+                              <Button fx:id="insert2Btn" mnemonicParsing="false" onAction="#insert2Fn">
+                                 <graphic>
+                                    <FontAwesomeIconView glyphName="ARROW_DOWN" size="18" />
+                                 </graphic></Button>
+                              <Button fx:id="eject2Btn" mnemonicParsing="false" onAction="#eject2Fn">
+                                 <graphic>
+                                    <FontAwesomeIconView glyphName="EJECT" size="18" />
+                                 </graphic></Button>
+                           </children>
+                           <padding>
+                              <Insets left="10.0" right="10.0" />
+                           </padding>
+                        </HBox>
+                     </left>
+                  </BorderPane>
+                  <HBox>
+                     <children>
+                        <VBox fillWidth="false" spacing="10.0">
+                           <children>
+                              <HBox spacing="10.0">
+                                 <children>
+                                    <Label text="Player" textFill="WHITE">
+                                       <font>
+                                          <Font name="Verdana" size="13.0" />
+                                       </font>
+                                       <graphic>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="MUSIC" size="18" />
+                                       </graphic></Label>
+                                    <Label text="Song Detection Enabled" textFill="WHITE">
+                                       <font>
+                                          <Font name="Verdana" size="13.0" />
+                                       </font></Label>
+                                 </children>
+                              </HBox>
+                              <Label text="Volume" textFill="WHITE">
+                                 <font>
+                                    <Font name="Verdana" size="13.0" />
+                                 </font></Label>
+                              <HBox spacing="10.0">
+                                 <children>
+                                    <Label>
+                                       <graphic>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_OFF" size="30" />
+                                       </graphic></Label>
+                                    <Slider fx:id="playerVolume2Sl" />
+                                    <Label>
+                                       <graphic>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_UP" size="25" />
+                                       </graphic></Label>
+                                 </children>
+                              </HBox>
+                              <Label text="Stereo balance" textFill="WHITE">
+                                 <font>
+                                    <Font name="Verdana" size="13.0" />
+                                 </font></Label>
+                              <HBox layoutX="20.0" layoutY="74.0" spacing="10.0">
+                                 <children>
+                                    <Label>
+                                       <graphic>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_OFF" size="30" />
+                                       </graphic></Label>
+                                    <Slider fx:id="playerStereo2Sl" />
+                                    <Label>
+                                       <graphic>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_UP" size="25" />
+                                       </graphic></Label>
+                                 </children>
+                              </HBox>
+                              <HBox spacing="10.0" VBox.vgrow="ALWAYS">
+                                 <children>
+                                    <Button fx:id="play2Btn" mnemonicParsing="false" onAction="#play2Fn">
+                                       <graphic>
+                                          <FontAwesomeIconView glyphName="PLAY" size="18" />
+                                       </graphic></Button>
+                                    <Button fx:id="stop2Btn" mnemonicParsing="false" onAction="#stop2Fn">
+                                       <graphic>
+                                          <FontAwesomeIconView glyphName="STOP" size="18" />
+                                       </graphic></Button>
+                                    <Button fx:id="fastRewind2Btn" mnemonicParsing="false" onAction="#fastRewind2Fn">
+                                       <graphic>
+                                          <FontAwesomeIconView fx:id="fastRewindBtn2" glyphName="FAST_BACKWARD" size="18" />
+                                       </graphic></Button>
+                                    <Button fx:id="fastForward2Btn" mnemonicParsing="false" onAction="#fastForward2Fn">
+                                       <graphic>
+                                          <FontAwesomeIconView glyphName="FAST_FORWARD" size="18" />
+                                       </graphic></Button>
+                                    <Button fx:id="autoReverse2Btn" mnemonicParsing="false" onAction="#autoReverse2Fn" text="AR" />
+                                 </children>
+                              </HBox>
+                              <Separator prefHeight="0.0" prefWidth="200.0" />
+                              <Label text="Recorder" textFill="WHITE">
+                                 <font>
+                                    <Font name="Verdana" size="13.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="MICROPHONE" size="18" />
+                                 </graphic></Label>
+                              <Label text="Volume" textFill="WHITE">
+                                 <font>
+                                    <Font name="Verdana" size="13.0" />
+                                 </font></Label>
+                              <HBox spacing="10.0">
+                                 <children>
+                                    <Label>
+                                       <graphic>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_OFF" size="30" />
+                                       </graphic></Label>
+                                    <Slider fx:id="recorderVolume2Sl" />
+                                    <Label>
+                                       <graphic>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_UP" size="25" />
+                                       </graphic></Label>
+                                 </children>
+                              </HBox>
+                              <Label text="Stereo balance" textFill="WHITE">
+                                 <font>
+                                    <Font name="Verdana" size="13.0" />
+                                 </font></Label>
+                              <HBox spacing="10.0">
+                                 <children>
+                                    <Label>
+                                       <graphic>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_OFF" size="30" />
+                                       </graphic></Label>
+                                    <Slider fx:id="recorderStereo2Sl" />
+                                    <Label>
+                                       <graphic>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_UP" size="25" />
+                                       </graphic></Label>
+                                 </children>
+                              </HBox>
+                              <Button fx:id="record2Btn" mnemonicParsing="false" onAction="#record2Fn" text="Record">
+                                 <graphic>
+                                    <FontAwesomeIconView glyphName="MICROPHONE" size="18" />
+                                 </graphic></Button>
+                              <HBox spacing="10.0">
+                                 <children>
+                                    <VBox spacing="10.0">
+                                       <children>
+                                          <RadioButton mnemonicParsing="false" text="Head A" textFill="WHITE" />
+                                          <RadioButton mnemonicParsing="false" text="Head B" textFill="WHITE" />
+                                       </children>
+                                    </VBox>
+                                    <RadioButton mnemonicParsing="false" text="Motor" textFill="WHITE" />
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                        <BorderPane HBox.hgrow="ALWAYS">
+                           <center>
+                              <Button fx:id="pause2Btn" mnemonicParsing="false" onAction="#pause2Fn" BorderPane.alignment="CENTER">
+                                 <graphic>
+                                    <FontAwesomeIconView glyphName="PAUSE" size="18" />
+                                 </graphic></Button>
+                           </center>
+                        </BorderPane>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
          </children>
-      </Pane>
-      <Pane layoutY="476.0" prefHeight="99.0" prefWidth="1066.0">
-         <children>
-            <ProgressIndicator layoutX="749.0" layoutY="60.0" progress="0.0" />
-            <RadioButton disable="true" layoutX="267.0" layoutY="25.0" mnemonicParsing="false" style="-fx-text-fill: DCDCDC;" text="Magnetic head a" />
-            <Label layoutX="655.0" layoutY="63.0" style="-fx-text-fill: DCDCDC;" text="Counter 2" />
-            <RadioButton disable="true" layoutX="533.0" layoutY="25.0" mnemonicParsing="false" style="-fx-text-fill: DCDCDC;" text="Motor 1" />
-            <Button layoutX="810.0" layoutY="12.0" mnemonicParsing="false">
-               <graphic>
-                  <FontAwesomeIconView glyphName="REFRESH" size="18" />
-               </graphic></Button>
-            <Button layoutX="810.0" layoutY="58.0" mnemonicParsing="false">
-               <graphic>
-                  <FontAwesomeIconView glyphName="REFRESH" size="18" />
-               </graphic></Button>
-            <Label layoutX="655.0" layoutY="25.0" style="-fx-text-fill: DCDCDC;" text="Counter 1" />
-            <ProgressIndicator layoutX="749.0" layoutY="14.0" progress="0.0" />
-            <RadioButton disable="true" layoutX="394.0" layoutY="25.0" mnemonicParsing="false" style="-fx-text-fill: DCDCDC;" text="Magnetic head b" />
-            <RadioButton disable="true" layoutX="267.0" layoutY="63.0" mnemonicParsing="false" style="-fx-text-fill: DCDCDC;" text="Magnetic head a" />
-            <RadioButton disable="true" layoutX="394.0" layoutY="63.0" mnemonicParsing="false" style="-fx-text-fill: DCDCDC;" text="Magnetic head b" />
-            <Label layoutX="187.0" layoutY="25.0" style="-fx-text-fill: DCDCDC;" text="Deck 1" />
-            <Label layoutX="187.0" layoutY="63.0" style="-fx-text-fill: DCDCDC;" text="Deck 2" />
-            <RadioButton disable="true" layoutX="533.0" layoutY="63.0" mnemonicParsing="false" style="-fx-text-fill: DCDCDC;" text="Motor 2" />
-         </children>
-      </Pane>
-   </children>
-</Pane>
+      </HBox>
+   </center>
+</BorderPane>

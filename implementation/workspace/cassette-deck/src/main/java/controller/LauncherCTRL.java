@@ -8,9 +8,9 @@ import javafx.stage.Stage;
 
 import model.CassetteDeck;
 import model.DoubleCassetteDeck;
-import model.SceneLoader;
 import model.SingleCassetteDeck;
-import model.Start;
+import tools.SceneLoader;
+import tools.Start;
 
 public class LauncherCTRL {
 

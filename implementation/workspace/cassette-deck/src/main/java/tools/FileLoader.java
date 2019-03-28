@@ -1,4 +1,4 @@
-package controller;
+package tools;
 
 import java.io.File;
 import javax.swing.JFileChooser;

@@ -1,5 +1,7 @@
 package model;
 
+import tools.AudioManager;
+
 public class Deck {
 
 	private int volume;

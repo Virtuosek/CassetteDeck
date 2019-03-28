@@ -6,15 +6,27 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.Slider;
-import javafx.scene.control.SplitPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import model.CassetteDeck;
-import model.SceneLoader;
+import tools.FileLoader;
+import tools.SceneLoader;
 
 public abstract class SimulationCTRL {
 	
 	@FXML
-	protected SplitPane playerAndRecorderSP;
+	protected HBox playerAndRecorderHB;
+	@FXML
+	protected HBox playerHeaderHB;
+	@FXML
+	protected HBox navigationHB;
+	@FXML
+	protected VBox recorderVB;
+	@FXML
+	protected HBox recorderHeaderHB;
+	@FXML
+	protected VBox headsVB;
 	@FXML
 	protected Slider volumeS;
 	@FXML
@@ -36,6 +48,8 @@ public abstract class SimulationCTRL {
 	@FXML
 	protected Button flipBtn;
 	@FXML
+	protected Button playerSourceBtn;
+	@FXML
 	protected Button resetCounterBtn;
 	@FXML
 	protected Button playBtn;
@@ -53,6 +67,8 @@ public abstract class SimulationCTRL {
 	protected Button nextSongBtn;
 	@FXML
 	protected Button autoReverseBtn;
+	@FXML
+	protected Button recorderSourceBtn;
 	@FXML
 	protected Button recordBtn;
 	@FXML
@@ -84,5 +100,7 @@ public abstract class SimulationCTRL {
     	loader.loadScene(window, "/deckLauncher.fxml");
     }
 	
-	public abstract void init(CassetteDeck cassetteDeck);
+	public void init(CassetteDeck cassetteDeck) {
+		this.cassetteDeck = cassetteDeck;
+	}
 }
