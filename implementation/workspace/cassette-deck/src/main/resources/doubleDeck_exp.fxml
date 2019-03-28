@@ -65,7 +65,7 @@
                            <children>
                               <Label text="TIME" />
                               <ProgressBar progress="0.0" />
-                              <Button fx:id="resetCounterBtn" mnemonicParsing="false" onAction="#resetCounterFn">
+                              <Button fx:id="resetCounterBtn" mnemonicParsing="false" onAction="#resetCounter1Fn">
                                  <graphic>
                                     <FontAwesomeIconView glyphName="REFRESH" size="18" />
                                  </graphic></Button>
@@ -78,15 +78,15 @@
                      <left>
                         <HBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
                            <children>
-                              <Button fx:id="flipBtn" mnemonicParsing="false" onAction="#flipFn">
+                              <Button fx:id="flipBtn" mnemonicParsing="false" onAction="#flip1Fn">
                                  <graphic>
                                     <FontAwesomeIconView glyphName="ROTATE_RIGHT" size="18" />
                                  </graphic></Button>
-                              <Button fx:id="insertBtn" mnemonicParsing="false" onAction="#insertFn">
+                              <Button fx:id="insertBtn" mnemonicParsing="false" onAction="#insert1Fn">
                                  <graphic>
                                     <FontAwesomeIconView glyphName="ARROW_DOWN" size="18" />
                                  </graphic></Button>
-                              <Button fx:id="ejectBtn" mnemonicParsing="false" onAction="#ejectFn">
+                              <Button fx:id="ejectBtn" mnemonicParsing="false" onAction="#eject1Fn">
                                  <graphic>
                                     <FontAwesomeIconView glyphName="EJECT" size="18" />
                                  </graphic></Button>
@@ -137,23 +137,23 @@
                               </HBox>
                               <HBox spacing="10.0" VBox.vgrow="ALWAYS">
                                  <children>
-                                    <Button fx:id="playBtn" mnemonicParsing="false" onAction="#playFn">
+                                    <Button fx:id="playBtn" mnemonicParsing="false" onAction="#play1Fn">
                                        <graphic>
                                           <FontAwesomeIconView glyphName="PLAY" size="18" />
                                        </graphic></Button>
-                                    <Button fx:id="stopBtn" mnemonicParsing="false" onAction="#stopFn">
+                                    <Button fx:id="stopBtn" mnemonicParsing="false" onAction="#stop1Fn">
                                        <graphic>
                                           <FontAwesomeIconView glyphName="STOP" size="18" />
                                        </graphic></Button>
-                                    <Button fx:id="fastRewindBtn" mnemonicParsing="false" onAction="#fastRewindFn">
+                                    <Button fx:id="fastRewindBtn" mnemonicParsing="false" onAction="#fastRewind1Fn">
                                        <graphic>
                                           <FontAwesomeIconView glyphName="FAST_BACKWARD" size="18" />
                                        </graphic></Button>
-                                    <Button fx:id="fastForwardBtn" mnemonicParsing="false" onAction="#fastForwardFn">
+                                    <Button fx:id="fastForwardBtn" mnemonicParsing="false" onAction="#fastForward1Fn">
                                        <graphic>
                                           <FontAwesomeIconView glyphName="FAST_FORWARD" size="18" />
                                        </graphic></Button>
-                                    <Button fx:id="autoReverseBtn" mnemonicParsing="false" onAction="#autoReverseFn" text="AR" />
+                                    <Button fx:id="autoReverseBtn" mnemonicParsing="false" onAction="#autoReverse1Fn" text="AR" />
                                  </children>
                               </HBox>
                               <Separator prefHeight="0.0" prefWidth="200.0" />
@@ -186,7 +186,7 @@
                                        </graphic></Label>
                                  </children>
                               </HBox>
-                              <Button fx:id="recordBtn" mnemonicParsing="false" onAction="#recordFn" text="Record">
+                              <Button fx:id="recordBtn" mnemonicParsing="false" onAction="#record1Fn" text="Record">
                                  <graphic>
                                     <FontAwesomeIconView glyphName="MICROPHONE" size="18" />
                                  </graphic></Button>
@@ -208,7 +208,7 @@
                         </VBox>
                         <BorderPane HBox.hgrow="ALWAYS">
                            <center>
-                              <Button fx:id="pauseBtn" mnemonicParsing="false" onAction="#pauseFn" BorderPane.alignment="CENTER">
+                              <Button fx:id="pauseBtn" mnemonicParsing="false" onAction="#pause1Fn" BorderPane.alignment="CENTER">
                                  <graphic>
                                     <FontAwesomeIconView glyphName="PAUSE" size="18" />
                                  </graphic></Button>
