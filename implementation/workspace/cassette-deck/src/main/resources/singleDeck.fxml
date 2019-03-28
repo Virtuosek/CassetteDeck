@@ -270,15 +270,15 @@
                </children>
             </HBox>
             <HBox fx:id="headsAndMotorHB" spacing="10.0">
+               <children>
+                  <VBox fx:id="headsVB" spacing="10.0">
                      <children>
-                        <VBox fx:id="headsVB" spacing="10.0">
-                           <children>
-                              <RadioButton fx:id="magneticHeadARB" mnemonicParsing="false" text="Head A" textFill="WHITE" />
-                              <RadioButton fx:id="magneticHeadBRB" mnemonicParsing="false" text="Head B" textFill="WHITE" />
-                           </children>
-                        </VBox>
-                        <RadioButton mnemonicParsing="false" text="Motor" textFill="WHITE" />
+                        <RadioButton fx:id="magneticHeadARB" mnemonicParsing="false" text="Head A" textFill="WHITE" />
+                        <RadioButton fx:id="magneticHeadBRB" mnemonicParsing="false" text="Head B" textFill="WHITE" />
                      </children>
+                  </VBox>
+                  <RadioButton mnemonicParsing="false" text="Motor" textFill="WHITE" />
+               </children>
             </HBox>
          </children>
          <padding>

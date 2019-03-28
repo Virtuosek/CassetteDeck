@@ -8,6 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.Slider;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import model.Cassette;
 import model.CassetteDeck;
@@ -17,7 +18,17 @@ import tools.FileLoader;
 public class DoubleCTRL extends SimulationCTRL {
 
 	@FXML
-	private VBox deckControllerVB;
+	private HBox playerAndRecorder2HB;
+	@FXML
+	private HBox playerHeader2HB;
+	@FXML
+	private HBox navigation2HB;
+	@FXML
+	private VBox recorder2VB;
+	@FXML
+	private HBox recorderHeader2HB;
+	@FXML
+	private VBox heads2VB;
 	@FXML
 	private Slider volume2S;
 	@FXML
@@ -245,19 +256,30 @@ public class DoubleCTRL extends SimulationCTRL {
     	doubleCassetteDeck = (DoubleCassetteDeck) cassetteDeck;
 		
         if(!cassetteDeck.hasSpeakers()) {
-        	
+        	playerHeaderHB.getChildren().remove(playerSourceBtn);
+        	playerHeader2HB.getChildren().remove(playerSource2Btn);
         }
         if(!cassetteDeck.hasRecorder()) {
-        	
+        	playerAndRecorderHB.getChildren().remove(recorderVB);
+        	playerAndRecorder2HB.getChildren().remove(recorder2VB);
         }
         if(!cassetteDeck.hasMicrophone()) {
-
+        	recorderHeaderHB.getChildren().remove(recorderSourceBtn);
+        	recorderHeader2HB.getChildren().remove(recorderSource2Btn);
         }
         if(!cassetteDeck.hasAutoReverse()) {
-
+        	navigationHB.getChildren().remove(autoReverseBtn);
+        	navigation2HB.getChildren().remove(autoReverse2Btn);
+        	headsVB.getChildren().remove(magneticHeadBRB);
+        	heads2VB.getChildren().remove(magneticHeadB2RB);
+        	magneticHeadARB.setText("Head");
+        	magneticHeadA2RB.setText("Head");
         }
         if(!cassetteDeck.hasSongDetection()) {
-
+        	navigationHB.getChildren().remove(previousSongBtn);
+        	navigation2HB.getChildren().remove(previousSong2Btn);
+        	navigationHB.getChildren().remove(nextSongBtn);
+        	navigation2HB.getChildren().remove(nextSong2Btn);
         }
     }
 }
