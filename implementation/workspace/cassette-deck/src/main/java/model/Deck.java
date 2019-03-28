@@ -100,6 +100,14 @@ public class Deck {
 		state.resetCounter();
 	}
 	
+	public void incrementCounter() {
+		counter++;
+	}
+	
+	public void decrementCounter() {
+		counter--;
+	}
+	
 	public void enableAutoReverse() {
 		setAutoReversing(true);
 		System.out.println("Auto-reverse is enabled.");

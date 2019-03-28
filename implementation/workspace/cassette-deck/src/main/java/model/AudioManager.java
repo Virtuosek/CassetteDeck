@@ -67,5 +67,9 @@ public class AudioManager {
 		player.setMute(false);
 		player.pause();
 	}
+	
+	public boolean isAtEnd() {
+		return player.getCurrentTime().greaterThanOrEqualTo(player.getStopTime());
+	}
 }
 

@@ -1,10 +1,14 @@
 package model;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class FastRewindingState implements State {
 
 	private Deck deck;
-	private double startTime;
-	private double endTime;
+	private Timer timer;
+	private double currentTime;
+	private double lastTime;
 	
 	public FastRewindingState(Deck deck) {
 		this.deck = deck;
@@ -14,20 +18,30 @@ public class FastRewindingState implements State {
 	public void entry() {
 		deck.getMotor().turnOn();
 		deck.getHolder().getCassette().setAtEnd(false);
-		// TODO Timer
-		startTime = System.currentTimeMillis();
+		long speed = (long) (1000 / Start.FAST_PLAYBACK_SPEED_FACTOR);
+		currentTime = System.currentTimeMillis();
+		timer = new Timer();
+		timer.scheduleAtFixedRate(new TimerTask() {
+			@Override
+			public void run() {
+				deck.decrementCounter();
+				System.out.println(deck.getCounter());
+				lastTime = currentTime;
+				currentTime = System.currentTimeMillis();
+				if(deck.getAudioManager().fastRewind(currentTime - lastTime)) {
+					deck.getHolder().getCassette().setAtStart(true);
+					deck.setState(deck.getIdleState());
+					this.cancel();
+				}
+			}
+		}, speed, speed);
 		System.out.println("The deck is fast rewinding.");
 	}
 	
 	@Override
 	public void exit() {
 		deck.getMotor().turnOff();
-		// TODO Timer
-		endTime = System.currentTimeMillis();
-		boolean isAtStart = deck.getAudioManager().fastRewind(endTime - startTime);
-		if(isAtStart) {
-			deck.getHolder().getCassette().setAtStart(true);
-		}
+		timer.cancel();
 		deck.setChangingSong(false);
 	}
 

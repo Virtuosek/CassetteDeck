@@ -1,8 +1,12 @@
 package model;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class RecordingState implements State {
 
 	private Deck deck;
+	private Timer timer;
 
 	public RecordingState(Deck deck) {
 		this.deck = deck;
@@ -25,7 +29,7 @@ public class RecordingState implements State {
 		if(!deck.isOnPause()) {
 			deck.getMotor().turnOff();
 			deck.getAudioManager().stopRecord();
-			// TODO Timer
+			timer.cancel();
 			System.out.println("**STOP RECORDING**");
 		}
 	}
@@ -59,6 +63,7 @@ public class RecordingState implements State {
 		}
 		else {
 			deck.getAudioManager().pause();
+			timer.cancel();
 			System.out.println("The deck is on pause.");
 		}
 	}
@@ -97,7 +102,19 @@ public class RecordingState implements State {
 		deck.getMotor().turnOn();
 		deck.getHolder().getCassette().setAtStart(false);
 		deck.getAudioManager().record();
-		// TODO Timer
+		timer = new Timer();
+		timer.scheduleAtFixedRate(new TimerTask() {
+			@Override
+			public void run() {
+				deck.incrementCounter();
+				System.out.println(deck.getCounter());
+				if(deck.getAudioManager().isAtEnd()) {
+					deck.getHolder().getCassette().setAtEnd(true);
+					deck.setState(deck.getIdleState());
+					this.cancel();
+				}
+			}
+		}, 1000, 1000);
 		System.out.println("**RECORDING**");
 	}
 }

@@ -1,10 +1,14 @@
 package model;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class FastForwardingState implements State {
 	
 	private Deck deck;
-	private double startTime;
-	private double endTime;
+	private Timer timer;
+	private double currentTime;
+	private double lastTime;
 
 	public FastForwardingState(Deck deck) {
 		this.deck = deck;
@@ -14,20 +18,30 @@ public class FastForwardingState implements State {
 	public void entry() {
 		deck.getMotor().turnOn();
 		deck.getHolder().getCassette().setAtStart(false);
-		// TODO Timer
-		startTime = System.currentTimeMillis();
+		long speed = (long) (1000 / Start.FAST_PLAYBACK_SPEED_FACTOR);
+		currentTime = System.currentTimeMillis();
+		timer = new Timer();
+		timer.scheduleAtFixedRate(new TimerTask() {
+			@Override
+			public void run() {
+				deck.incrementCounter();
+				System.out.println(deck.getCounter());
+				lastTime = currentTime;
+				currentTime = System.currentTimeMillis();
+				if(deck.getAudioManager().fastForward(currentTime - lastTime)) {
+					deck.getHolder().getCassette().setAtEnd(true);
+					deck.setState(deck.getIdleState());
+					this.cancel();
+				}
+			}
+		}, speed, speed);
 		System.out.println("The deck is fast forwarding.");
 	}
 	
 	@Override
 	public void exit() {
 		deck.getMotor().turnOff();
-		// TODO Timer
-		endTime = System.currentTimeMillis();
-		boolean isAtEnd = deck.getAudioManager().fastForward(endTime - startTime);
-		if(isAtEnd) {
-			deck.getHolder().getCassette().setAtEnd(true);
-		}
+		timer.cancel();
 		deck.setChangingSong(false);
 	}
 	
