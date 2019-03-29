@@ -108,8 +108,8 @@ public abstract class SimulationCTRL {
 	
 	public void init(CassetteDeck cassetteDeck) {
 		this.cassetteDeck = cassetteDeck;
-		statusL.setText(Status.OFF.toString());
 		Deck deck = cassetteDeck.getDeck();
+		statusL.setText(Status.OFF.toString());
     	deck.statusProperty().addListener(new ChangeListener<Status>() {
     		@Override
     		public void changed(ObservableValue<? extends Status> observable, Status oldValue, Status newValue) {

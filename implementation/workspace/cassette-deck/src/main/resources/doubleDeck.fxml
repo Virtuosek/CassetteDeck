@@ -100,7 +100,7 @@
                      <right>
                         <VBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
                            <children>
-                              <Label fx:id="counter2L" style="-fx-text-fill: #DCDCDC;" text="TIME">
+                              <Label fx:id="counterL" style="-fx-text-fill: #DCDCDC;" text="TIME">
                                  <font>
                                     <Font name="Verdana" size="13.0" />
                                  </font></Label>
@@ -337,7 +337,7 @@
                      <right>
                         <VBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
                            <children>
-                              <Label style="-fx-text-fill: #DCDCDC;" text="TIME">
+                              <Label fx:id="counter2L" style="-fx-text-fill: #DCDCDC;" text="TIME">
                                  <font>
                                     <Font name="Verdana" size="13.0" />
                                  </font></Label>
@@ -527,4 +527,15 @@
          </children>
       </HBox>
    </center>
+   <bottom>
+      <HBox fx:id="infoHB" alignment="CENTER" prefHeight="33.0" prefWidth="555.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="infoL" text="Info" textFill="#d0cece">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </bottom>
 </BorderPane>

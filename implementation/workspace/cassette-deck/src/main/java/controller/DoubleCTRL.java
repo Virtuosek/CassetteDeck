@@ -14,6 +14,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import model.Cassette;
 import model.CassetteDeck;
+import model.Deck;
 import model.DoubleCassetteDeck;
 import tools.FileLoader;
 import tools.Status;
@@ -260,13 +261,22 @@ public class DoubleCTRL extends SimulationCTRL {
     	super.init(cassetteDeck);
     	
     	doubleCassetteDeck = (DoubleCassetteDeck) cassetteDeck;
+    	Deck deck = doubleCassetteDeck.getDeck();
 		status2L.setText(Status.OFF.toString());
-    	doubleCassetteDeck.getDeck2().statusProperty().addListener(new ChangeListener<Status>() {
+    	deck.statusProperty().addListener(new ChangeListener<Status>() {
     		@Override
     		public void changed(ObservableValue<? extends Status> observable, Status oldValue, Status newValue) {
-    			status2L.setText(doubleCassetteDeck.getDeck2().getStatus().toString());
+    			status2L.setText(deck.getStatus().toString());
     		}
     	});
+    	counter2L.setText("0");
+    	deck.counterProperty().addListener(new ChangeListener<Number>() {
+			@Override
+			public void changed(ObservableValue<? extends Number> arg0, Number arg1, Number arg2) {
+				counterL.setText(Integer.toString(deck.getCounter()));
+			}
+    	});
+    	
         if(!cassetteDeck.hasSpeakers()) {
         	playerHeaderHB.getChildren().remove(playerSourceBtn);
         	playerHeader2HB.getChildren().remove(playerSource2Btn);
