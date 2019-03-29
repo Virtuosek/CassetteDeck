@@ -39,6 +39,8 @@ public abstract class SimulationCTRL {
 	protected Slider recordVolumeS;
 	@FXML
 	protected Slider recordBalanceS;
+        @FXML
+        protected Label infoL;
 	@FXML
 	protected Label statusL;
 	@FXML

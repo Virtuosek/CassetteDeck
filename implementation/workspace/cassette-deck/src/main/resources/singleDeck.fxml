@@ -143,7 +143,7 @@
                                  <graphic>
                                     <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_OFF" size="30" />
                                  </graphic></Label>
-                              <Slider fx:id="playerVolumeSl" />
+                              <Slider fx:id="volumeS" onDragDetected="#pvolumeFn" showTickLabels="true" showTickMarks="true" value="50.0" />
                               <Label>
                                  <graphic>
                                     <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_UP" size="25" />
@@ -160,7 +160,7 @@
                                  <graphic>
                                     <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_OFF" size="30" />
                                  </graphic></Label>
-                              <Slider fx:id="playerStereoSl" />
+                              <Slider fx:id="balanceS" showTickLabels="true" showTickMarks="true" value="50.0" />
                               <Label>
                                  <graphic>
                                     <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_UP" size="25" />
@@ -238,7 +238,7 @@
                               <graphic>
                                  <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_OFF" size="30" />
                               </graphic></Label>
-                           <Slider fx:id="recorderVolumeSl" />
+                           <Slider fx:id="recordVolumeS" showTickLabels="true" showTickMarks="true" value="50.0" />
                            <Label>
                               <graphic>
                                  <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_UP" size="25" />
@@ -255,7 +255,7 @@
                               <graphic>
                                  <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_OFF" size="30" />
                               </graphic></Label>
-                           <Slider fx:id="recorderStereoSl" />
+                           <Slider fx:id="recordBalanceS" showTickLabels="true" showTickMarks="true" value="50.0" />
                            <Label>
                               <graphic>
                                  <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_UP" size="25" />

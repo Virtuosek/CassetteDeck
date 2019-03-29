@@ -1,13 +1,16 @@
 package controller;
 
 import java.io.File;
+import javafx.beans.InvalidationListener;
+import javafx.beans.Observable;
 
 import model.Cassette;
 import model.CassetteDeck;
+import tools.AudioManager;
 import tools.FileLoader;
 
 public class SingleCTRL extends SimulationCTRL {
-	
+
     public void ejectFn() {
         System.out.println("*EJECT BUTTON PRESSED*");
         cassetteDeck.getDeck().eject();
@@ -16,11 +19,11 @@ public class SingleCTRL extends SimulationCTRL {
     public void insertFn() {
         System.out.println("*INSERT BUTTON PRESSED*");
         File songFile = null;
-        if(!cassetteDeck.getDeck().getHolder().hasCassette()) {
+        if (!cassetteDeck.getDeck().getHolder().hasCassette()) {
             fileLoader = new FileLoader();
             songFile = fileLoader.openFile();
         }
-        if(songFile != null) {
+        if (songFile != null) {
             cassetteDeck.getDeck().insert(new Cassette(songFile));
         }
     }
@@ -29,15 +32,15 @@ public class SingleCTRL extends SimulationCTRL {
         System.out.println("*FLIP BUTTON PRESSED*");
         // TODO
     }
-    
+
     public void playerSourceFn() {
-    	System.out.println("*PLAYER SOURCE BUTTON PRESSED*");
-    	// TODO
+        System.out.println("*PLAYER SOURCE BUTTON PRESSED*");
+        // TODO
     }
-    
+
     public void resetCounterFn() {
-    	System.out.println("*RESET COUNTER BUTTON PRESSED*");
-    	cassetteDeck.getDeck().resetCounter();
+        System.out.println("*RESET COUNTER BUTTON PRESSED*");
+        cassetteDeck.getDeck().resetCounter();
     }
 
     public void playFn() {
@@ -64,30 +67,29 @@ public class SingleCTRL extends SimulationCTRL {
         System.out.println("*FAST FORWARD BUTTON PRESSED*");
         cassetteDeck.getDeck().fastForward();
     }
-    
+
     public void previousSongFn() {
-    	System.out.println("*PREVIOUS SONG BUTTON PRESSED*");
-    	cassetteDeck.getDeck().previousSong();
+        System.out.println("*PREVIOUS SONG BUTTON PRESSED*");
+        cassetteDeck.getDeck().previousSong();
     }
-    
+
     public void nextSongFn() {
-    	System.out.println("*NEXT SONG BUTTON PRESSED*");
-    	cassetteDeck.getDeck().nextSong();
+        System.out.println("*NEXT SONG BUTTON PRESSED*");
+        cassetteDeck.getDeck().nextSong();
     }
-    
+
     public void autoReverseFn() {
-    	System.out.println("*AUTO REVERSE BUTTON PRESSED*");
-    	if(cassetteDeck.getDeck().isAutoReversing()) {
-    		cassetteDeck.getDeck().disableAutoReverse();
-    	}
-    	else {
-    		cassetteDeck.getDeck().enableAutoReverse();;
-    	}
+        System.out.println("*AUTO REVERSE BUTTON PRESSED*");
+        if (cassetteDeck.getDeck().isAutoReversing()) {
+            cassetteDeck.getDeck().disableAutoReverse();
+        } else {
+            cassetteDeck.getDeck().enableAutoReverse();;
+        }
     }
-    
+
     public void recorderSourceFn() {
-    	System.out.println("*RECORDER SOURCE BUTTON PRESSED*");
-    	// TODO
+        System.out.println("*RECORDER SOURCE BUTTON PRESSED*");
+        // TODO
     }
 
     public void recordFn() {
@@ -95,27 +97,36 @@ public class SingleCTRL extends SimulationCTRL {
         cassetteDeck.getDeck().record();
     }
     
+    public void pvolumeFn(){
+        System.out.println("VOLUME MODIFIED");
+        AudioManager audm = cassetteDeck.getDeck().getAudioManager();
+        //volumeS.setValue(audm.fetchVolume()*100);
+       // System.out.println("VOLUME FETCHED: "+audm.fetchVolume()*100);
+        audm.changeVolume(volumeS.getValue()/100);
+        System.out.println("SLIDER VALUE: "+volumeS.getValue()/100);
+    }
+
     @Override
     public void init(CassetteDeck cassetteDeck) {
-    	super.init(cassetteDeck);
-    	
-        if(!cassetteDeck.hasSpeakers()) {
-        	playerHeaderHB.getChildren().remove(playerSourceBtn);
+        super.init(cassetteDeck);
+
+        if (!cassetteDeck.hasSpeakers()) {
+            playerHeaderHB.getChildren().remove(playerSourceBtn);
         }
-        if(!cassetteDeck.hasRecorder()) {
-        	playerAndRecorderHB.getChildren().remove(recorderVB);
+        if (!cassetteDeck.hasRecorder()) {
+            playerAndRecorderHB.getChildren().remove(recorderVB);
         }
-        if(!cassetteDeck.hasMicrophone()) {
-        	recorderHeaderHB.getChildren().remove(recorderSourceBtn);
+        if (!cassetteDeck.hasMicrophone()) {
+            recorderHeaderHB.getChildren().remove(recorderSourceBtn);
         }
-        if(!cassetteDeck.hasAutoReverse()) {
-        	navigationHB.getChildren().remove(autoReverseBtn);
-        	headsVB.getChildren().remove(magneticHeadBRB);
-        	magneticHeadARB.setText("Head");
+        if (!cassetteDeck.hasAutoReverse()) {
+            navigationHB.getChildren().remove(autoReverseBtn);
+            headsVB.getChildren().remove(magneticHeadBRB);
+            magneticHeadARB.setText("Head");
         }
-        if(!cassetteDeck.hasSongDetection()) {
-        	navigationHB.getChildren().remove(previousSongBtn);
-        	navigationHB.getChildren().remove(nextSongBtn);
+        if (!cassetteDeck.hasSongDetection()) {
+            navigationHB.getChildren().remove(previousSongBtn);
+            navigationHB.getChildren().remove(nextSongBtn);
         }
     }
 }
