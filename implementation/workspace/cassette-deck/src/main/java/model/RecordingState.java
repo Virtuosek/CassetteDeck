@@ -3,6 +3,7 @@ package model;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import javafx.application.Platform;
 import tools.Status;
 
 public class RecordingState implements State {
@@ -108,13 +109,17 @@ public class RecordingState implements State {
 		timer.scheduleAtFixedRate(new TimerTask() {
 			@Override
 			public void run() {
-				deck.incrementCounter();
-				System.out.println(deck.getCounter());
-				if(deck.getAudioManager().isAtEnd()) {
-					deck.getHolder().getCassette().setAtEnd(true);
-					deck.setState(deck.getIdleState());
-					this.cancel();
-				}
+				Platform.runLater(new Runnable() {
+					@Override
+					public void run() {
+						deck.incrementCounter();
+						if(deck.getAudioManager().isAtEnd()) {
+							deck.getHolder().getCassette().setAtEnd(true);
+							deck.setState(deck.getIdleState());
+							cancel();
+						}
+					}
+				});
 			}
 		}, 1000, 1000);
 		deck.setStatus(Status.RECORDING);

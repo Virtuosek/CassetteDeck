@@ -3,6 +3,7 @@ package controller;
 import java.io.File;
 
 import model.Cassette;
+import model.CassetteDeck;
 import tools.FileLoader;
 
 public class SingleCTRL extends SimulationCTRL {
@@ -90,5 +91,29 @@ public class SingleCTRL extends SimulationCTRL {
     public void recordFn() {
         System.out.println("*RECORD BUTTON PRESSED*");
         cassetteDeck.getDeck().record();
+    }
+    
+    @Override
+    public void init(CassetteDeck cassetteDeck) {
+    	super.init(cassetteDeck);
+    	
+        if(!cassetteDeck.hasSpeakers()) {
+        	playerHeaderHB.getChildren().remove(playerSourceBtn);
+        }
+        if(!cassetteDeck.hasRecorder()) {
+        	playerAndRecorderHB.getChildren().remove(recorderVB);
+        }
+        if(!cassetteDeck.hasMicrophone()) {
+        	recorderHeaderHB.getChildren().remove(recorderSourceBtn);
+        }
+        if(!cassetteDeck.hasAutoReverse()) {
+        	navigationHB.getChildren().remove(autoReverseBtn);
+        	headsVB.getChildren().remove(magneticHeadBRB);
+        	magneticHeadARB.setText("Head");
+        }
+        if(!cassetteDeck.hasSongDetection()) {
+        	navigationHB.getChildren().remove(previousSongBtn);
+        	navigationHB.getChildren().remove(nextSongBtn);
+        }
     }
 }

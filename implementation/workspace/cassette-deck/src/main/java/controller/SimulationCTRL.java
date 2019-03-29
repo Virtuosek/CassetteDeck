@@ -12,6 +12,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import model.CassetteDeck;
+import model.Deck;
 import tools.FileLoader;
 import tools.SceneLoader;
 import tools.Status;
@@ -108,29 +109,19 @@ public abstract class SimulationCTRL {
 	public void init(CassetteDeck cassetteDeck) {
 		this.cassetteDeck = cassetteDeck;
 		statusL.setText(Status.OFF.toString());
-    	cassetteDeck.getDeck().statusProperty().addListener(new ChangeListener<Status>() {
+		Deck deck = cassetteDeck.getDeck();
+    	deck.statusProperty().addListener(new ChangeListener<Status>() {
     		@Override
     		public void changed(ObservableValue<? extends Status> observable, Status oldValue, Status newValue) {
-    			statusL.setText(cassetteDeck.getDeck().getStatus().toString());
+    			statusL.setText(deck.getStatus().toString());
     		}
     	});
-        if(!cassetteDeck.hasSpeakers()) {
-        	playerHeaderHB.getChildren().remove(playerSourceBtn);
-        }
-        if(!cassetteDeck.hasRecorder()) {
-        	playerAndRecorderHB.getChildren().remove(recorderVB);
-        }
-        if(!cassetteDeck.hasMicrophone()) {
-        	recorderHeaderHB.getChildren().remove(recorderSourceBtn);
-        }
-        if(!cassetteDeck.hasAutoReverse()) {
-        	navigationHB.getChildren().remove(autoReverseBtn);
-        	headsVB.getChildren().remove(magneticHeadBRB);
-        	magneticHeadARB.setText("Head");
-        }
-        if(!cassetteDeck.hasSongDetection()) {
-        	navigationHB.getChildren().remove(previousSongBtn);
-        	navigationHB.getChildren().remove(nextSongBtn);
-        }
+    	counterL.setText("0");
+    	deck.counterProperty().addListener(new ChangeListener<Number>() {
+			@Override
+			public void changed(ObservableValue<? extends Number> arg0, Number arg1, Number arg2) {
+				counterL.setText(Integer.toString(deck.getCounter()));
+			}
+    	});
 	}
 }

@@ -3,6 +3,7 @@ package model;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import javafx.application.Platform;
 import tools.Start;
 import tools.Status;
 
@@ -27,15 +28,19 @@ public class FastRewindingState implements State {
 		timer.scheduleAtFixedRate(new TimerTask() {
 			@Override
 			public void run() {
-				deck.decrementCounter();
-				System.out.println(deck.getCounter());
-				lastTime = currentTime;
-				currentTime = System.currentTimeMillis();
-				if(deck.getAudioManager().fastRewind(currentTime - lastTime)) {
-					deck.getHolder().getCassette().setAtStart(true);
-					deck.setState(deck.getIdleState());
-					this.cancel();
-				}
+				Platform.runLater(new Runnable() {
+					@Override
+					public void run() {
+						deck.decrementCounter();
+						lastTime = currentTime;
+						currentTime = System.currentTimeMillis();
+						if(deck.getAudioManager().fastRewind(currentTime - lastTime)) {
+							deck.getHolder().getCassette().setAtStart(true);
+							deck.setState(deck.getIdleState());
+							cancel();
+						}
+					}
+				});
 			}
 		}, speed, speed);
 		deck.setStatus(Status.FAST_REWINDING);
