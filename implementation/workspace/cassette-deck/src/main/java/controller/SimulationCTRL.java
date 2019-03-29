@@ -56,7 +56,7 @@ public abstract class SimulationCTRL {
 	@FXML
 	protected Button flipBtn;
 	@FXML
-	protected Button playerSourceBtn;
+	protected Label playerSourceL;
 	@FXML
 	protected Button resetCounterBtn;
 	@FXML
@@ -76,7 +76,7 @@ public abstract class SimulationCTRL {
 	@FXML
 	protected Button autoReverseBtn;
 	@FXML
-	protected Button recorderSourceBtn;
+	protected Label recorderSourceL;
 	@FXML
 	protected Button recordBtn;
 	@FXML
@@ -125,5 +125,14 @@ public abstract class SimulationCTRL {
 				counterL.setText(Integer.toString(deck.getCounter()));
 			}
     	});
+    	if(cassetteDeck.getSpeakers() != null) {
+    		playerSourceL.setText("SPEAKERS");
+    	}
+    	else {
+    		playerSourceL.setText("HEADSET");
+    	}
+    	if(cassetteDeck.getMicrophone() != null) {
+    		recorderSourceL.setText("MICROPHONE");
+    	}
 	}
 }

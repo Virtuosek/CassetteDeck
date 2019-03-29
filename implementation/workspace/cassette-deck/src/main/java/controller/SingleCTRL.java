@@ -121,14 +121,8 @@ public class SingleCTRL extends SimulationCTRL {
     public void init(CassetteDeck cassetteDeck) {
     	super.init(cassetteDeck);
     	
-        if(cassetteDeck.getSpeakers() == null) {
-        	playerHeaderHB.getChildren().remove(playerSourceBtn);
-        }
         if (!cassetteDeck.hasRecorder()) {
             playerAndRecorderHB.getChildren().remove(recorderVB);
-        }
-        if(cassetteDeck.getMicrophone() == null) {
-        	recorderHeaderHB.getChildren().remove(recorderSourceBtn);
         }
         if (!cassetteDeck.hasAutoReverse()) {
             navigationHB.getChildren().remove(autoReverseBtn);
