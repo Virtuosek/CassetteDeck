@@ -132,7 +132,7 @@
                                        <graphic>
                                           <FontAwesomeIconView fill="WHITE" glyphName="MUSIC" size="18" />
                                        </graphic></Label>
-                                    <Button fx:id="playerSourceBtn" mnemonicParsing="false" onAction="#playerSource1Fn" text="Source" />
+                                    <Label fx:id="playerSourceL" mnemonicParsing="false" text="SOURCE" />
                                  </children>
                               </HBox>
                               <Label style="-fx-text-fill: #DCDCDC;" text="Volume">
@@ -227,7 +227,7 @@
                                     <graphic>
                                        <FontAwesomeIconView fill="WHITE" glyphName="MICROPHONE" size="18" />
                                     </graphic></Label>
-                                 <Button fx:id="recorderSourceBtn" mnemonicParsing="false" onAction="#recorderSource1Fn" text="Source" />
+                                 <Label fx:id="recorderSourceL" mnemonicParsing="false" text="SOURCE" />
                               </children>
                            </HBox>
                            <Label style="-fx-text-fill: #DCDCDC;" text="Volume">
@@ -369,7 +369,7 @@
                                        <graphic>
                                           <FontAwesomeIconView fill="WHITE" glyphName="MUSIC" size="18" />
                                        </graphic></Label>
-                                    <Button fx:id="playerSource2Btn" mnemonicParsing="false" onAction="#playerSource2Fn" text="Source" />
+                                    <Label fx:id="playerSource2L" mnemonicParsing="false" text="SOURCE" />
                                  </children>
                               </HBox>
                               <Label style="-fx-text-fill: #DCDCDC;" text="Volume">
@@ -464,7 +464,7 @@
                                     <graphic>
                                        <FontAwesomeIconView fill="WHITE" glyphName="MICROPHONE" size="18" />
                                     </graphic></Label>
-                                 <Button fx:id="recorderSource2Btn" mnemonicParsing="false" onAction="#recorderSource2Fn" text="Source" />
+                                 <Label fx:id="recorderSource2L" mnemonicParsing="false" text="SOURCE" />
                               </children>
                            </HBox>
                            <Label style="-fx-text-fill: #DCDCDC;" text="Volume">

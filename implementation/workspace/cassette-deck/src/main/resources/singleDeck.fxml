@@ -130,7 +130,7 @@
                                  <graphic>
                                     <FontAwesomeIconView fill="WHITE" glyphName="MUSIC" size="18" />
                                  </graphic></Label>
-                              <Button fx:id="playerSourceBtn" mnemonicParsing="false" onAction="#playerSourceFn" text="Source" />
+                              <Label fx:id="playerSourceL" mnemonicParsing="false" text="SOURCE" />
                            </children>
                         </HBox>
                         <Label style="-fx-text-fill: #DCDCDC;" text="Volume">
@@ -225,7 +225,7 @@
                               <graphic>
                                  <FontAwesomeIconView fill="WHITE" glyphName="MICROPHONE" size="18" />
                               </graphic></Label>
-                           <Button fx:id="recorderSourceBtn" mnemonicParsing="false" onAction="#recorderSourceFn" text="Source" />
+                           <Label fx:id="recorderSourceL" mnemonicParsing="false" text="SOURCE" />
                         </children>
                      </HBox>
                      <Label style="-fx-text-fill: #DCDCDC;" text="Volume">

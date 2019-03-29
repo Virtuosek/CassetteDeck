@@ -52,7 +52,7 @@ public class DoubleCTRL extends SimulationCTRL {
 	@FXML
 	private Button flip2Btn;
 	@FXML
-	private Button playerSource2Btn;
+	private Label playerSource2L;
 	@FXML
 	private Button resetCounter2Btn;
 	@FXML
@@ -72,7 +72,7 @@ public class DoubleCTRL extends SimulationCTRL {
 	@FXML
 	private Button autoReverse2Btn;
 	@FXML
-	private Button recorderSource2Btn;
+	private Label recorderSource2L;
 	@FXML
 	private Button record2Btn;
 	@FXML
@@ -296,18 +296,19 @@ public class DoubleCTRL extends SimulationCTRL {
 				counter2L.setText(Integer.toString(deck2.getCounter()));
 			}
     	});
+    	if(cassetteDeck.getSpeakers() != null) {
+    		playerSource2L.setText("SPEAKERS");
+    	}
+    	else {
+    		playerSource2L.setText("HEADSET");
+    	}
+    	if(cassetteDeck.getMicrophone() != null) {
+    		recorderSource2L.setText("MICROPHONE");
+    	}
     	
-        if(cassetteDeck.getSpeakers() == null) {
-        	playerHeaderHB.getChildren().remove(playerSourceBtn);
-        	playerHeader2HB.getChildren().remove(playerSource2Btn);
-        }
         if(!cassetteDeck.hasRecorder()) {
         	playerAndRecorderHB.getChildren().remove(recorderVB);
         	playerAndRecorder2HB.getChildren().remove(recorder2VB);
-        }
-        if(cassetteDeck.getMicrophone() == null) {
-        	recorderHeaderHB.getChildren().remove(recorderSourceBtn);
-        	recorderHeader2HB.getChildren().remove(recorderSource2Btn);
         }
         if(!cassetteDeck.hasAutoReverse()) {
         	navigationHB.getChildren().remove(autoReverseBtn);
