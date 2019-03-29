@@ -45,7 +45,7 @@ public class AudioManagerTest {
     public void testLoadFile() {
         System.out.println("loadFile");
         File songFile = null;
-        AudioManager instance = new AudioManager();
+        AudioManager instance = new AudioManager(true);
         instance.loadFile(songFile);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -57,7 +57,7 @@ public class AudioManagerTest {
     @Test
     public void testUnloadFile() {
         System.out.println("unloadFile");
-        AudioManager instance = new AudioManager();
+        AudioManager instance = new AudioManager(true);
         instance.unloadFile();
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -69,7 +69,7 @@ public class AudioManagerTest {
     @Test
     public void testPlay() {
         System.out.println("play");
-        AudioManager instance = new AudioManager();
+        AudioManager instance = new AudioManager(true);
         instance.play();
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -81,7 +81,7 @@ public class AudioManagerTest {
     @Test
     public void testStop() {
         System.out.println("stop");
-        AudioManager instance = new AudioManager();
+        AudioManager instance = new AudioManager(true);
         instance.stop();
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -93,7 +93,7 @@ public class AudioManagerTest {
     @Test
     public void testPause() {
         System.out.println("pause");
-        AudioManager instance = new AudioManager();
+        AudioManager instance = new AudioManager(true);
         instance.pause();
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -106,7 +106,7 @@ public class AudioManagerTest {
     public void testFastRewind() {
         System.out.println("fastRewind");
         double fastRewindingTime = 0.0;
-        AudioManager instance = new AudioManager();
+        AudioManager instance = new AudioManager(true);
         boolean expResult = false;
         boolean result = instance.fastRewind(fastRewindingTime);
         assertEquals(expResult, result);
@@ -121,7 +121,7 @@ public class AudioManagerTest {
     public void testFastForward() {
         System.out.println("fastForward");
         double fastForwardingTime = 0.0;
-        AudioManager instance = new AudioManager();
+        AudioManager instance = new AudioManager(true);
         boolean expResult = false;
         boolean result = instance.fastForward(fastForwardingTime);
         assertEquals(expResult, result);
@@ -135,7 +135,7 @@ public class AudioManagerTest {
     @Test
     public void testRecord() {
         System.out.println("record");
-        AudioManager instance = new AudioManager();
+        AudioManager instance = new AudioManager(true);
         instance.record();
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -147,7 +147,7 @@ public class AudioManagerTest {
     @Test
     public void testStopRecord() {
         System.out.println("stopRecord");
-        AudioManager instance = new AudioManager();
+        AudioManager instance = new AudioManager(true);
         instance.stopRecord();
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -159,7 +159,7 @@ public class AudioManagerTest {
     @Test
     public void testIsAtEnd() {
         System.out.println("isAtEnd");
-        AudioManager instance = new AudioManager();
+        AudioManager instance = new AudioManager(true);
         boolean expResult = false;
         boolean result = instance.isAtEnd();
         assertEquals(expResult, result);

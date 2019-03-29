@@ -13,7 +13,7 @@ public class DoubleCassetteDeck extends CassetteDeck {
 	public DoubleCassetteDeck(boolean hasRecorder, boolean hasMicrophone, boolean hasSpeakers, boolean hasAutoReverse, boolean hasSongDetection) {
 		super(hasRecorder, hasMicrophone, hasSpeakers, hasAutoReverse, hasSongDetection);
 		volumeSlider = new SimpleIntegerProperty(0);
-		deck2 = new SimpleObjectProperty<Deck>(new Deck());
+		deck2 = new SimpleObjectProperty<Deck>(new Deck(hasSpeakers));
 	}
 	
 	@Override

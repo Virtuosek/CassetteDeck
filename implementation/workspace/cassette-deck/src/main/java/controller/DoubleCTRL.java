@@ -297,7 +297,7 @@ public class DoubleCTRL extends SimulationCTRL {
 			}
     	});
     	
-        if(!cassetteDeck.hasSpeakers()) {
+        if(cassetteDeck.getSpeakers() == null) {
         	playerHeaderHB.getChildren().remove(playerSourceBtn);
         	playerHeader2HB.getChildren().remove(playerSource2Btn);
         }
@@ -305,7 +305,7 @@ public class DoubleCTRL extends SimulationCTRL {
         	playerAndRecorderHB.getChildren().remove(recorderVB);
         	playerAndRecorder2HB.getChildren().remove(recorder2VB);
         }
-        if(!cassetteDeck.hasMicrophone()) {
+        if(cassetteDeck.getMicrophone() == null) {
         	recorderHeaderHB.getChildren().remove(recorderSourceBtn);
         	recorderHeader2HB.getChildren().remove(recorderSource2Btn);
         }

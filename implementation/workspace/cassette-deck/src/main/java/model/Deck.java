@@ -33,7 +33,7 @@ public class Deck {
 	private State fastForwardingState;
 	private State state;
 	
-	public Deck() {
+	public Deck(boolean hasSpeakers) {
 		volume = new SimpleIntegerProperty(0);
 		balance = new SimpleIntegerProperty(0);
 		recordVolume = new SimpleIntegerProperty(0);
@@ -45,7 +45,7 @@ public class Deck {
 		motor = new SimpleObjectProperty<Motor>(new Motor());
 		head = new SimpleObjectProperty<PlaybackHead>(new PlaybackHead());
 		holder = new SimpleObjectProperty<CassetteHolder>(new CassetteHolder());
-		audioManager = new SimpleObjectProperty<AudioManager>(new AudioManager());
+		audioManager = new SimpleObjectProperty<AudioManager>(new AudioManager(hasSpeakers));
 		status = new SimpleObjectProperty<Status>(Status.OFF);
 		
 		offState = new OffState(this);
@@ -290,7 +290,7 @@ public class Deck {
 	public ObjectProperty<PlaybackHead> headProperty() {
 		return head;
 	}
-
+	
 	public CassetteHolder getHolder() {
 		return holder.get();
 	}

@@ -9,14 +9,19 @@ import javafx.util.Duration;
 public class AudioManager {
 	
 	private MediaPlayer player;
+	private boolean hasSpeakers;
 	
-	public AudioManager() {
+	public AudioManager(boolean hasSpeakers) {
 		player = null;
+		this.hasSpeakers = hasSpeakers;
 	}
 	
 	public void loadFile(File songFile) {
 		Media media = new Media(songFile.toURI().toString());
 		player = new MediaPlayer(media);
+		if(!hasSpeakers) {
+			player.setMute(true);
+		}
 	}
 	
 	public void unloadFile() {
@@ -58,12 +63,16 @@ public class AudioManager {
 	}
 	
 	public void record() {
-		player.setMute(true);
+		if(hasSpeakers) {
+			player.setMute(true);	
+		}
 		player.play();
 	}
 	
 	public void stopRecord() {
-		player.setMute(false);
+		if(hasSpeakers) {
+			player.setMute(false);
+		}
 		player.pause();
 	}
 	
