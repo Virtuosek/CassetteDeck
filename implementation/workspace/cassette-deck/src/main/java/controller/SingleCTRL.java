@@ -17,10 +17,12 @@ public class SingleCTRL extends SimulationCTRL {
         System.out.println("*INSERT BUTTON PRESSED*");
         File songFile = null;
         if(!cassetteDeck.getDeck().getHolder().hasCassette()) {
-        	fileLoader = new FileLoader();
-        	songFile = fileLoader.openFile();
+            fileLoader = new FileLoader();
+            songFile = fileLoader.openFile();
         }
-        cassetteDeck.getDeck().insert(new Cassette(songFile));
+        if(songFile != null) {
+            cassetteDeck.getDeck().insert(new Cassette(songFile));
+        }
     }
 
     public void flipFn() {

@@ -286,4 +286,15 @@
          </padding>
       </VBox>
    </center>
+   <bottom>
+      <HBox fx:id="infoHB" alignment="CENTER" prefHeight="33.0" prefWidth="555.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="infoL" text="Info" textFill="#d0cece">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </bottom>
 </BorderPane>

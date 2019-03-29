@@ -11,22 +11,22 @@
     </properties>
    
     <dependencies>
-        <!-- JavaFx styling -->
+        <!--JavaFx styling-->
         <dependency>
             <groupId>de.jensd</groupId>
             <artifactId>fontawesomefx</artifactId>
             <version>8.9</version>
         </dependency>
-        <!-- MP3 player -->
-<!--        <dependency>
-            <groupId>com.googlecode.soundlibs</groupId>
-            <artifactId>jlayer</artifactId>
-            <version>1.0.1-1</version>
-        </dependency>-->
-
+        <!--JUnit-->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
     
-    <!-- JavaFx plugin -->
+    <!--JavaFx plugin-->
     <build>
         <plugins> 
             <plugin>
@@ -34,14 +34,9 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>8.8.3</version>
                 <configuration>
-<!--                    <vendor>YourCompany</vendor>-->
                     <mainClass>tools.Start</mainClass>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-    
-    
-       
-
 </project>

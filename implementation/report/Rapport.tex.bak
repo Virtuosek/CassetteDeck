@@ -59,12 +59,18 @@ For not only the modeling but also the implementation phase of the project, we h
 We have chosen \textit{maven} to easily manage jar files and organize the project.
 \subsubsection{\textit{IDE}s}
 \begin{center}
-\includegraphics[width=2.5cm]{./img/netBeans.png} \& \includegraphics[width=5cm]{./img/eclipseLogo.png}
+\includegraphics[width=2.5cm]{./img/netBeans.png} \& \includegraphics[width=5cm]{./img/eclipse.png}
 \end{center}
 To be sure the application is \textit{IDE}-independent, we have used each a different java \textit{IDE}, \textit{Netbeans} and \textit{Eclipse}. It is note worthy that we have encountered some behavioral differences caused by these \textit{IDEs}, noticeably, the path each one uses to acces the \textit{fxml} files.
-\subsection{MVC}
+\subsection{\textit{MVC}}
+\begin{center}
+\includegraphics[width=5cm]{./img/mvc.png}
+\end{center}
 We have tried to use as best we could the Model, View, Controler architecture, the project uses 2 of the 3 packages, "model" and "controller", for the "view" we have encountered -as said above- differences between the \textit{IDE}s which forced us to place the \textit{fxml} files in the src/main/resources folder.
+\subsection{\textit{JUnit?}}
+\subsection{Section2?}
 \pagebreak
+
 
 \section{Modeling differences}
 There have been some changes to the model since its conception in the \textbf{Modeling Report}, notably:
@@ -91,11 +97,10 @@ There have been some changes to the model since its conception in the \textbf{Mo
 \section{Known Issues}
 %\pagebreak
 \section{Miscellaneous}
-\begin{itemize}
-  \item Video link: %\url{https://youtube.com}
-  \item Git repository: \url{https://github.com/Virtuosek/CassetteDeck}
-\end{itemize}
-Note that the repository is private, please send a contribution request to either $\href{mailto:remagkes@gmail.com}{remagkes@gmail.com} $ or $\href{mailto:_}{theoEmail}$
+\subsection{\textit{Git}}
+Throughout the project, we have used version control \textit{git} and \textit{github} to organize and avoid conflicts while working on the project. After receiving feedback from the modeling report, we have decided to make the repository private. We invite you to send a contribution request to either $\href{mailto:remagkes@gmail.com}{remagkes@gmail.com} $ or $\href{mailto:to.constant@gmail.com}{to.constant@gmail.com}$
+\subsection{Video link}
+As asked in the requisites, a video demonstrating the basic features of the simulation can be accessed via this link: 
 
 
 
