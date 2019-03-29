@@ -51,7 +51,7 @@
                <left>
                   <HBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
                      <children>
-                        <Button fx:id="flipBtn" mnemonicParsing="false" onAction="#flipFn">
+                        <Button fx:id="flipBtn" disable="true" mnemonicParsing="false" onAction="#flipFn">
                            <graphic>
                               <FontAwesomeIconView glyphName="ROTATE_RIGHT" size="18" />
                            </graphic>
@@ -273,11 +273,11 @@
                <children>
                   <VBox fx:id="headsVB" spacing="10.0">
                      <children>
-                        <RadioButton fx:id="magneticHeadARB" mnemonicParsing="false" text="Head A" textFill="WHITE" />
-                        <RadioButton fx:id="magneticHeadBRB" mnemonicParsing="false" text="Head B" textFill="WHITE" />
+                        <RadioButton fx:id="magneticHeadARB" disable="true" mnemonicParsing="false" text="Head A" textFill="WHITE" />
+                        <RadioButton fx:id="magneticHeadBRB" disable="true" mnemonicParsing="false" text="Head B" textFill="WHITE" />
                      </children>
                   </VBox>
-                  <RadioButton mnemonicParsing="false" text="Motor" textFill="WHITE" />
+                  <RadioButton disable="true" mnemonicParsing="false" text="Motor" textFill="WHITE" />
                </children>
             </HBox>
          </children>

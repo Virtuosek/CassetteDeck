@@ -113,8 +113,8 @@ public class SingleCTRL extends SimulationCTRL {
         AudioManager audm = cassetteDeck.getDeck().getAudioManager();
         //volumeS.setValue(audm.fetchVolume()*100);
        // System.out.println("VOLUME FETCHED: "+audm.fetchVolume()*100);
-        audm.changeVolume(volumeS.getValue()/100);
-        System.out.println("SLIDER VALUE: "+volumeS.getValue()/100);
+        audm.changeVolume(volumeS.getValue());
+        System.out.println("SLIDER VALUE: "+volumeS.getValue());
     }
 
     @Override

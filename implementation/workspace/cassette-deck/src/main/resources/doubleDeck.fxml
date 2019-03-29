@@ -53,7 +53,7 @@
                      <left>
                         <HBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
                            <children>
-                              <Button fx:id="flipBtn" mnemonicParsing="false" onAction="#flip1Fn">
+                              <Button fx:id="flipBtn" disable="true" mnemonicParsing="false" onAction="#flip1Fn">
                                  <graphic>
                                     <FontAwesomeIconView glyphName="ROTATE_RIGHT" size="18" />
                                  </graphic>
@@ -145,7 +145,7 @@
                                        <graphic>
                                           <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_OFF" size="30" />
                                        </graphic></Label>
-                                    <Slider fx:id="playerVolumeSl" />
+                                    <Slider fx:id="playerVolumeSl" showTickLabels="true" showTickMarks="true" />
                                     <Label>
                                        <graphic>
                                           <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_UP" size="25" />
@@ -162,7 +162,7 @@
                                        <graphic>
                                           <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_OFF" size="30" />
                                        </graphic></Label>
-                                    <Slider fx:id="playerStereoSl" />
+                                    <Slider fx:id="playerStereoSl" showTickLabels="true" showTickMarks="true" />
                                     <Label>
                                        <graphic>
                                           <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_UP" size="25" />
@@ -240,7 +240,7 @@
                                     <graphic>
                                        <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_OFF" size="30" />
                                     </graphic></Label>
-                                 <Slider fx:id="recorderVolumeSl" />
+                                 <Slider fx:id="recorderVolumeSl" showTickLabels="true" showTickMarks="true" />
                                  <Label>
                                     <graphic>
                                        <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_UP" size="25" />
@@ -257,7 +257,7 @@
                                     <graphic>
                                        <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_OFF" size="30" />
                                     </graphic></Label>
-                                 <Slider fx:id="recorderStereoSl" />
+                                 <Slider fx:id="recorderStereoSl" showTickLabels="true" showTickMarks="true" />
                                  <Label>
                                     <graphic>
                                        <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_UP" size="25" />
@@ -275,11 +275,11 @@
                      <children>
                         <VBox fx:id="headsVB" spacing="10.0">
                            <children>
-                              <RadioButton fx:id="magneticHeadARB" mnemonicParsing="false" text="Head A" textFill="WHITE" />
-                              <RadioButton fx:id="magneticHeadBRB" mnemonicParsing="false" text="Head B" textFill="WHITE" />
+                              <RadioButton fx:id="magneticHeadARB" disable="true" mnemonicParsing="false" text="Head A" textFill="WHITE" />
+                              <RadioButton fx:id="magneticHeadBRB" disable="true" mnemonicParsing="false" text="Head B" textFill="WHITE" />
                            </children>
                         </VBox>
-                        <RadioButton mnemonicParsing="false" text="Motor" textFill="WHITE" />
+                        <RadioButton disable="true" mnemonicParsing="false" text="Motor" textFill="WHITE" />
                      </children>
                   </HBox>
                </children>
@@ -293,7 +293,7 @@
                      <left>
                         <HBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
                            <children>
-                              <Button fx:id="flip2Btn" mnemonicParsing="false" onAction="#flip2Fn">
+                              <Button fx:id="flip2Btn" disable="true" mnemonicParsing="false" onAction="#flip2Fn">
                                  <graphic>
                                     <FontAwesomeIconView glyphName="ROTATE_RIGHT" size="18" />
                                  </graphic>
@@ -382,7 +382,7 @@
                                        <graphic>
                                           <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_OFF" size="30" />
                                        </graphic></Label>
-                                    <Slider fx:id="playerVolume2Sl" />
+                                    <Slider fx:id="playerVolume2Sl" showTickLabels="true" showTickMarks="true" />
                                     <Label>
                                        <graphic>
                                           <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_UP" size="25" />
@@ -399,7 +399,7 @@
                                        <graphic>
                                           <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_OFF" size="30" />
                                        </graphic></Label>
-                                    <Slider fx:id="playerStereo2Sl" />
+                                    <Slider fx:id="playerStereo2Sl" showTickLabels="true" showTickMarks="true" />
                                     <Label>
                                        <graphic>
                                           <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_UP" size="25" />
@@ -477,7 +477,7 @@
                                     <graphic>
                                        <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_OFF" size="30" />
                                     </graphic></Label>
-                                 <Slider fx:id="recorderVolume2Sl" />
+                                 <Slider fx:id="recorderVolume2Sl" showTickLabels="true" showTickMarks="true" />
                                  <Label>
                                     <graphic>
                                        <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_UP" size="25" />
@@ -494,7 +494,7 @@
                                     <graphic>
                                        <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_OFF" size="30" />
                                     </graphic></Label>
-                                 <Slider fx:id="recorderStereo2Sl" />
+                                 <Slider fx:id="recorderStereo2Sl" showTickLabels="true" showTickMarks="true" />
                                  <Label>
                                     <graphic>
                                        <FontAwesomeIconView fill="WHITE" glyphName="VOLUME_UP" size="25" />
@@ -512,11 +512,11 @@
                      <children>
                         <VBox fx:id="heads2VB" spacing="10.0">
                            <children>
-                              <RadioButton fx:id="magneticHeadA2RB" mnemonicParsing="false" text="Head A" textFill="WHITE" />
-                              <RadioButton fx:id="magneticHeadB2RB" mnemonicParsing="false" text="Head B" textFill="WHITE" />
+                              <RadioButton fx:id="magneticHeadA2RB" disable="true" mnemonicParsing="false" text="Head A" textFill="WHITE" />
+                              <RadioButton fx:id="magneticHeadB2RB" disable="true" mnemonicParsing="false" text="Head B" textFill="WHITE" />
                            </children>
                         </VBox>
-                        <RadioButton mnemonicParsing="false" text="Motor" textFill="WHITE" />
+                        <RadioButton disable="true" mnemonicParsing="false" text="Motor" textFill="WHITE" />
                      </children>
                   </HBox>
                </children>

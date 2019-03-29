@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.22)  29 MAR 2019 22:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.22)  29 MAR 2019 23:54
 entering extended mode
 **./Rapport.tex
 (Rapport.tex
@@ -404,30 +404,30 @@ been already used, duplicate ignored
                    \relax 
 l.43 \clearpage
                 [1]
-<./img/SceneBuilder.png, id=82, 783.92876pt x 783.92876pt>
+<./img/SceneBuilder.png, id=72, 783.92876pt x 783.92876pt>
 File: ./img/SceneBuilder.png Graphic file (type png)
 <use ./img/SceneBuilder.png>
-Package pdftex.def Info: ./img/SceneBuilder.png  used on input line 51.
+Package pdftex.def Info: ./img/SceneBuilder.png  used on input line 50.
 (pdftex.def)             Requested size: 56.9055pt x 56.90216pt.
-<./img/maven.png, id=84, 273.02pt x 69.058pt>
+<./img/maven.png, id=74, 273.02pt x 69.058pt>
 File: ./img/maven.png Graphic file (type png)
 <use ./img/maven.png>
-Package pdftex.def Info: ./img/maven.png  used on input line 57.
+Package pdftex.def Info: ./img/maven.png  used on input line 56.
 (pdftex.def)             Requested size: 71.13188pt x 17.99153pt.
-<./img/netBeans.png, id=85, 200.75pt x 200.75pt>
+<./img/netBeans.png, id=75, 200.75pt x 200.75pt>
 File: ./img/netBeans.png Graphic file (type png)
 <use ./img/netBeans.png>
-Package pdftex.def Info: ./img/netBeans.png  used on input line 62.
+Package pdftex.def Info: ./img/netBeans.png  used on input line 61.
 (pdftex.def)             Requested size: 71.13188pt x 71.13348pt.
-<./img/eclipse.png, id=86, 803.0pt x 188.705pt>
+<./img/eclipse.png, id=76, 803.0pt x 188.705pt>
 File: ./img/eclipse.png Graphic file (type png)
 <use ./img/eclipse.png>
-Package pdftex.def Info: ./img/eclipse.png  used on input line 62.
+Package pdftex.def Info: ./img/eclipse.png  used on input line 61.
 (pdftex.def)             Requested size: 142.26378pt x 33.42986pt.
-<./img/mvc.png, id=87, 249.18094pt x 205.5178pt>
+<./img/mvc.png, id=77, 249.18094pt x 205.5178pt>
 File: ./img/mvc.png Graphic file (type png)
 <use ./img/mvc.png>
-Package pdftex.def Info: ./img/mvc.png  used on input line 67.
+Package pdftex.def Info: ./img/mvc.png  used on input line 66.
 (pdftex.def)             Requested size: 142.26378pt x 117.33765pt.
 
 
@@ -440,53 +440,54 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.70 \subsection
-                {Section2?} [1
+l.69 
+      [1
 
  <./img/SceneBuilder.png> <./img/maven.png> <./img/netBeans.png> <./img/eclipse
-.png> <./img/mvc.png>] [2]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 77.
+.png> <./img/mvc.png>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 73.
 
 ("D:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 77.
-<./img/deckLauncher.png, id=102, 246.1697pt x 297.36093pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 73.
+<./img/deckLauncher.png, id=88, 246.1697pt x 297.36093pt>
 File: ./img/deckLauncher.png Graphic file (type png)
 <use ./img/deckLauncher.png>
-Package pdftex.def Info: ./img/deckLauncher.png  used on input line 80.
+Package pdftex.def Info: ./img/deckLauncher.png  used on input line 76.
 (pdftex.def)             Requested size: 142.26378pt x 171.85237pt.
-<./img/doubleDeck_noF.png, id=103, 531.48563pt x 319.1925pt>
+<./img/doubleDeck_noF.png, id=89, 531.48563pt x 319.1925pt>
 File: ./img/doubleDeck_noF.png Graphic file (type png)
 <use ./img/doubleDeck_noF.png>
-Package pdftex.def Info: ./img/doubleDeck_noF.png  used on input line 85.
+Package pdftex.def Info: ./img/doubleDeck_noF.png  used on input line 81.
 (pdftex.def)             Requested size: 284.52756pt x 170.88075pt.
- [3 <./img/deckLauncher.png (PNG copy)> <./img/doubleDeck_noF.png (PNG copy)>]
-Overfull \hbox (23.93048pt too wide) in paragraph at lines 103--104
+ [2 <./img/deckLauncher.png (PNG copy)>] [3 <./img/doubleDeck_noF.png (PNG copy
+)>]
+Overfull \hbox (23.93048pt too wide) in paragraph at lines 102--103
 \OT1/cmr/m/n/10.95 make the repos-i-tory pri-vate. We in-vite you to send a con
 -tri-bu-tion re-quest to ei-ther $[]\OML/cmm/m/it/10.95 remagkes\OT1/cmr/m/n/10
 .95 @\OML/cmm/m/it/10.95 gmail:com[]$
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 109.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 108.
 [4]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 109.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 108.
  (Rapport.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 109.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 109.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 108.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 108.
 Package rerunfilecheck Info: File `Rapport.out' has not changed.
-(rerunfilecheck)             Checksum: 933F4847B1DA214C980C91434ED3A1ED;768.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 109.
+(rerunfilecheck)             Checksum: B62376FBE547C04B64223A3102F9427D;602.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 108.
  ) 
 Here is how much of TeX's memory you used:
- 6713 strings out of 492970
- 96329 string characters out of 3135842
- 194086 words of memory out of 3000000
- 10480 multiletter control sequences out of 15000+200000
- 11829 words of font info for 43 fonts, out of 3000000 for 9000
+ 6708 strings out of 492970
+ 96220 string characters out of 3135842
+ 193086 words of memory out of 3000000
+ 10477 multiletter control sequences out of 15000+200000
+ 11470 words of font info for 42 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,10n,43p,456b,403s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 28i,10n,43p,787b,469s stack positions out of 5000i,500n,10000p,200000b,50000s
 <D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><D:/Program Files/Mi
@@ -496,9 +497,9 @@ pe1/public/amsfonts/cm/cmr12.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/publi
 c/amsfonts/cm/cmsl10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
 ts/cm/cmsy10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
 ti10.pfb>
-Output written on Rapport.pdf (6 pages, 315626 bytes).
+Output written on Rapport.pdf (6 pages, 315175 bytes).
 PDF statistics:
- 151 PDF objects out of 1000 (max. 8388607)
- 19 named destinations out of 1000 (max. 500000)
- 140 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 140 PDF objects out of 1000 (max. 8388607)
+ 17 named destinations out of 1000 (max. 500000)
+ 124 words of extra memory for PDF output out of 10000 (max. 10000000)
 

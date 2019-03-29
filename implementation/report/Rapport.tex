@@ -45,19 +45,18 @@ Academic year 2018-2019
 
 \section{Implementation choices}
 \label{sec:implChoices}
-\subsection{Software and technologies}
-\subsubsection{\textit{Scene Builder}}
+\subsection{\textit{Scene Builder}}
 \begin{center}
 \includegraphics[width=2cm]{./img/SceneBuilder.png}\\
 \end{center}
 For not only the modeling but also the implementation phase of the project, we have used \textit{Scene Builder} to design the \textit{JavaFx GUI}.\\
 \textit{FXML} files were generated and introduced to our project.
-\subsubsection{\textit{Maven}}
+\subsection{\textit{Maven}}
 \begin{center}
 \includegraphics[width=2.5cm]{./img/maven.png}\\
 \end{center}
 We have chosen \textit{maven} to easily manage jar files and organize the project.
-\subsubsection{\textit{IDE}s}
+\subsection{\textit{IDE}s}
 \begin{center}
 \includegraphics[width=2.5cm]{./img/netBeans.png} \& \includegraphics[width=5cm]{./img/eclipse.png}
 \end{center}
@@ -67,9 +66,6 @@ To be sure the application is \textit{IDE}-independent, we have used each a diff
 \includegraphics[width=5cm]{./img/mvc.png}
 \end{center}
 We have tried to use as best we could the Model, View, Controler architecture, the project uses 2 of the 3 packages, "model" and "controller", for the "view" we have encountered -as said above- differences between the \textit{IDE}s which forced us to place the \textit{fxml} files in the src/main/resources folder.
-\subsection{Section2?}
-\pagebreak
-
 
 \section{Modeling differences}
 There have been some changes to the model since its conception in the \textbf{Modeling Report}, notably:
@@ -92,10 +88,12 @@ There have been some changes to the model since its conception in the \textbf{Mo
 
 %\pagebreak
 \section{Design Patterns}
+For this application, we implemented the "state machine" design pattern to handle the different states of the Deck class. Indeed, the deck (s) of the device will not have the same behavior at the start of a button depending on the state in which they are (s). A deck can be turned off, on hold, playing, fast-forwarding, fast-rewinding, or recording. We have chosen not to make a pause state, because, in our opinion, it simply is a possible action when the deck is in the reading or recording state. The pause button is a button that can be held down at the same time as the others, and can be engaged at any time. This is not the case for other buttons that disengage themselves when pressing another button (other than pause), and that can not be engaged at any time.
+The state machine consists of a State interface that inherits each possible state. The class that can take these states (Deck in this case) has a State attribute and the behavior of all Deck methods that are likely to vary by state is delegated to State. This State object will change each time the state changes, thus another class will take care of Deck's behavior.
 %\pagebreak
 \section{Known Issues}
 \begin{itemize}
-\item JUnit test have not been completed.
+\item JUnit tests have not been completed.
 \end{itemize}
 %\pagebreak
 \section{Miscellaneous}
