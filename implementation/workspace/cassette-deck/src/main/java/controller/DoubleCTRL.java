@@ -14,6 +14,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import model.Cassette;
 import model.CassetteDeck;
+import model.Deck;
 import model.DoubleCassetteDeck;
 import tools.FileLoader;
 import tools.Status;
@@ -88,16 +89,26 @@ public class DoubleCTRL extends SimulationCTRL {
     public void eject1Fn() {
     	System.out.println("*EJECT BUTTON 1 PRESSED*");
     	doubleCassetteDeck.getDeck().eject();
+        progressPB.setProgress(0.);
     }
     
     public void insert1Fn() {
         System.out.println("*INSERT BUTTON 1 PRESSED*");
+        Deck deck = cassetteDeck.getDeck();
         File songFile = null;
         if(!doubleCassetteDeck.getDeck().getHolder().hasCassette()) {
         	fileLoader = new FileLoader();
         	songFile = fileLoader.openFile();
         }
-        doubleCassetteDeck.getDeck().insert(new Cassette(songFile));
+        if(songFile != null) {
+            deck.insert(new Cassette(songFile));
+        	deck.getHolder().getCassette().progressProperty().addListener(new ChangeListener<Number>() {
+    			@Override
+    			public void changed(ObservableValue<? extends Number> arg0, Number arg1, Number arg2) {
+    				progressPB.setProgress(deck.getHolder().getCassette().getProgress());
+    			}
+        	});
+        }
     }
     
     public void flip1Fn() {
@@ -173,16 +184,26 @@ public class DoubleCTRL extends SimulationCTRL {
     public void eject2Fn() {
     	System.out.println("*EJECT BUTTON 2 PRESSED*");
     	doubleCassetteDeck.getDeck2().eject();
+        progress2PB.setProgress(0.);
     }
     
     public void insert2Fn() {
         System.out.println("*INSERT BUTTON 2 PRESSED*");
+        Deck deck2 = doubleCassetteDeck.getDeck2();
         File songFile = null;
         if(!doubleCassetteDeck.getDeck2().getHolder().hasCassette()) {
         	fileLoader = new FileLoader();
         	songFile = fileLoader.openFile();
         }
-        doubleCassetteDeck.getDeck2().insert(new Cassette(songFile));
+        if(songFile != null) {
+            deck2.insert(new Cassette(songFile));
+        	deck2.getHolder().getCassette().progressProperty().addListener(new ChangeListener<Number>() {
+    			@Override
+    			public void changed(ObservableValue<? extends Number> arg0, Number arg1, Number arg2) {
+    				progress2PB.setProgress(deck2.getHolder().getCassette().getProgress());
+    			}
+        	});
+        }
     }
     
     public void flip2Fn() {
@@ -260,14 +281,23 @@ public class DoubleCTRL extends SimulationCTRL {
     	super.init(cassetteDeck);
     	
     	doubleCassetteDeck = (DoubleCassetteDeck) cassetteDeck;
+    	Deck deck2 = doubleCassetteDeck.getDeck2();
 		status2L.setText(Status.OFF.toString());
-    	doubleCassetteDeck.getDeck2().statusProperty().addListener(new ChangeListener<Status>() {
+    	deck2.statusProperty().addListener(new ChangeListener<Status>() {
     		@Override
     		public void changed(ObservableValue<? extends Status> observable, Status oldValue, Status newValue) {
-    			status2L.setText(doubleCassetteDeck.getDeck2().getStatus().toString());
+    			status2L.setText(deck2.getStatus().toString());
     		}
     	});
-        if(!cassetteDeck.hasSpeakers()) {
+    	counter2L.setText("0");
+    	deck2.counterProperty().addListener(new ChangeListener<Number>() {
+			@Override
+			public void changed(ObservableValue<? extends Number> arg0, Number arg1, Number arg2) {
+				counter2L.setText(Integer.toString(deck2.getCounter()));
+			}
+    	});
+    	
+        if(cassetteDeck.getSpeakers() == null) {
         	playerHeaderHB.getChildren().remove(playerSourceBtn);
         	playerHeader2HB.getChildren().remove(playerSource2Btn);
         }
@@ -275,7 +305,7 @@ public class DoubleCTRL extends SimulationCTRL {
         	playerAndRecorderHB.getChildren().remove(recorderVB);
         	playerAndRecorder2HB.getChildren().remove(recorder2VB);
         }
-        if(!cassetteDeck.hasMicrophone()) {
+        if(cassetteDeck.getMicrophone() == null) {
         	recorderHeaderHB.getChildren().remove(recorderSourceBtn);
         	recorderHeader2HB.getChildren().remove(recorderSource2Btn);
         }

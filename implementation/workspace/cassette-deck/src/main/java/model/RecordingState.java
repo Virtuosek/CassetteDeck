@@ -102,9 +102,10 @@ public class RecordingState implements State {
 	}
 	
 	public void launchRecord() {
+		Cassette cassette = deck.getHolder().getCassette();
 		deck.getMotor().turnOn();
-		deck.getHolder().getCassette().setAtStart(false);
-		deck.getAudioManager().record();
+		cassette.setAtStart(false);
+		deck.getAudioManager().play();
 		timer = new Timer();
 		timer.scheduleAtFixedRate(new TimerTask() {
 			@Override
@@ -113,8 +114,9 @@ public class RecordingState implements State {
 					@Override
 					public void run() {
 						deck.incrementCounter();
+						cassette.setProgress(deck.getAudioManager().getProgress());
 						if(deck.getAudioManager().isAtEnd()) {
-							deck.getHolder().getCassette().setAtEnd(true);
+							cassette.setAtEnd(true);
 							deck.setState(deck.getIdleState());
 							cancel();
 						}

@@ -4,8 +4,11 @@ import java.io.File;
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import model.Cassette;
 import model.CassetteDeck;
+import model.Deck;
 import tools.AudioManager;
 import tools.FileLoader;
 
@@ -14,17 +17,25 @@ public class SingleCTRL extends SimulationCTRL {
     public void ejectFn() {
         System.out.println("*EJECT BUTTON PRESSED*");
         cassetteDeck.getDeck().eject();
+        progressPB.setProgress(0.);
     }
 
     public void insertFn() {
         System.out.println("*INSERT BUTTON PRESSED*");
+        Deck deck = cassetteDeck.getDeck();
         File songFile = null;
-        if (!cassetteDeck.getDeck().getHolder().hasCassette()) {
+        if(!deck.getHolder().hasCassette()) {
             fileLoader = new FileLoader();
             songFile = fileLoader.openFile();
         }
-        if (songFile != null) {
-            cassetteDeck.getDeck().insert(new Cassette(songFile));
+        if(songFile != null) {
+            deck.insert(new Cassette(songFile));
+        	deck.getHolder().getCassette().progressProperty().addListener(new ChangeListener<Number>() {
+    			@Override
+    			public void changed(ObservableValue<? extends Number> arg0, Number arg1, Number arg2) {
+    				progressPB.setProgress(deck.getHolder().getCassette().getProgress());
+    			}
+        	});
         }
     }
 
@@ -108,16 +119,16 @@ public class SingleCTRL extends SimulationCTRL {
 
     @Override
     public void init(CassetteDeck cassetteDeck) {
-        super.init(cassetteDeck);
-
-        if (!cassetteDeck.hasSpeakers()) {
-            playerHeaderHB.getChildren().remove(playerSourceBtn);
+    	super.init(cassetteDeck);
+    	
+        if(cassetteDeck.getSpeakers() == null) {
+        	playerHeaderHB.getChildren().remove(playerSourceBtn);
         }
         if (!cassetteDeck.hasRecorder()) {
             playerAndRecorderHB.getChildren().remove(recorderVB);
         }
-        if (!cassetteDeck.hasMicrophone()) {
-            recorderHeaderHB.getChildren().remove(recorderSourceBtn);
+        if(cassetteDeck.getMicrophone() == null) {
+        	recorderHeaderHB.getChildren().remove(recorderSourceBtn);
         }
         if (!cassetteDeck.hasAutoReverse()) {
             navigationHB.getChildren().remove(autoReverseBtn);

@@ -102,7 +102,7 @@
                            <font>
                               <Font name="Verdana" size="13.0" />
                            </font></Label>
-                        <ProgressBar progress="0.0" />
+                        <ProgressBar fx:id="progressPB" />
                         <Button fx:id="resetCounterBtn" mnemonicParsing="false" onAction="#resetCounterFn">
                            <graphic>
                               <FontAwesomeIconView glyphName="REFRESH" size="18" />

@@ -10,19 +10,29 @@ public abstract class CassetteDeck {
 	private ObjectProperty<Deck> deck;
 	private BooleanProperty isTurnedOn;
 	private BooleanProperty hasRecorder;
-	private BooleanProperty hasMicrophone;
-	private BooleanProperty hasSpeakers;
 	private BooleanProperty hasAutoReverse;
 	private BooleanProperty hasSongDetection;
+	private ObjectProperty<Device> speakers;
+	private ObjectProperty<Device> microphone;
 	
 	public CassetteDeck(boolean hasRecorder, boolean hasMicrophone, boolean hasSpeakers, boolean hasAutoReverse, boolean hasSongDetection) {
-		deck = new SimpleObjectProperty<Deck>(new Deck());
+		deck = new SimpleObjectProperty<Deck>(new Deck(hasSpeakers));
 		isTurnedOn = new SimpleBooleanProperty(false);
 		this.hasRecorder = new SimpleBooleanProperty(hasRecorder);
-		this.hasMicrophone = new SimpleBooleanProperty(hasMicrophone);
-		this.hasSpeakers = new SimpleBooleanProperty(hasSpeakers);
 		this.hasAutoReverse = new SimpleBooleanProperty(hasAutoReverse);
 		this.hasSongDetection = new SimpleBooleanProperty(hasSongDetection);
+		if(hasSpeakers) {
+			speakers = new SimpleObjectProperty<Device>(new Device());
+		}
+		else {
+			speakers = new SimpleObjectProperty<Device>(null);
+		}
+		if(hasMicrophone) {
+			microphone = new SimpleObjectProperty<Device>(new Device());
+		}
+		else {
+			microphone = new SimpleObjectProperty<Device>(null);
+		}
 	}
 	
 	public void turnOn() {
@@ -91,26 +101,6 @@ public abstract class CassetteDeck {
 		return hasRecorder;
 	}
 
-	public boolean hasMicrophone() {
-		return hasMicrophone.get();
-	}
-
-	public void setMicrophone(boolean hasMicrophone) {
-		this.hasMicrophone.set(hasMicrophone);
-	}
-
-	public boolean hasSpeakers() {
-		return hasSpeakers.get();
-	}
-
-	public void setSpeakers(boolean hasSpeakers) {
-		this.hasSpeakers.set(hasSpeakers);
-	}
-	
-	public BooleanProperty hasSpeakersProperty() {
-		return hasSpeakers;
-	}
-
 	public boolean hasAutoReverse() {
 		return hasAutoReverse.get();
 	}
@@ -134,11 +124,28 @@ public abstract class CassetteDeck {
 	public BooleanProperty hasSongDetectionProperty() {
 		return hasSongDetection;
 	}
+	
+	public Device getSpeakers() {
+		return speakers.get();
+	}
 
-	@Override
-	public String toString() {
-		return "CassetteDeck [deck=" + deck + ", isTurnedOn=" + isTurnedOn + ", hasRecorder=" + hasRecorder
-				+ ", hasMicrophone=" + hasMicrophone + ", hasSpeakers=" + hasSpeakers + ", hasAutoReverse="
-				+ hasAutoReverse + ", hasSongDetection=" + hasSongDetection + "]";
+	public void setSpeakers(Device speakers) {
+		this.speakers.set(speakers);
+	}
+	
+	public ObjectProperty<Device> speakersProperty() {
+		return speakers;
+	}
+	
+	public Device getMicrophone() {
+		return microphone.get();
+	}
+
+	public void setMicrophone(Device microphone) {
+		this.microphone.set(microphone);
+	}
+	
+	public ObjectProperty<Device> microphoneProperty() {
+		return microphone;
 	}
 }

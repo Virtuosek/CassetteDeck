@@ -20,8 +20,9 @@ public class FastForwardingState implements State {
 	
 	@Override
 	public void entry() {
+		Cassette cassette = deck.getHolder().getCassette();
 		deck.getMotor().turnOn();
-		deck.getHolder().getCassette().setAtStart(false);
+		cassette.setAtStart(false);
 		long speed = (long) (1000 / Start.FAST_PLAYBACK_SPEED_FACTOR);
 		currentTime = System.currentTimeMillis();
 		timer = new Timer();
@@ -32,10 +33,11 @@ public class FastForwardingState implements State {
 					@Override
 					public void run() {
 						deck.incrementCounter();
+						cassette.setProgress(deck.getAudioManager().getProgress());
 						lastTime = currentTime;
 						currentTime = System.currentTimeMillis();
 						if(deck.getAudioManager().fastForward(currentTime - lastTime)) {
-							deck.getHolder().getCassette().setAtEnd(true);
+							cassette.setAtEnd(true);
 							deck.setState(deck.getIdleState());
 							cancel();
 						}
