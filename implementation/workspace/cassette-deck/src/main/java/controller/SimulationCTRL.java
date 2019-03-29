@@ -1,5 +1,7 @@
 package controller;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -12,6 +14,7 @@ import javafx.stage.Stage;
 import model.CassetteDeck;
 import tools.FileLoader;
 import tools.SceneLoader;
+import tools.Status;
 
 public abstract class SimulationCTRL {
 	
@@ -37,6 +40,8 @@ public abstract class SimulationCTRL {
 	protected Slider recordBalanceS;
 	@FXML
 	protected Label statusL;
+	@FXML
+	protected Label counterL;
 	@FXML
 	protected Button powerBtn;
 	@FXML
@@ -102,5 +107,30 @@ public abstract class SimulationCTRL {
 	
 	public void init(CassetteDeck cassetteDeck) {
 		this.cassetteDeck = cassetteDeck;
+		statusL.setText(Status.OFF.toString());
+    	cassetteDeck.getDeck().statusProperty().addListener(new ChangeListener<Status>() {
+    		@Override
+    		public void changed(ObservableValue<? extends Status> observable, Status oldValue, Status newValue) {
+    			statusL.setText(cassetteDeck.getDeck().getStatus().toString());
+    		}
+    	});
+        if(!cassetteDeck.hasSpeakers()) {
+        	playerHeaderHB.getChildren().remove(playerSourceBtn);
+        }
+        if(!cassetteDeck.hasRecorder()) {
+        	playerAndRecorderHB.getChildren().remove(recorderVB);
+        }
+        if(!cassetteDeck.hasMicrophone()) {
+        	recorderHeaderHB.getChildren().remove(recorderSourceBtn);
+        }
+        if(!cassetteDeck.hasAutoReverse()) {
+        	navigationHB.getChildren().remove(autoReverseBtn);
+        	headsVB.getChildren().remove(magneticHeadBRB);
+        	magneticHeadARB.setText("Head");
+        }
+        if(!cassetteDeck.hasSongDetection()) {
+        	navigationHB.getChildren().remove(previousSongBtn);
+        	navigationHB.getChildren().remove(nextSongBtn);
+        }
 	}
 }

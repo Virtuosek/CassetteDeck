@@ -1,21 +1,29 @@
 package model;
 
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import tools.AudioManager;
+import tools.Status;
 
 public class Deck {
 
-	private int volume;
-	private int balance;
-	private int recordVolume;
-	private int recordBalance;
-	private int counter;
-	private boolean isAutoReversing;
-	private boolean isOnPause;
-	private boolean isChangingSong;
-	private Motor motor;
-	private PlaybackHead head;
-	private CassetteHolder holder;
-	private AudioManager audioManager;
+	private IntegerProperty volume;
+	private IntegerProperty balance;
+	private IntegerProperty recordVolume;
+	private IntegerProperty recordBalance;
+	private IntegerProperty counter;
+	private BooleanProperty isAutoReversing;
+	private BooleanProperty isOnPause;
+	private BooleanProperty isChangingSong;
+	private ObjectProperty<Motor> motor;
+	private ObjectProperty<PlaybackHead> head;
+	private ObjectProperty<CassetteHolder> holder;
+	private ObjectProperty<AudioManager> audioManager;
+	private ObjectProperty<Status> status;
 	
 	private State offState;
 	private State idleState;
@@ -23,22 +31,22 @@ public class Deck {
 	private State recordingState;
 	private State fastRewindingState;
 	private State fastForwardingState;
-	
 	private State state;
 	
 	public Deck() {
-		volume = 0;
-		balance = 0;
-		recordVolume = 0;
-		recordBalance = 0;
-		counter = 0;
-		isAutoReversing = false;
-		isOnPause = false;
-		isChangingSong = false;
-		motor = new Motor();
-		head = new PlaybackHead();
-		holder = new CassetteHolder();
-		audioManager = new AudioManager();
+		volume = new SimpleIntegerProperty(0);
+		balance = new SimpleIntegerProperty(0);
+		recordVolume = new SimpleIntegerProperty(0);
+		recordBalance = new SimpleIntegerProperty(0);
+		counter = new SimpleIntegerProperty(0);
+		isAutoReversing = new SimpleBooleanProperty(false);
+		isOnPause = new SimpleBooleanProperty(false);
+		isChangingSong = new SimpleBooleanProperty(false);
+		motor = new SimpleObjectProperty<Motor>(new Motor());
+		head = new SimpleObjectProperty<PlaybackHead>(new PlaybackHead());
+		holder = new SimpleObjectProperty<CassetteHolder>(new CassetteHolder());
+		audioManager = new SimpleObjectProperty<AudioManager>(new AudioManager());
+		status = new SimpleObjectProperty<Status>(Status.OFF);
 		
 		offState = new OffState(this);
 		idleState = new IdleState(this);
@@ -46,16 +54,15 @@ public class Deck {
 		recordingState = new RecordingState(this);
 		fastRewindingState = new FastRewindingState(this);
 		fastForwardingState = new FastForwardingState(this);
-		
 		state = offState;
 	}
 	
 	public void turnOn() {
-		state = idleState;
+		setState(idleState);
 	}
 	
 	public void turnOff() {
-		state = offState;
+		setState(offState);
 	}
 	
 	public void eject() {
@@ -103,11 +110,11 @@ public class Deck {
 	}
 	
 	public void incrementCounter() {
-		counter++;
+		counter.set(counter.get() + 1);
 	}
 	
 	public void decrementCounter() {
-		counter--;
+		counter.set(counter.get() - 1);
 	}
 	
 	public void enableAutoReverse() {
@@ -121,42 +128,42 @@ public class Deck {
 	}
 	
 	public void turnVolumeLeft() {
-		volume--;
+		volume.set(volume.get() - 1);
 		System.out.println("The volume has been decreased.");
 	}
 	
 	public void turnVolumeRight() {
-		volume++;
+		volume.set(volume.get() + 1);
 		System.out.println("The volume has been increased.");
 	}
 	
 	public void turnBalanceLeft() {
-		balance--;
+		balance.set(balance.get() - 1);
 		System.out.println("The balance has been turned to left.");
 	}
 	
 	public void turnBalanceRight() {
-		balance++;
+		balance.set(balance.get() + 1);
 		System.out.println("The balance has been turned to right.");
 	}
 	
 	public void turnRecordVolumeLeft() {
-		recordVolume--;
+		recordVolume.set(recordVolume.get() - 1);
 		System.out.println("The record volume has been decreased.");
 	}
 	
 	public void turnRecordVolumeRight() {
-		recordVolume++;
+		recordVolume.set(recordVolume.get() + 1);
 		System.out.println("The record volume has been increased.");
 	}
 	
 	public void turnRecordBalanceLeft() {
-		recordBalance--;
+		recordBalance.set(recordBalance.get() - 1);
 		System.out.println("The record balance has been turned to left.");
 	}
 	
 	public void turnRecordBalanceRight() {
-		recordBalance++;
+		recordBalance.set(recordBalance.get() + 1);
 		System.out.println("The record balance has been turned to right.");
 	}
 	
@@ -165,95 +172,159 @@ public class Deck {
 	
 
 	public int getVolume() {
-		return volume;
+		return volume.get();
 	}
 
 	public void setVolume(int volume) {
-		this.volume = volume;
+		this.volume.set(volume);
+	}
+	
+	public IntegerProperty volumeProperty() {
+		return volume;
 	}
 
 	public int getBalance() {
-		return balance;
+		return balance.get();
 	}
 
 	public void setBalance(int balance) {
-		this.balance = balance;
+		this.balance.set(balance);
+	}
+	
+	public IntegerProperty balanceProperty() {
+		return balance;
 	}
 
 	public int getRecordVolume() {
-		return recordVolume;
+		return recordVolume.get();
 	}
 
 	public void setRecordVolume(int recordVolume) {
-		this.recordVolume = recordVolume;
+		this.recordVolume.set(recordVolume);
+	}
+	
+	public IntegerProperty recordVolumeProperty() {
+		return recordVolume;
 	}
 
 	public int getRecordBalance() {
-		return recordBalance;
+		return recordBalance.get();
 	}
 
 	public void setRecordBalance(int recordBalance) {
-		this.recordBalance = recordBalance;
+		this.recordBalance.set(recordBalance);
+	}
+	
+	public IntegerProperty recordBalanceProperty() {
+		return recordBalance;
 	}
 
 	public int getCounter() {
-		return counter;
+		return counter.get();
 	}
 
 	public void setCounter(int counter) {
-		this.counter = counter;
+		this.counter.set(counter);
 	}
 
+	public IntegerProperty counterProperty() {
+		return counter;
+	}
+	
 	public boolean isAutoReversing() {
-		return isAutoReversing;
+		return isAutoReversing.get();
 	}
 
 	public void setAutoReversing(boolean isAutoReversing) {
-		this.isAutoReversing = isAutoReversing;
+		this.isAutoReversing.set(isAutoReversing);
+	}
+	
+	public BooleanProperty isAutoReversingProperty() {
+		return isAutoReversing;
 	}
 
 	public boolean isOnPause() {
-		return isOnPause;
+		return isOnPause.get();
 	}
 	
 	public void setOnPause(boolean isOnPause) {
-		this.isOnPause = isOnPause;
+		this.isOnPause.set(isOnPause);
+	}
+	
+	public BooleanProperty isOnPauseProperty() {
+		return isOnPause;
 	}
 	
 	public boolean isChangingSong() {
-		return isChangingSong;
+		return isChangingSong.get();
 	}
 	
 	public void setChangingSong(boolean isChangingSong) {
-		this.isChangingSong = isChangingSong;
+		this.isChangingSong.set(isChangingSong);
+	}
+	
+	public BooleanProperty isChangingSongProperty() {
+		return isChangingSong;
 	}
 	
 	public Motor getMotor() {
-		return motor;
+		return motor.get();
 	}
 
 	public void setMotor(Motor motor) {
-		this.motor = motor;
+		this.motor.set(motor);
 	}
 
+	public ObjectProperty<Motor> motorProperty() {
+		return motor;
+    }
+	
 	public PlaybackHead getHead() {
-		return head;
+		return head.get();
 	}
 
 	public void setHead(PlaybackHead head) {
-		this.head = head;
+		this.head.set(head);
+	}
+	
+	public ObjectProperty<PlaybackHead> headProperty() {
+		return head;
 	}
 
 	public CassetteHolder getHolder() {
-		return holder;
+		return holder.get();
 	}
 
 	public void setHolder(CassetteHolder holder) {
-		this.holder = holder;
+		this.holder.set(holder);
+	}
+	
+	public ObjectProperty<CassetteHolder> holderProperty() {
+		return holder;
 	}
 	
 	public AudioManager getAudioManager() {
+		return audioManager.get();
+	}
+	
+	public void setAudioManager(AudioManager audioManager) {
+		this.audioManager.set(audioManager);
+	}
+	
+	public ObjectProperty<AudioManager> audioManagerProperty() {
 		return audioManager;
+	}
+	
+	public Status getStatus() {
+		return status.get();
+	}
+	
+	public void setStatus(Status status) {
+		this.status.set(status);
+	}
+	
+	public ObjectProperty<Status> statusProperty() {
+		return status;
 	}
 
 	public State getOffState() {

@@ -1,5 +1,7 @@
 package model;
 
+import tools.Status;
+
 public class OffState implements State {
 
 	private Deck deck;
@@ -10,12 +12,14 @@ public class OffState implements State {
 	
 	@Override
 	public void entry() {
-
+		deck.setStatus(Status.OFF);
+		System.out.println("The deck is off.");
 	}
 	
 	@Override
 	public void exit() {
-		
+		deck.setStatus(Status.IDLE);
+		System.out.println("The deck is on.");
 	}
 	
 	@Override

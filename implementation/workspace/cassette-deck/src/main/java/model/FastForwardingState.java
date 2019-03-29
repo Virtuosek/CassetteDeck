@@ -4,6 +4,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import tools.Start;
+import tools.Status;
 
 public class FastForwardingState implements State {
 	
@@ -37,6 +38,7 @@ public class FastForwardingState implements State {
 				}
 			}
 		}, speed, speed);
+		deck.setStatus(Status.FAST_FORWARDING);
 		System.out.println("The deck is fast forwarding.");
 	}
 	

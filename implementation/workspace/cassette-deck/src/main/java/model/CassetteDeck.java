@@ -21,15 +21,13 @@ public abstract class CassetteDeck {
 	}
 	
 	public void turnOn() {
-		deck.turnOn();
 		isTurnedOn = true;
-		System.out.println("The cassette deck is turned on.");
+		deck.turnOn();
 	}
 	
 	public void turnOff() {
-		deck.turnOff();
 		isTurnedOn = false;
-		System.out.println("Power is off.");
+		deck.turnOff();
 	}
 	
 	public void plugInputDevice() {

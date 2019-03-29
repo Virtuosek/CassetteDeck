@@ -3,6 +3,8 @@ package model;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import tools.Status;
+
 public class PlayingState implements State {
 
 	private Deck deck;
@@ -115,6 +117,7 @@ public class PlayingState implements State {
 				}
 			}
 		}, 1000, 1000);
+		deck.setStatus(Status.PLAYING);
 		System.out.println("**PLAYING**");
 	}
 }

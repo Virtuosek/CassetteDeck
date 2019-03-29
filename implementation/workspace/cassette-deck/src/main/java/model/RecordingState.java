@@ -3,6 +3,8 @@ package model;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import tools.Status;
+
 public class RecordingState implements State {
 
 	private Deck deck;
@@ -115,6 +117,7 @@ public class RecordingState implements State {
 				}
 			}
 		}, 1000, 1000);
+		deck.setStatus(Status.RECORDING);
 		System.out.println("**RECORDING**");
 	}
 }

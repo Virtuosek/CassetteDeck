@@ -1,5 +1,7 @@
 package model;
 
+import tools.Status;
+
 public class IdleState implements State {
 
 	private Deck deck;
@@ -10,6 +12,7 @@ public class IdleState implements State {
 	
 	@Override
 	public void entry() {
+		deck.setStatus(Status.IDLE);
 		System.out.println("The deck is idle.");
 	}
 	

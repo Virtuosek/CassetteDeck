@@ -20,12 +20,14 @@ public class DoubleCassetteDeck extends CassetteDeck {
 	public void turnOn() {
 		super.turnOn();
 		deck2.turnOn();
+		System.out.println("The cassette deck is turned on.");
 	}
 	
 	@Override
 	public void turnOff() {
 		super.turnOff();
 		deck2.turnOff();
+		System.out.println("Power is off.");
 	}
 	
 	public int getVolumeSlider() {
