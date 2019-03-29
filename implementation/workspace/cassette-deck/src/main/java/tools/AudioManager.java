@@ -70,5 +70,9 @@ public class AudioManager {
 	public boolean isAtEnd() {
 		return player.getCurrentTime().greaterThanOrEqualTo(player.getStopTime());
 	}
+	
+	public double getProgress() {
+		return player.getCurrentTime().toMillis() / player.getStopTime().toMillis();
+	}
 }
 

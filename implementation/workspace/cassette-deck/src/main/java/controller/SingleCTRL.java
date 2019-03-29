@@ -2,8 +2,11 @@ package controller;
 
 import java.io.File;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import model.Cassette;
 import model.CassetteDeck;
+import model.Deck;
 import tools.FileLoader;
 
 public class SingleCTRL extends SimulationCTRL {
@@ -11,17 +14,25 @@ public class SingleCTRL extends SimulationCTRL {
     public void ejectFn() {
         System.out.println("*EJECT BUTTON PRESSED*");
         cassetteDeck.getDeck().eject();
+        progressPB.setProgress(0.);
     }
 
     public void insertFn() {
         System.out.println("*INSERT BUTTON PRESSED*");
+        Deck deck = cassetteDeck.getDeck();
         File songFile = null;
-        if(!cassetteDeck.getDeck().getHolder().hasCassette()) {
+        if(!deck.getHolder().hasCassette()) {
             fileLoader = new FileLoader();
             songFile = fileLoader.openFile();
         }
         if(songFile != null) {
-            cassetteDeck.getDeck().insert(new Cassette(songFile));
+            deck.insert(new Cassette(songFile));
+        	deck.getHolder().getCassette().progressProperty().addListener(new ChangeListener<Number>() {
+    			@Override
+    			public void changed(ObservableValue<? extends Number> arg0, Number arg1, Number arg2) {
+    				progressPB.setProgress(deck.getHolder().getCassette().getProgress());
+    			}
+        	});
         }
     }
 

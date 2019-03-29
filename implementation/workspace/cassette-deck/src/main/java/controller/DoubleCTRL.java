@@ -89,16 +89,26 @@ public class DoubleCTRL extends SimulationCTRL {
     public void eject1Fn() {
     	System.out.println("*EJECT BUTTON 1 PRESSED*");
     	doubleCassetteDeck.getDeck().eject();
+        progressPB.setProgress(0.);
     }
     
     public void insert1Fn() {
         System.out.println("*INSERT BUTTON 1 PRESSED*");
+        Deck deck = cassetteDeck.getDeck();
         File songFile = null;
         if(!doubleCassetteDeck.getDeck().getHolder().hasCassette()) {
         	fileLoader = new FileLoader();
         	songFile = fileLoader.openFile();
         }
-        doubleCassetteDeck.getDeck().insert(new Cassette(songFile));
+        if(songFile != null) {
+            deck.insert(new Cassette(songFile));
+        	deck.getHolder().getCassette().progressProperty().addListener(new ChangeListener<Number>() {
+    			@Override
+    			public void changed(ObservableValue<? extends Number> arg0, Number arg1, Number arg2) {
+    				progressPB.setProgress(deck.getHolder().getCassette().getProgress());
+    			}
+        	});
+        }
     }
     
     public void flip1Fn() {
@@ -174,16 +184,26 @@ public class DoubleCTRL extends SimulationCTRL {
     public void eject2Fn() {
     	System.out.println("*EJECT BUTTON 2 PRESSED*");
     	doubleCassetteDeck.getDeck2().eject();
+        progress2PB.setProgress(0.);
     }
     
     public void insert2Fn() {
         System.out.println("*INSERT BUTTON 2 PRESSED*");
+        Deck deck2 = doubleCassetteDeck.getDeck2();
         File songFile = null;
         if(!doubleCassetteDeck.getDeck2().getHolder().hasCassette()) {
         	fileLoader = new FileLoader();
         	songFile = fileLoader.openFile();
         }
-        doubleCassetteDeck.getDeck2().insert(new Cassette(songFile));
+        if(songFile != null) {
+            deck2.insert(new Cassette(songFile));
+        	deck2.getHolder().getCassette().progressProperty().addListener(new ChangeListener<Number>() {
+    			@Override
+    			public void changed(ObservableValue<? extends Number> arg0, Number arg1, Number arg2) {
+    				progress2PB.setProgress(deck2.getHolder().getCassette().getProgress());
+    			}
+        	});
+        }
     }
     
     public void flip2Fn() {
@@ -261,19 +281,19 @@ public class DoubleCTRL extends SimulationCTRL {
     	super.init(cassetteDeck);
     	
     	doubleCassetteDeck = (DoubleCassetteDeck) cassetteDeck;
-    	Deck deck = doubleCassetteDeck.getDeck();
+    	Deck deck2 = doubleCassetteDeck.getDeck2();
 		status2L.setText(Status.OFF.toString());
-    	deck.statusProperty().addListener(new ChangeListener<Status>() {
+    	deck2.statusProperty().addListener(new ChangeListener<Status>() {
     		@Override
     		public void changed(ObservableValue<? extends Status> observable, Status oldValue, Status newValue) {
-    			status2L.setText(deck.getStatus().toString());
+    			status2L.setText(deck2.getStatus().toString());
     		}
     	});
     	counter2L.setText("0");
-    	deck.counterProperty().addListener(new ChangeListener<Number>() {
+    	deck2.counterProperty().addListener(new ChangeListener<Number>() {
 			@Override
 			public void changed(ObservableValue<? extends Number> arg0, Number arg1, Number arg2) {
-				counterL.setText(Integer.toString(deck.getCounter()));
+				counter2L.setText(Integer.toString(deck2.getCounter()));
 			}
     	});
     	
